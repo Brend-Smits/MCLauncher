@@ -11,7 +11,7 @@
         <module name="MCLauncher.DAL" />
         <module name="MCLauncher.Domain" />
         <module name="MCLauncher.UI.Admin" />
-        <module name="MCLauncher.UI.User" />
+        <module name="MCLauncher.UI.EndUser" />
         <module name="MCLauncherAPI" />
         <module name="MCLauncherBLL" />
         <module name="MCLauncherDAL" />
