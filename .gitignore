@@ -68,3 +68,8 @@ fabric.properties
 \.idea/vcs\.xml
 
 \.idea/encodings\.xml
+MCLRestAPI/target/
+
+MCLRestAPI/\.idea/
+
+MCLEndUser/\.idea/
