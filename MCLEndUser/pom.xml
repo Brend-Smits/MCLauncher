@@ -6,7 +6,30 @@
 
     <groupId>net.toastynetworks</groupId>
     <artifactId>MCLauncher.EndUser</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>MCLEndUser.DAL</module>
+        <module>MCLEndUser.BLL</module>
+        <module>MCLEndUser.UI</module>
+        <module>MCLEndUser.BLL.Interfaces</module>
+        <module>MCLEndUser.DAL.Interfaces</module>
+        <module>MCLEndUser.Domain</module>
+        <module>MCLEndUser.Factory</module>
+    </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 
 </project>
