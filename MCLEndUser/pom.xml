@@ -12,6 +12,9 @@
         <module>MCLEndUser.DAL</module>
         <module>MCLEndUser.BLL</module>
         <module>MCLEndUser.UI</module>
+        <module>MCLEndUser.BLL.Interfaces</module>
+        <module>MCLEndUser.DAL.Interfaces</module>
+        <module>MCLEndUser.Domain</module>
     </modules>
 
 

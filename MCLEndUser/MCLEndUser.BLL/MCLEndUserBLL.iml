@@ -11,5 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="MCLEndUserDALInterfaces" />
+    <orderEntry type="module" module-name="MCLEndUserDomain" />
   </component>
 </module>
