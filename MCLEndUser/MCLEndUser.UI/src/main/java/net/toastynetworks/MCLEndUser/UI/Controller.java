@@ -1,4 +1,4 @@
-package net.toastynetworks.MCLEndUser;
+package net.toastynetworks.MCLEndUser.UI;
 
 public class Controller {
 

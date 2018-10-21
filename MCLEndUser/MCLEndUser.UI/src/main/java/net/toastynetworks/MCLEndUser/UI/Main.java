@@ -1,4 +1,4 @@
-package net.toastynetworks.MCLEndUser;
+package net.toastynetworks.MCLEndUser.UI;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
