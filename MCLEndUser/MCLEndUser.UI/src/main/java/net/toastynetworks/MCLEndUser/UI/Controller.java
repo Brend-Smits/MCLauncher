@@ -9,6 +9,7 @@ import net.toastynetworks.MCLEndUser.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLEndUser.Factory.ModpackFactory;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -26,10 +27,13 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         modpackList.setItems(items);
-        items.add(GetAllModpacks());
+        for (String modpackName :
+                GetAllModpacks()) {
+            items.add(modpackName);
+        }
 
     }
-    public String GetAllModpacks() {
+    public List<String> GetAllModpacks() {
         return modpackLogic.GetAllModpacks();
     }
 
