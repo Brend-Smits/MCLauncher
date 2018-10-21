@@ -1,6 +1,8 @@
 package net.toastynetworks.MCLEndUser.DAL.Contexts.Interfaces;
 
+import java.util.List;
+
 public interface IModpackContext {
 
-    String GetAllModpacks();
+    List<String> GetAllModpacks();
 }
