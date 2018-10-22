@@ -6,6 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="MCLAdmin.BLL" />
+        <module name="MCLAdmin.BLL.Interfaces" />
+        <module name="MCLAdmin.DAL" />
+        <module name="MCLAdmin.DAL.Interfaces" />
+        <module name="MCLAdmin.Domain" />
+        <module name="MCLAdmin.Factory" />
         <module name="MCLAdmin.UI" />
         <module name="MCLAdminBLL" />
         <module name="MCLAdminBLLInterfaces" />
