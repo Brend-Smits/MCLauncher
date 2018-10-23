@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 public class ModpackService {
 
     List<Modpack> modpacks = new ArrayList<>(Arrays.asList(
-            new Modpack("SF3", "Latest"),
-            new Modpack("TL", "Latest"),
-            new Modpack("IE", "Beta")
+            new Modpack("FTB: Sky-Factory 3", "Latest"),
+            new Modpack("Tekkit Legends", "Latest"),
+            new Modpack("FTB: Infinity Evolved", "Beta")
     )
     );
 

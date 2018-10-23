@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.toastynetworks.MCLAdmin.UI.Controller">
+   <children>
+      <ListView layoutX="14.0" layoutY="40.0" prefHeight="348.0" prefWidth="140.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="37.0" />
+      <ListView layoutX="160.0" layoutY="40.0" prefHeight="348.0" prefWidth="126.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="37.0" />
+      <Label layoutX="50.0" layoutY="14.0" text="Modpacks" />
+      <Label layoutX="196.0" layoutY="14.0" text="Versions" />
+   </children>
+</AnchorPane>

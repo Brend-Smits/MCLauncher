@@ -1,6 +1,8 @@
 package net.toastynetworks.MCLEndUser.BLL.Interfaces;
 
+import java.util.List;
+
 public interface IModpackLogic {
 
-    String GetAllModpacks();
+    List<String> GetAllModpacks();
 }

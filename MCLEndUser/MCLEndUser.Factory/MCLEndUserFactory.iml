@@ -13,6 +13,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MCLEndUserDAL" />
     <orderEntry type="module" module-name="MCLEndUserDALInterfaces" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.7" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.7" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.7" level="project" />
     <orderEntry type="module" module-name="MCLEndUserBLL" />
     <orderEntry type="module" module-name="MCLEndUserDomain" />
     <orderEntry type="module" module-name="MCLEndUserBLLInterfaces" />

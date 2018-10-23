@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.toastynetworks.MCLAdmin.UI.Controller">
+   <children>
+      <TableView fx:id="modpackTable" layoutX="-2.0" layoutY="39.0" prefHeight="359.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="modpackName" prefWidth="200.0" text="C1" />
+          <TableColumn fx:id="modpackVersion" minWidth="5.0" prefWidth="140.0" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="4.0" layoutY="4.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="117.0" text="Add Modpack" />
+      <Button layoutX="130.0" layoutY="3.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="117.0" text="Edit Modpack" />
+   </children>
+</AnchorPane>
