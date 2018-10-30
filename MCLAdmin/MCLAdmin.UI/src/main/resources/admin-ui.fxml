@@ -9,8 +9,8 @@
    <children>
       <TableView fx:id="modpackTable" layoutX="-2.0" layoutY="39.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="41.0">
         <columns>
-          <TableColumn fx:id="modpackName" prefWidth="200.0" text="Modpack" />
-          <TableColumn fx:id="modpackVersion" minWidth="5.0" prefWidth="140.0" text="Version" />
+          <TableColumn fx:id="modpackNameColumn" prefWidth="200.0" text="Modpack" />
+          <TableColumn fx:id="modpackVersionColumn" minWidth="5.0" prefWidth="140.0" text="Version" />
         </columns>
       </TableView>
       <Button layoutX="4.0" layoutY="4.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="117.0" text="Add Modpack" />
