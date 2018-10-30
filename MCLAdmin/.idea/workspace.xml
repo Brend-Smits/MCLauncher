@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd252546-2248-4eab-bf12-bd2c321b71bb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/AddModpackScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/admin-ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/admin-ui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/target/classes/admin-ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/target/classes/admin-ui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -41,7 +28,7 @@
     <session id="-1137841989">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -51,30 +38,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="2" />
-          <entry key="java" value="20" />
+          <entry key="fxml" value="3" />
+          <entry key="java" value="22" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="20" />
-          <entry key="XML" value="10" />
+          <entry key="JAVA" value="22" />
+          <entry key="XML" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="2" />
-          <entry key="fxml" value="9" />
-          <entry key="java" value="1660" />
+          <entry key="fxml" value="18" />
+          <entry key="java" value="2126" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1660" />
+          <entry key="JAVA" value="2126" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="XML" value="10" />
+          <entry key="XML" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -102,15 +89,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/AddModpackScene.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="182" selection-start-line="6" selection-start-column="182" selection-end-line="6" selection-end-column="182" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="314">
+              <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1153#1154#0" expanded="true" />
                 <element signature="e#1187#1188#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="3147" selection-start-line="3147" selection-end-line="3147" />
             </state>
           </provider>
         </entry>
@@ -177,10 +195,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-532">
+            <state relative-caret-position="233">
               <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -195,9 +213,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -221,8 +239,9 @@
         <option value="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java" />
-        <option value="$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" />
+        <option value="$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/AddModpackScene.fxml" />
+        <option value="$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java" />
       </list>
     </option>
   </component>
@@ -340,6 +359,49 @@
               <item name="DAL" type="462c0819:PsiDirectoryNode" />
               <item name="Contexts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -351,7 +413,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540894969795" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540897936599" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MCLRestAPI" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -405,12 +467,12 @@
       <workItem from="1540239047084" duration="1758000" />
       <workItem from="1540366609127" duration="756000" />
       <workItem from="1540372647190" duration="1500000" />
-      <workItem from="1540825054843" duration="11265000" />
+      <workItem from="1540825054843" duration="15070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16670000" />
+    <option name="totallyTimeSpent" value="20475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-134" width="1936" height="1176" extended-state="6" />
@@ -425,8 +487,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2571977" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2571977" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39923224" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -451,6 +513,20 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java</url>
+          <line>55</line>
+          <properties class="net.toastynetworks.MCLAdmin.UI.Controller" method="addModpackButton">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -478,16 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -553,18 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1153#1154#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -609,11 +663,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
+        <state relative-caret-position="233">
           <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2913#2922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/AddModpackScene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="182" selection-start-line="6" selection-start-column="182" selection-end-line="6" selection-end-column="182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="3147" selection-start-line="3147" selection-end-line="3147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
           </folding>
         </state>
       </provider>

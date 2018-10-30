@@ -13,7 +13,7 @@
           <TableColumn fx:id="modpackVersionColumn" minWidth="5.0" prefWidth="140.0" text="Version" />
         </columns>
       </TableView>
-      <Button layoutX="4.0" layoutY="4.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="117.0" text="Add Modpack" />
+      <Button fx:id="addNewModpackButton" layoutX="4.0" layoutY="4.0" mnemonicParsing="false" onAction="#addModpackButton" prefHeight="33.0" prefWidth="117.0" text="Add Modpack" />
       <Button layoutX="130.0" layoutY="5.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="117.0" text="Edit Modpack" />
    </children>
 </AnchorPane>
