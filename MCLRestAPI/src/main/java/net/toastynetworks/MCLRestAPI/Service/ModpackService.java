@@ -23,11 +23,11 @@ public class ModpackService {
     }
 
     public Modpack getModpack(String name) {
-        return modpacks.stream().filter(t -> t.getName().equals(name)).findFirst().get();
+        return modpacks.stream().filter(t -> t.getModpackName().equals(name)).findFirst().get();
     }
 
     public List<Modpack> getModpacksWithReleaseType(String releaseType) {
-        return modpacks.stream().filter(t -> t.getVersionType().equals(releaseType)).collect(Collectors.toList());
+        return modpacks.stream().filter(t -> t.getModpackVersionType().equals(releaseType)).collect(Collectors.toList());
     }
 
     public void addModpack(Modpack modpack) {
@@ -35,10 +35,10 @@ public class ModpackService {
     }
 
     public void updateModpack(Modpack modpack, String modpackName) {
-        modpacks.stream().filter(t -> t.getName().equals(modpackName)).findFirst().ifPresent(i -> {i.setName(modpack.getName());i.setVersionType(modpack.getVersionType());});
+        modpacks.stream().filter(t -> t.getModpackName().equals(modpackName)).findFirst().ifPresent(i -> {i.setModpackName(modpack.getModpackName());i.setModpackVersionType(modpack.getModpackVersionType());});
     }
 
     public void deleteModpack(String modpackName) {
-        modpacks.removeIf(t -> t.getName().equals(modpackName));
+        modpacks.removeIf(t -> t.getModpackName().equals(modpackName));
     }
 }
