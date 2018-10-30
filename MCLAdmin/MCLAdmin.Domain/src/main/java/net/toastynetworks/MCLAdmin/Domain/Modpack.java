@@ -1,6 +1,7 @@
-package net.toastynetworks.MCLRestAPI.Models;
+package net.toastynetworks.MCLAdmin.Domain;
 
 public class Modpack {
+
     private String modpackName;
     private String modpackVersionType;
 
