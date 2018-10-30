@@ -12,6 +12,7 @@ import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -22,19 +23,25 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn<Modpack, String> modpackNameColumn;
     @FXML
-        private TableColumn<Modpack, String> modpackVersionColumn;
+    private TableColumn<Modpack, String> modpackVersionColumn;
 
     public ObservableList<Modpack> getModpacks() {
         ObservableList<Modpack> modpacks = FXCollections.observableArrayList();
-        modpacks.add(new Modpack("SF3", "Beta"));
+        for (Modpack modpack :
+                GetAllModpacks()) {
+            modpacks.add(modpack);
+        }
         return modpacks;
+    }
+
+    public List<Modpack> GetAllModpacks() {
+        return modpackLogic.GetAllModpacks();
     }
 
 
     public void initialize(URL location, ResourceBundle resources) {
         modpackNameColumn.setCellValueFactory(new PropertyValueFactory<Modpack, String>("modpackName"));
         modpackVersionColumn.setCellValueFactory(new PropertyValueFactory<Modpack, String>("modpackVersionType"));
-
 
         modpackTable.setItems(getModpacks());
 

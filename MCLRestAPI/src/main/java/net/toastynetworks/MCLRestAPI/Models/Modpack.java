@@ -1,32 +1,32 @@
 package net.toastynetworks.MCLRestAPI.Models;
 
 public class Modpack {
-    private String name;
-    private String versionType;
+    private String modpackName;
+    private String modpackVersionType;
 
     public Modpack(String name, String versionType) {
-        this.name = name;
-        this.versionType = versionType;
+        this.modpackName = name;
+        this.modpackVersionType = versionType;
     }
 
     public Modpack() {
 
     }
 
-    public String getName() {
-        return name;
+    public String getModpackName() {
+        return modpackName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setModpackName(String modpackName) {
+        this.modpackName = modpackName;
     }
 
-    public String getVersionType() {
-        return versionType;
+    public String getModpackVersionType() {
+        return modpackVersionType;
     }
 
-    public void setVersionType(String versionType) {
-        this.versionType = versionType;
+    public void setModpackVersionType(String modpackVersionType) {
+        this.modpackVersionType = modpackVersionType;
     }
 
 }

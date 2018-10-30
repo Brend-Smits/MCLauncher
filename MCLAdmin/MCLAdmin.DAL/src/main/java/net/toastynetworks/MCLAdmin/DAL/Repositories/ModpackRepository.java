@@ -2,6 +2,7 @@ package net.toastynetworks.MCLAdmin.DAL.Repositories;
 
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLAdmin.DAL.Interfaces.IModpackRepository;
+import net.toastynetworks.MCLAdmin.Domain.Modpack;
 
 import java.util.List;
 
@@ -19,5 +20,10 @@ public class ModpackRepository implements IModpackRepository {
 
     public List<String> GetAllModpackVersions() {
         return null;
+    }
+
+    public List<Modpack> GetAllModpacks() {
+
+        return modpackContext.GetAllModpacks();
     }
 }

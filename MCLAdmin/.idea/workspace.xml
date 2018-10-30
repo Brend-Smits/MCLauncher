@@ -2,22 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd252546-2248-4eab-bf12-bd2c321b71bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MCLAdmin.Domain/src/main/java/net/toastynetworks/MCLAdmin/Domain/Modpack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MCLAdmin.Factory/src/main/java/net/toastynetworks/MCLAdmin/Factory/ModpackFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.Factory/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.Factory/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/admin-ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/admin-ui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/target/classes/admin-ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/target/classes/admin-ui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -50,13 +52,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="2" />
-          <entry key="java" value="14" />
+          <entry key="java" value="20" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="14" />
+          <entry key="JAVA" value="20" />
           <entry key="XML" value="10" />
         </counts>
       </usages-collector>
@@ -64,13 +66,13 @@
         <counts>
           <entry key="dummy" value="2" />
           <entry key="fxml" value="9" />
-          <entry key="java" value="1025" />
+          <entry key="java" value="1660" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1025" />
+          <entry key="JAVA" value="1660" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="10" />
         </counts>
@@ -100,10 +102,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Main.java">
+        <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="340">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1153#1154#0" expanded="true" />
+                <element signature="e#1187#1188#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,63 +130,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="289">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-                <element signature="e#339#340#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#657#658#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MCLAdmin.Domain/src/main/java/net/toastynetworks/MCLAdmin/Domain/Modpack.java">
+        <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-              <folding>
-                <element signature="e#331#332#0" expanded="true" />
-                <element signature="e#358#359#0" expanded="true" />
-                <element signature="e#398#399#0" expanded="true" />
-                <element signature="e#430#431#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-                <element signature="e#502#503#0" expanded="true" />
-                <element signature="e#556#557#0" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/admin-ui.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MCLAdmin.Factory/src/main/java/net/toastynetworks/MCLAdmin/Factory/ModpackFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+            <state relative-caret-position="187">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -181,62 +156,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state relative-caret-position="374">
+              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
-                <element signature="e#458#459#0" expanded="true" />
-                <element signature="e#258#259#0" expanded="true" />
-                <element signature="e#285#286#0" expanded="true" />
-                <element signature="e#336#337#0" expanded="true" />
-                <element signature="e#363#364#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+            <state relative-caret-position="-532">
+              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#261#262#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#339#340#0" expanded="true" />
-                <element signature="e#366#367#0" expanded="true" />
-                <element signature="e#1589#1597#0" expanded="true" />
+                <element signature="e#2913#2922#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="37" />
-              <folding>
-                <element signature="e#333#334#0" expanded="true" />
-                <element signature="e#360#361#0" expanded="true" />
-                <element signature="e#400#401#0" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
-                <element signature="e#504#505#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -262,16 +211,18 @@
         <option value="$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/admin-ui.fxml" />
         <option value="$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Main.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCAdmin/BLL/Interfaces/IModpackLogic.java" />
-        <option value="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java" />
-        <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.DAL/pom.xml" />
         <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestAPIContext.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.Factory/src/main/java/net/toastynetworks/MCLAdmin/Factory/ModpackFactory.java" />
-        <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java" />
-        <option value="$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackModel.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.Domain/src/main/java/net/toastynetworks/MCLAdmin/Domain/Modpack.java" />
+        <option value="$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.java" />
+        <option value="$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java" />
+        <option value="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java" />
+        <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java" />
+        <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java" />
         <option value="$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java" />
+        <option value="$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" />
       </list>
     </option>
   </component>
@@ -289,14 +240,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-1208" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-134" />
     <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <hideEmptyPackages ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -310,93 +263,25 @@
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.BLL" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.BLL.Interfaces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.BLL" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.BLL.Interfaces" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.BLL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.BLL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.BLL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.BLL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.BLL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.BLL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="BLL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.BLL.Interfaces" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.BLL.Interfaces" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -404,107 +289,34 @@
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.BLL.Interfaces" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="DAL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="Contexts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="Contexts" type="462c0819:PsiDirectoryNode" />
               <item name="Interfaces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
               <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -512,257 +324,21 @@
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
               <item name="DAL" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.DAL.Interfaces" type="462c0819:PsiDirectoryNode" />
+              <item name="MCLAdmin.DAL" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
               <item name="DAL" type="462c0819:PsiDirectoryNode" />
-              <item name="Interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="Domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Factory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLauncher.Admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="MCLAdmin.UI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Contexts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -775,7 +351,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540892607244" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540894969795" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MCLRestAPI" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -829,15 +405,15 @@
       <workItem from="1540239047084" duration="1758000" />
       <workItem from="1540366609127" duration="756000" />
       <workItem from="1540372647190" duration="1500000" />
-      <workItem from="1540825054843" duration="9288000" />
+      <workItem from="1540825054843" duration="11265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14693000" />
+    <option name="totallyTimeSpent" value="16670000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-1208" width="1936" height="1176" extended-state="6" />
+    <frame x="-1928" y="-134" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
@@ -876,18 +452,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -910,46 +474,10 @@
     <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#339#340#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-            <element signature="e#1589#1597#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -980,18 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#339#340#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/resources/admin-ui.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1006,22 +522,6 @@
           <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1043,12 +543,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java">
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="170">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/DAL/Interfaces/IModpackRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/Interfaces/IModpackContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-532">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2913#2922#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,9 @@
 package net.toastynetworks.MCLAdmin.DAL.Contexts;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackContext;
+import net.toastynetworks.MCLAdmin.Domain.Modpack;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,6 +20,11 @@ public class ModpackRestApiContext implements IModpackContext {
 
     public List<String> GetAllModpackVersions() {
         return null;
+    }
+
+    public List<Modpack> GetAllModpacks() {
+        String json = GetJSONFromUrl("v1/modpack");
+        return GetModpacksFromJSON(json);
     }
 
     public String GetJSONFromUrl(String endpoint) {
@@ -56,15 +63,32 @@ public class ModpackRestApiContext implements IModpackContext {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
 
-            ModpackModel[] modpackModels = objectMapper.readValue(json, ModpackModel[].class);
-            for (ModpackModel model : modpackModels) {
-                System.out.println(model.getName());
-                modpackNames.add(model.getName());
+            Modpack[] modpackModels = objectMapper.readValue(json, Modpack[].class);
+            for (Modpack model : modpackModels) {
+                System.out.println(model.getModpackName());
+                modpackNames.add(model.getModpackName());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
         return modpackNames;
+    }
+    public List<Modpack> GetModpacksFromJSON(String json) {
+        List<String> modpackNames = new ArrayList<String>();
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            Modpack[] modpackModels = objectMapper.readValue(json, Modpack[].class);
+            List<Modpack> modpackList = new ArrayList<Modpack>();
+            for (Modpack modpack :
+                    modpackModels) {
+                modpackList.add(modpack);
+            }
+            return modpackList;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
