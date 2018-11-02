@@ -27,6 +27,10 @@ public class ModpackRestApiContext implements IModpackContext {
         return GetModpacksFromJSON(json);
     }
 
+    public void AddModpack(Modpack modpack) {
+        //
+    }
+
     public String GetJSONFromUrl(String endpoint, String methodCall) {
         try {
             URL url = new URL("http://localhost:8080/" + endpoint);

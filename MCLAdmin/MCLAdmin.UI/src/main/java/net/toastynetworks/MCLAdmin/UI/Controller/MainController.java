@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class MainController implements Initializable {
 
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     @FXML
@@ -50,12 +50,12 @@ public class Controller implements Initializable {
         modpackTable.setItems(getModpacks());
     }
 
-    public void addModpackButton() {
-            try {
-                new SwitchScene(addNewModpackButton, "fxml/AddModpackScene.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
 
+    public void addModpackButton() {
+        try {
+            new SwitchScene(addNewModpackButton, "fxml/AddModpackScene.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

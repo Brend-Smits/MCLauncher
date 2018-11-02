@@ -10,4 +10,6 @@ public interface IModpackRepository {
     List<String> GetAllModpackVersions();
 
     List<Modpack> GetAllModpacks();
+
+    void AddModpack(Modpack modpack);
 }
