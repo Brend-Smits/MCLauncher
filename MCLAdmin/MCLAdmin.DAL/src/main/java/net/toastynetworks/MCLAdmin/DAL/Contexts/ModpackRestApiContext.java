@@ -23,15 +23,19 @@ public class ModpackRestApiContext implements IModpackContext {
     }
 
     public List<Modpack> GetAllModpacks() {
-        String json = GetJSONFromUrl("v1/modpack");
+        String json = GetJSONFromUrl("v1/modpack", "GET");
         return GetModpacksFromJSON(json);
     }
 
-    public String GetJSONFromUrl(String endpoint) {
+    public void AddModpack(Modpack modpack) {
+        //
+    }
+
+    public String GetJSONFromUrl(String endpoint, String methodCall) {
         try {
             URL url = new URL("http://localhost:8080/" + endpoint);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
+            connection.setRequestMethod(methodCall);
             connection.setRequestProperty("Accept", "application/json");
 
             if (connection.getResponseCode() != 200) {
@@ -53,28 +57,12 @@ public class ModpackRestApiContext implements IModpackContext {
 
 
 
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (Exception exception) {
+            System.out.println(exception);
         }
         return null;
     }
-    public List<String> GetModpackNamesFromJSON(String json) {
-        List<String> modpackNames = new ArrayList<String>();
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-
-            Modpack[] modpackModels = objectMapper.readValue(json, Modpack[].class);
-            for (Modpack model : modpackModels) {
-                System.out.println(model.getModpackName());
-                modpackNames.add(model.getModpackName());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return modpackNames;
-    }
     public List<Modpack> GetModpacksFromJSON(String json) {
-        List<String> modpackNames = new ArrayList<String>();
         try {
             ObjectMapper objectMapper = new ObjectMapper();
 

@@ -26,4 +26,8 @@ public class ModpackRepository implements IModpackRepository {
 
         return modpackContext.GetAllModpacks();
     }
+
+    public void AddModpack(Modpack modpack) {
+        modpackContext.AddModpack(modpack);
+    }
 }

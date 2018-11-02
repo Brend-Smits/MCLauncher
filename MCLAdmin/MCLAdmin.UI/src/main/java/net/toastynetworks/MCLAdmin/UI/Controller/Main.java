@@ -1,4 +1,4 @@
-package net.toastynetworks.MCLAdmin.UI;
+package net.toastynetworks.MCLAdmin.UI.Controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("admin-ui.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/admin-ui.fxml"));
         primaryStage.setTitle("MCL-Admin");
         primaryStage.setScene(new Scene(root,  1800, 1000));
         primaryStage.show();
