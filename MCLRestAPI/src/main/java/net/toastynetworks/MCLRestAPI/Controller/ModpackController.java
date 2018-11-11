@@ -36,9 +36,9 @@ public class ModpackController {
     }
 
     @ApiOperation("Add a new modpack")
-    @RequestMapping(method = RequestMethod.POST, value = "/modpack")
+    @RequestMapping(method = RequestMethod.POST, value = "/addModpack", produces = "application/json")
     public void addModpack(@RequestBody Modpack modpack) {
-        modpackService.addModpack(modpack);
+        modpackService.addModpack(new Modpack(modpack.getModpackName(), modpack.getModpackVersionType()));
     }
 
     @ApiOperation("Update a modpack")

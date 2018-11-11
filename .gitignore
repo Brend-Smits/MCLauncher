@@ -75,3 +75,5 @@ MCLRestAPI/\.idea/
 MCLEndUser/\.idea/
 
 MCLAdmin/\.idea/workspace\.xml
+
+*.log

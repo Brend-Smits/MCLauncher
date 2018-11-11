@@ -1,19 +1,42 @@
 package net.toastynetworks.MCLAdmin.DAL.Contexts;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.ObjectMapper;
+import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ModpackRestApiContext implements IModpackContext {
+
+    static {
+        Unirest.setObjectMapper(new ObjectMapper() {
+            private com.fasterxml.jackson.databind.ObjectMapper jacksonObjectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
+
+            public <T> T readValue(String value, Class<T> valueType) {
+                try {
+                    return jacksonObjectMapper.readValue(value, valueType);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            public String writeValue(Object value) {
+                try {
+                    return jacksonObjectMapper.writeValueAsString(value);
+                } catch (JsonProcessingException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+
     public List<String> GetAllModpackNames() {
         return null;
     }
@@ -23,60 +46,39 @@ public class ModpackRestApiContext implements IModpackContext {
     }
 
     public List<Modpack> GetAllModpacks() {
-        String json = GetJSONFromUrl("v1/modpack", "GET");
-        return GetModpacksFromJSON(json);
+        return GetModpackList();
     }
 
     public void AddModpack(Modpack modpack) {
-        //
-    }
-
-    public String GetJSONFromUrl(String endpoint, String methodCall) {
         try {
-            URL url = new URL("http://localhost:8080/" + endpoint);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod(methodCall);
-            connection.setRequestProperty("Accept", "application/json");
+            Modpack modpackObject = new Modpack(modpack.getModpackName(), modpack.getModpackVersionType());
+            System.out.println(modpackObject.getModpackName() + modpackObject.getModpackVersionType());
+            HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/v1/modpack/addModpack")
+                    .header("Content-Type", "application/json")
+                    .body(modpackObject)
+                    .asJson();
 
-            if (connection.getResponseCode() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + connection.getResponseCode());
+            if (jsonResponse.getStatus() != 200) {
+                System.out.println("Headers: " + jsonResponse.getHeaders());
+                System.out.println("Body: " + jsonResponse.getBody());
+                throw new RuntimeException("Failed: HTTP error code : " + jsonResponse.getStatus() + " " + jsonResponse.getStatusText());
             }
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (connection.getInputStream())));
-
-            String output;
-            StringBuffer response = new StringBuffer();
-            System.out.println("Output from Server .... \n");
-            while ((output = br.readLine()) != null) {
-                response.append(output);
-            }
-            connection.disconnect();
-            return response.toString();
-
-
 
         } catch (Exception exception) {
             System.out.println(exception);
         }
-        return null;
     }
-    public List<Modpack> GetModpacksFromJSON(String json) {
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-
-            Modpack[] modpackModels = objectMapper.readValue(json, Modpack[].class);
-            List<Modpack> modpackList = new ArrayList<Modpack>();
-            for (Modpack modpack :
-                    modpackModels) {
-                modpackList.add(modpack);
-            }
-            return modpackList;
-        } catch (IOException e) {
-            e.printStackTrace();
+    public List<Modpack> GetModpackList() {
+        try{
+            HttpResponse<Modpack[]> modpackListResponse = Unirest.get("http://localhost:8080/v1/modpack").asObject(Modpack[].class);
+            Modpack[] modpackObjectArray = modpackListResponse.getBody();
+            return Arrays.asList(modpackObjectArray);
+        } catch (Exception e) {
+            System.out.println(e);
         }
+
         return null;
     }
+
 
 }

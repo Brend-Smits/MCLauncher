@@ -25,6 +25,6 @@ public class ModpackLogic implements IModpackLogic {
     }
 
     public void AddModpack(Modpack modpack) {
-        return modpackRepository.AddModpack(modpack);
+        modpackRepository.AddModpack(modpack);
     }
 }
