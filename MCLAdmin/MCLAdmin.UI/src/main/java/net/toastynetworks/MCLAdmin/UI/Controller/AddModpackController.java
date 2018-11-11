@@ -6,12 +6,13 @@ import javafx.scene.control.TextField;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
+import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
 public class AddModpackController {
 
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     @FXML
-    private Button AddModpackButton;
+    private Button backButton;
     @FXML
     private TextField nameTextField;
     @FXML
@@ -20,6 +21,13 @@ public class AddModpackController {
     public void AddModpack() {
         modpackLogic.AddModpack(new Modpack(nameTextField.getText(), versionTextField.getText()));
 
+    }
+    public void backToMainMenuButton() {
+        try {
+            new SwitchScene(backButton, "fxml/admin-ui.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
