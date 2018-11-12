@@ -48,8 +48,8 @@ public class ModpackController {
     }
 
     @ApiOperation("Delete a modpack")
-    @RequestMapping(method = RequestMethod.DELETE, value = "/{name}")
-    public void deleteModpack(@PathVariable String name) {
-        modpackService.deleteModpack(name);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{modpackId}")
+    public void deleteModpack(@PathVariable int modpackId) {
+        modpackService.deleteModpack(modpackId);
     }
 }

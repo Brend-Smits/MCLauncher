@@ -38,7 +38,7 @@ public class ModpackService {
         modpacks.stream().filter(t -> t.getModpackId() == (modpackId)).findFirst().ifPresent(i -> {i.setModpackName(modpack.getModpackName());i.setModpackVersionType(modpack.getModpackVersionType());});
     }
 
-    public void deleteModpack(String modpackName) {
-        modpacks.removeIf(t -> t.getModpackName().equals(modpackName));
+    public void deleteModpack(int modpackId) {
+        modpacks.removeIf(t -> t.getModpackId() == modpackId);
     }
 }
