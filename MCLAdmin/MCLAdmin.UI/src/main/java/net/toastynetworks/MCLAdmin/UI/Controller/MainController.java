@@ -27,6 +27,8 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<Modpack, String> modpackVersionColumn;
     @FXML
+    private TableColumn<Modpack, Integer> modpackIdColumn;
+    @FXML
     private Button addNewModpackButton;
     @FXML
     private Button editModpackButton;
@@ -49,6 +51,7 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         modpackNameColumn.setCellValueFactory(new PropertyValueFactory<Modpack, String>("modpackName"));
         modpackVersionColumn.setCellValueFactory(new PropertyValueFactory<Modpack, String>("modpackVersionType"));
+        modpackIdColumn.setCellValueFactory(new PropertyValueFactory<Modpack, Integer>("modpackId"));
 
         modpackTable.setItems(getModpacks());
     }

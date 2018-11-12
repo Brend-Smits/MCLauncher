@@ -22,7 +22,6 @@ public class EditModpackController {
     @FXML
     private TextField idTextField;
 
-
     public void backToMainMenuButton() {
         try {
             new SwitchScene(backButton, "fxml/admin-ui.fxml");
@@ -32,7 +31,6 @@ public class EditModpackController {
     }
     public void saveModpackAction() {
         try {
-            //logic here to save modpack
             Modpack editedModpack = new Modpack(Integer.valueOf(idTextField.getText()), nameTextField.getText(), versionTextField.getText());
             modpackLogic.EditModpack(editedModpack);
             System.out.println("Saving modpack");

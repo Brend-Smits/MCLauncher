@@ -4,6 +4,7 @@ public class Modpack {
 
     private String modpackName;
     private String modpackVersionType;
+    private int modpackId;
 
     public int getModpackId() {
         return modpackId;
@@ -13,7 +14,6 @@ public class Modpack {
         this.modpackId = modpackId;
     }
 
-    private int modpackId;
     public Modpack(String name, String versionType) {
         this.modpackName = name;
         this.modpackVersionType = versionType;
