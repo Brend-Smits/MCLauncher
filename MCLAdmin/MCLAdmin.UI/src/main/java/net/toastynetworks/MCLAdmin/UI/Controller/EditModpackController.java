@@ -25,6 +25,15 @@ public class EditModpackController {
             e.printStackTrace();
         }
     }
+    public void saveModpackAction() {
+        try {
+            //logic here to save modpack
+            Modpack editedModpack = new Modpack(nameTextField.getText(), versionTextField.getText());
+            System.out.println("Saving modpack");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
     public void initialize() {
         nameTextField.setText(selectedModpack.getModpackName());

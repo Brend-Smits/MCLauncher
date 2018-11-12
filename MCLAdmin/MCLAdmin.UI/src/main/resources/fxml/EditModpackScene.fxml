@@ -5,13 +5,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.toastynetworks.MCLAdmin.UI.Controller.EditModpackController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.toastynetworks.MCLAdmin.UI.Controller.EditModpackController">
    <children>
-      <TextField fx:id="nameTextField" layoutX="61.0" layoutY="56.0" prefHeight="25.0" prefWidth="203.0" promptText="name" />
-      <TextField fx:id="versionTextField" layoutX="61.0" layoutY="120.0" prefHeight="25.0" prefWidth="203.0" promptText="version" />
+      <TextField fx:id="nameTextField" layoutX="62.0" layoutY="121.0" prefHeight="25.0" prefWidth="203.0" promptText="name" text="Name of Modpack" />
+      <TextField fx:id="versionTextField" layoutX="62.0" layoutY="187.0" prefHeight="25.0" prefWidth="203.0" promptText="version" text="Version of Modpack" />
       <Button fx:id="backButton" layoutX="462.0" layoutY="335.0" mnemonicParsing="false" onAction="#backToMainMenuButton" prefHeight="42.0" prefWidth="126.0" text="Back" />
-      <Label layoutX="61.0" layoutY="32.0" text="Modpack name:" />
-      <Label layoutX="61.0" layoutY="98.0" text="Modpack version:" />
-      <Button fx:id="SaveModpackButton" layoutX="61.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="203.0" text="Save Modpack" />
+      <Label layoutX="62.0" layoutY="97.0" text="Modpack Name:" />
+      <Label layoutX="62.0" layoutY="163.0" text="Modpack Version:" />
+      <Button fx:id="saveModpackButton" layoutX="299.0" layoutY="335.0" mnemonicParsing="false" onAction="#saveModpackAction" prefHeight="42.0" prefWidth="126.0" text="Save Modpack" />
+      <TextField fx:id="idTextField" editable="false" layoutX="62.0" layoutY="60.0" prefHeight="25.0" prefWidth="203.0" promptText="name" text="ID of Modpack (Auto)" />
+      <Label layoutX="62.0" layoutY="36.0" text="Modpack ID:" />
    </children>
 </AnchorPane>
