@@ -28,6 +28,8 @@ public class MainController implements Initializable {
     private TableColumn<Modpack, String> modpackVersionColumn;
     @FXML
     private Button addNewModpackButton;
+    @FXML
+    private Button editModpackButton;
 
     public ObservableList<Modpack> getModpacks() {
         ObservableList<Modpack> modpacks = FXCollections.observableArrayList();
@@ -56,6 +58,16 @@ public class MainController implements Initializable {
             new SwitchScene(addNewModpackButton, "fxml/AddModpackScene.fxml");
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+    public void editModpackButton() {
+        try {
+            Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
+            EditModpackController editModpackController = new EditModpackController();
+            editModpackController.objectPassThrough(modpack);
+            new SwitchScene(editModpackButton, "fxml/EditModpackScene.fxml");
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 }

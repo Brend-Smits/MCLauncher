@@ -3,24 +3,24 @@ package net.toastynetworks.MCLAdmin.UI.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
-import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
-public class AddModpackController {
+public class EditModpackController {
 
-    private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     @FXML
     private Button backButton;
     @FXML
     private TextField nameTextField;
     @FXML
     private TextField versionTextField;
+    private Modpack modpackModel;
 
-    public void AddModpack() {
-        modpackLogic.AddModpack(new Modpack(nameTextField.getText(), versionTextField.getText()));
+
+    public void objectPassThrough(Modpack modpack) {
+        modpackModel = new Modpack(modpack.getModpackName(), modpack.getModpackVersionType());
     }
+
     public void backToMainMenuButton() {
         try {
             new SwitchScene(backButton, "fxml/admin-ui.fxml");
@@ -29,4 +29,8 @@ public class AddModpackController {
         }
     }
 
+    public void initialize() {
+        nameTextField.setText(modpackModel.getModpackName());
+        versionTextField.setText(modpackModel.getModpackVersionType());
+    }
 }

@@ -11,4 +11,6 @@ public interface IModpackLogic {
     List<Modpack> GetAllModpacks();
 
     void AddModpack(Modpack modpack);
+
+    void editModpack(Modpack modpack);
 }
