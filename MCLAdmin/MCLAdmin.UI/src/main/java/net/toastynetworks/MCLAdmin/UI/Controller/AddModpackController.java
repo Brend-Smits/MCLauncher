@@ -20,6 +20,12 @@ public class AddModpackController {
 
     public void AddModpack() {
         modpackLogic.AddModpack(new Modpack(nameTextField.getText(), versionTextField.getText()));
+        try {
+            new SwitchScene(backButton, "fxml/main.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
     public void backToMainMenuButton() {
         try {

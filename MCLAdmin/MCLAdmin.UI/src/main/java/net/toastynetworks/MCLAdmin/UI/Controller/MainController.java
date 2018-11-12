@@ -78,6 +78,7 @@ public class MainController implements Initializable {
         try {
             selectedModpack = modpackTable.getSelectionModel().getSelectedItem();
             modpackLogic.DeleteModpack(selectedModpack);
+            modpackTable.setItems(getModpacks());
         } catch (Exception e) {
             System.out.println(e);
         }

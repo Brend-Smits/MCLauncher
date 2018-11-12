@@ -41,13 +41,13 @@ public class ModpackController {
         modpackService.addModpack(new Modpack((modpackService.getAllModpacks().size() + 1), modpack.getModpackName(), modpack.getModpackVersionType()));
     }
 
-    @ApiOperation("Update a modpack")
+    @ApiOperation("Update a modpack by ID")
     @RequestMapping(method = RequestMethod.PUT, value = "/{modpackId}")
     public void updateModpack(@RequestBody Modpack modpack, @PathVariable int modpackId) {
         modpackService.updateModpack(modpack, modpackId);
     }
 
-    @ApiOperation("Delete a modpack")
+    @ApiOperation("Delete a modpack by ID")
     @RequestMapping(method = RequestMethod.DELETE, value = "/{modpackId}")
     public void deleteModpack(@PathVariable int modpackId) {
         modpackService.deleteModpack(modpackId);
