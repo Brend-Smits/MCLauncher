@@ -8,8 +8,7 @@ public interface IModpackContext {
 
     List<String> GetAllModpackNames();
     List<String> GetAllModpackVersions();
-
     List<Modpack> GetAllModpacks();
-
     void AddModpack(Modpack modpack);
+    void EditModpack(Modpack modpack);
 }

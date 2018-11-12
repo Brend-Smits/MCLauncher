@@ -12,5 +12,5 @@ public interface IModpackLogic {
 
     void AddModpack(Modpack modpack);
 
-    void editModpack(Modpack modpack);
+    void EditModpack(Modpack modpack);
 }

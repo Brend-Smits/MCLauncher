@@ -38,13 +38,13 @@ public class ModpackController {
     @ApiOperation("Add a new modpack")
     @RequestMapping(method = RequestMethod.POST, value = "/addModpack", produces = "application/json")
     public void addModpack(@RequestBody Modpack modpack) {
-        modpackService.addModpack(new Modpack(modpack.getModpackName(), modpack.getModpackVersionType()));
+        modpackService.addModpack(new Modpack((modpackService.getAllModpacks().size() + 1), modpack.getModpackName(), modpack.getModpackVersionType()));
     }
 
     @ApiOperation("Update a modpack")
-    @RequestMapping(method = RequestMethod.PUT, value = "/{name}")
-    public void updateModpack(@RequestBody Modpack modpack, @PathVariable String name) {
-        modpackService.updateModpack(modpack, name);
+    @RequestMapping(method = RequestMethod.PUT, value = "/{modpackId}")
+    public void updateModpack(@RequestBody Modpack modpack, @PathVariable int modpackId) {
+        modpackService.updateModpack(modpack, modpackId);
     }
 
     @ApiOperation("Delete a modpack")

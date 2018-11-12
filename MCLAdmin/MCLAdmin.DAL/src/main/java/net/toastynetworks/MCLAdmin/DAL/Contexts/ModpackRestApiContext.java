@@ -79,6 +79,20 @@ public class ModpackRestApiContext implements IModpackContext {
 
         return null;
     }
+    public void EditModpack(Modpack modpack) {
+        System.out.println(modpack.getModpackId() + modpack.getModpackName() + modpack.getModpackVersionType());
+        try {
+            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/" + modpack.getModpackId())
+                    .header("Content-Type", "application/json")
+                    .body(modpack)
+                    .asJson();
+            if (updateModpack.getStatus() != 200) {
+                throw new RuntimeException("Failed: HTTP error code: " + updateModpack.getStatus() + " " + updateModpack.getStatusText());
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
 
 }
