@@ -7,6 +7,7 @@ import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
+import org.apache.http.HttpStatus;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -34,15 +35,6 @@ public class ModpackRestApiContext implements IModpackContext {
                 }
             }
         });
-    }
-
-
-    public List<String> GetAllModpackNames() {
-        return null;
-    }
-
-    public List<String> GetAllModpackVersions() {
-        return null;
     }
 
     public List<Modpack> GetAllModpacks() {
@@ -80,7 +72,6 @@ public class ModpackRestApiContext implements IModpackContext {
         return null;
     }
     public void EditModpack(Modpack modpack) {
-        System.out.println(modpack.getModpackId() + modpack.getModpackName() + modpack.getModpackVersionType());
         try {
             HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/" + modpack.getModpackId())
                     .header("Content-Type", "application/json")
@@ -88,6 +79,17 @@ public class ModpackRestApiContext implements IModpackContext {
                     .asJson();
             if (updateModpack.getStatus() != 200) {
                 throw new RuntimeException("Failed: HTTP error code: " + updateModpack.getStatus() + " " + updateModpack.getStatusText());
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void DeleteModpack(Modpack modpack) {
+        try {
+            HttpResponse<String> deleteModpack = Unirest.delete("http://localhost:8080/v1/modpack/" + modpack.getModpackId()).asString();
+            if (deleteModpack.getStatus() != 200) {
+                throw new RuntimeException("Failed: HTTP error code: " + deleteModpack.getStatus() + " " + deleteModpack.getStatusText());
             }
         } catch (Exception e) {
             System.out.println(e);

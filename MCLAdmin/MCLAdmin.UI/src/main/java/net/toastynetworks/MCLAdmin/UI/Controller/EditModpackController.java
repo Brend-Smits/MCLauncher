@@ -24,7 +24,7 @@ public class EditModpackController {
 
     public void backToMainMenuButton() {
         try {
-            new SwitchScene(backButton, "fxml/admin-ui.fxml");
+            new SwitchScene(backButton, "fxml/main.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }

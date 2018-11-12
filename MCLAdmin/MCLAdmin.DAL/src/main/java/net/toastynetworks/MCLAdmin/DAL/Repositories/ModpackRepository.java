@@ -33,4 +33,7 @@ public class ModpackRepository implements IModpackRepository {
     public void EditModpack(Modpack modpack) {
         modpackContext.EditModpack(modpack);
     }
+    public void DeleteModpack(Modpack modpack) {
+        modpackContext.DeleteModpack(modpack);
+    }
 }

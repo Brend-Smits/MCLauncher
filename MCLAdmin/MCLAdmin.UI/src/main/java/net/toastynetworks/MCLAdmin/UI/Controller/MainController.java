@@ -32,6 +32,8 @@ public class MainController implements Initializable {
     private Button addNewModpackButton;
     @FXML
     private Button editModpackButton;
+    @FXML Button deleteModpackButton;
+
     public static Modpack selectedModpack;
 
     public ObservableList<Modpack> getModpacks() {
@@ -68,6 +70,14 @@ public class MainController implements Initializable {
         try {
             selectedModpack = modpackTable.getSelectionModel().getSelectedItem();
             new SwitchScene(editModpackButton, "fxml/EditModpackScene.fxml");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void deleteModpackButton() {
+        try {
+            selectedModpack = modpackTable.getSelectionModel().getSelectedItem();
+            modpackLogic.DeleteModpack(selectedModpack);
         } catch (Exception e) {
             System.out.println(e);
         }

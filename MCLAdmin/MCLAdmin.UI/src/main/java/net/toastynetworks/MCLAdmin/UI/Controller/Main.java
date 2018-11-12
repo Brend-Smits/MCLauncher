@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/admin-ui.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/main.fxml"));
         primaryStage.setTitle("MCL-Admin");
         primaryStage.setScene(new Scene(root,  1800, 1000));
         primaryStage.show();

@@ -14,7 +14,7 @@ public class SwitchScene {
 
         stage = (Stage) button.getScene().getWindow();
         root = FXMLLoader.load(getClass().getClassLoader().getResource(newScene));
-        Scene scene = new Scene(root, 1188, 800);
+        Scene scene = new Scene(root, 1800, 1000);
         stage.setScene(scene);
 
         stage.show();

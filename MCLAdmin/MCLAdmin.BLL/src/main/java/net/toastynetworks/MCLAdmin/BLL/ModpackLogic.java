@@ -12,13 +12,6 @@ public class ModpackLogic implements IModpackLogic {
     public ModpackLogic(IModpackRepository modpackRepo) {
         modpackRepository = modpackRepo;
     }
-    public List<String> GetAllModpackNames() {
-        return null;
-    }
-
-    public List<String> GetAllModpackVersions() {
-        return null;
-    }
 
     public List<Modpack> GetAllModpacks() {
         return modpackRepository.GetAllModpacks();
@@ -30,5 +23,9 @@ public class ModpackLogic implements IModpackLogic {
 
     public void EditModpack(Modpack modpack) {
         modpackRepository.EditModpack(modpack);
+    }
+
+    public void DeleteModpack(Modpack modpack) {
+        modpackRepository.DeleteModpack(modpack);
     }
 }
