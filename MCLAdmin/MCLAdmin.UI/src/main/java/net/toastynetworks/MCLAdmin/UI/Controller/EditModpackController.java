@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
+import static net.toastynetworks.MCLAdmin.UI.Controller.MainController.selectedModpack;
+
 public class EditModpackController {
 
     @FXML
@@ -14,12 +16,7 @@ public class EditModpackController {
     private TextField nameTextField;
     @FXML
     private TextField versionTextField;
-    private Modpack modpackModel;
 
-
-    public void objectPassThrough(Modpack modpack) {
-        modpackModel = new Modpack(modpack.getModpackName(), modpack.getModpackVersionType());
-    }
 
     public void backToMainMenuButton() {
         try {
@@ -30,7 +27,7 @@ public class EditModpackController {
     }
 
     public void initialize() {
-        nameTextField.setText(modpackModel.getModpackName());
-        versionTextField.setText(modpackModel.getModpackVersionType());
+        nameTextField.setText(selectedModpack.getModpackName());
+        versionTextField.setText(selectedModpack.getModpackVersionType());
     }
 }

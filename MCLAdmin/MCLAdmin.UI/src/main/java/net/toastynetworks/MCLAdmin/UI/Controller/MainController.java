@@ -30,6 +30,7 @@ public class MainController implements Initializable {
     private Button addNewModpackButton;
     @FXML
     private Button editModpackButton;
+    public static Modpack selectedModpack;
 
     public ObservableList<Modpack> getModpacks() {
         ObservableList<Modpack> modpacks = FXCollections.observableArrayList();
@@ -62,9 +63,7 @@ public class MainController implements Initializable {
     }
     public void editModpackButton() {
         try {
-            Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
-            EditModpackController editModpackController = new EditModpackController();
-            editModpackController.objectPassThrough(modpack);
+            selectedModpack = modpackTable.getSelectionModel().getSelectedItem();
             new SwitchScene(editModpackButton, "fxml/EditModpackScene.fxml");
         } catch (Exception e) {
             System.out.println(e);
