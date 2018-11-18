@@ -53,12 +53,37 @@ public class AddModpackController {
                     dir.listFiles()) {
                 try {
                     System.out.println(calcSHA1(file));
-                } catch (Exception e ) {
+                } catch (Exception e) {
                     System.out.println(e);
                 }
             }
-        } else {
+            CreateConfig(dir.getAbsolutePath());
+        }
+    }
 
+    public void CreateConfig(String workspace) {
+        String dataFolder = System.getenv("APPDATA");
+        File file = new File(dataFolder + "/" + ".MCLauncher/" + "config.txt");
+        if(!file.exists()) {
+            file.getParentFile().mkdirs();
+        }
+        PrintWriter printWriter = null;
+
+        try
+        {
+            printWriter = new PrintWriter(file);
+            printWriter.println(workspace);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            if ( printWriter != null )
+            {
+                printWriter.close();
+            }
         }
     }
     /**
