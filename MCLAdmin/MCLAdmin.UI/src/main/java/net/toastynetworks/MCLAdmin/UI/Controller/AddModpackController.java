@@ -1,13 +1,13 @@
 package net.toastynetworks.MCLAdmin.UI.Controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
-import javafx.stage.Stage;
+import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
+import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
@@ -16,9 +16,11 @@ import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+
 public class AddModpackController {
 
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
+    private IConfigLogic configLogic = ConfigFactory.CreateLogic();
     @FXML
     private Button backButton;
     @FXML
@@ -57,33 +59,7 @@ public class AddModpackController {
                     System.out.println(e);
                 }
             }
-            CreateConfig(dir.getAbsolutePath());
-        }
-    }
-
-    public void CreateConfig(String workspace) {
-        String dataFolder = System.getenv("APPDATA");
-        File file = new File(dataFolder + "/" + ".MCLauncher/" + "config.txt");
-        if(!file.exists()) {
-            file.getParentFile().mkdirs();
-        }
-        PrintWriter printWriter = null;
-
-        try
-        {
-            printWriter = new PrintWriter(file);
-            printWriter.println(workspace);
-        }
-        catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            if ( printWriter != null )
-            {
-                printWriter.close();
-            }
+            configLogic.EditConfig(nameTextField.getText(), dir.getAbsolutePath());
         }
     }
     /**
