@@ -21,23 +21,16 @@ public class ConfigLogic implements IConfigLogic {
     }
 
     public String GetWorkSpaceFromConfig() {
-        Properties prop = null;
+        Properties prop = new Properties();
+        InputStream input = null;
         try {
-            prop = new Properties();
-            InputStream input = null;
-            try {
-                input = new FileInputStream(configPath);
-                if (input == null) {
-                    CreateConfig();
-                    input = new FileInputStream(configPath);
-                }
-            } catch (FileNotFoundException e) {
-                CreateConfig();
-                input = new FileInputStream(configPath);
-
-            }
+            input = new FileInputStream(configPath);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
             prop.load(input);
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return prop.getProperty("Workspace:");
