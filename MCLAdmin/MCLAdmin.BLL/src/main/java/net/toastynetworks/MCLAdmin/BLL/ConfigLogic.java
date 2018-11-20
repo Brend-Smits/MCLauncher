@@ -6,22 +6,25 @@ import java.io.*;
 import java.util.Properties;
 
 public class ConfigLogic implements IConfigLogic {
+    private String configPath = System.getenv("APPDATA") + "/" + ".MCLauncher/admin/" + "config.properties";
+
     public void CreateConfig() {
         try {
-            File file = new File(System.getenv("APPDATA") + "/" + ".MCLauncher/admin/" + "config.properties");
+            File file = new File(configPath);
             if (!file.exists()) {
                 file.getParentFile().mkdirs();
+                OutputStream output = new FileOutputStream(configPath);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public String GetWorkSpaceFromConfig(String modpackName) {
+    public String GetWorkSpaceFromConfig() {
         Properties prop = new Properties();
         InputStream input = null;
         try {
-            input = new FileInputStream(System.getenv("APPDATA") + "/" + ".MCLauncher/admin/" + "config.properties");
+            input = new FileInputStream(configPath);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -30,26 +33,15 @@ public class ConfigLogic implements IConfigLogic {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return prop.getProperty(modpackName);
+        return prop.getProperty("Workspace:");
     }
 
-//    public void FillConfig() {
-//        try {
-//            Properties prop = new Properties();
-//            OutputStream output = new FileOutputStream(file);
-//            // save properties to project root folder
-//            prop.store(output, null);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-    public void EditConfig(String modpackname, String newWorkspace) {
+    public void EditConfig( String newWorkspace) {
         try {
             Properties prop = new Properties();
             InputStream input = null;
             try {
-                input = new FileInputStream(System.getenv("APPDATA") + "/" + ".MCLauncher/admin/" + "config.properties");
+                input = new FileInputStream(configPath);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -58,12 +50,8 @@ public class ConfigLogic implements IConfigLogic {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            OutputStream output = new FileOutputStream(System.getenv("APPDATA") + "/" + ".MCLauncher/admin/" + "config.properties");
-            if (prop.getProperty(modpackname) == null) {
-                prop.setProperty(modpackname, newWorkspace);
-            } else {
-                prop.replace(modpackname, newWorkspace);
-            }
+            OutputStream output = new FileOutputStream(configPath);
+            prop.setProperty("Workspace:", newWorkspace);
             prop.store(output, null);
         } catch (Exception e) {
             System.out.println(e);
@@ -75,10 +63,10 @@ public class ConfigLogic implements IConfigLogic {
             Properties prop = new Properties();
             InputStream input = null;
             try {
-                input = new FileInputStream(System.getenv("APPDATA") + "/" + ".MCLauncher/admin/" + "config.properties");
+                input = new FileInputStream(configPath);
                 prop.load(input);
                 prop.remove(modpackName);
-                OutputStream output = new FileOutputStream(System.getenv("APPDATA") + "/" + ".MCLauncher/admin/" + "config.properties");
+                OutputStream output = new FileOutputStream(configPath);
                 prop.store(output, null);
             } catch (FileNotFoundException io) {
                 System.out.println(io);
