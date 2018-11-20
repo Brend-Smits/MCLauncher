@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 public class ModpackService {
 
     List<Modpack> modpacks = new ArrayList<>(Arrays.asList(
-            new Modpack("FTB: Sky-Factory 3", "Latest"),
-            new Modpack("Tekkit Legends", "Latest"),
-            new Modpack("FTB: Infinity Evolved", "Beta")
+            new Modpack(0, "FTB: Sky-Factory 3", "Latest"),
+            new Modpack(1, "Tekkit Legends", "Latest"),
+            new Modpack(2, "FTB: Infinity Evolved", "Beta")
     )
     );
 
@@ -34,11 +34,11 @@ public class ModpackService {
         modpacks.add(modpack);
     }
 
-    public void updateModpack(Modpack modpack, String modpackName) {
-        modpacks.stream().filter(t -> t.getModpackName().equals(modpackName)).findFirst().ifPresent(i -> {i.setModpackName(modpack.getModpackName());i.setModpackVersionType(modpack.getModpackVersionType());});
+    public void updateModpack(Modpack modpack, int modpackId) {
+        modpacks.stream().filter(t -> t.getModpackId() == (modpackId)).findFirst().ifPresent(i -> {i.setModpackName(modpack.getModpackName());i.setModpackVersionType(modpack.getModpackVersionType());});
     }
 
-    public void deleteModpack(String modpackName) {
-        modpacks.removeIf(t -> t.getModpackName().equals(modpackName));
+    public void deleteModpack(int modpackId) {
+        modpacks.removeIf(t -> t.getModpackId() == modpackId);
     }
 }
