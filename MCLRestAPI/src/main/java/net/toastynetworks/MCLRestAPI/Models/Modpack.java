@@ -14,8 +14,7 @@ public class Modpack {
     private String name;
     private String versionType;
 
-    public Modpack( int modpackId, String name, String versionType) {
-        this.id = modpackId;
+    public Modpack(String name, String versionType) {
         this.name = name;
         this.versionType = versionType;
     }

@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ModpackRepository extends CrudRepository<Modpack, Integer> {
-    List<Modpack> findByModpackVersionType(String modpackVersionType);
+    List<Modpack> findByVersionType(String versionType);
 }

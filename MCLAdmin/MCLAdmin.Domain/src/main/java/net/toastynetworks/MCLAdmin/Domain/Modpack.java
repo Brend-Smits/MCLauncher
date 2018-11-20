@@ -20,12 +20,6 @@ public class Modpack {
         this.versionType = versionType;
     }
 
-    public Modpack(int modpackId, String name, String versionType) {
-        this.id = modpackId;
-        this.name = name;
-        this.versionType = versionType;
-    }
-
     public Modpack() { }
 
     public String getName() {

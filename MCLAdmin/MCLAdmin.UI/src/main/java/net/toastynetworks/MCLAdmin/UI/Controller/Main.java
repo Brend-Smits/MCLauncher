@@ -1,7 +1,6 @@
 package net.toastynetworks.MCLAdmin.UI.Controller;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,7 +9,6 @@ import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 
 import java.net.URL;
-import java.util.HashMap;
 
 public class Main extends Application {
 private IConfigLogic configLogic = ConfigFactory.CreateLogic();

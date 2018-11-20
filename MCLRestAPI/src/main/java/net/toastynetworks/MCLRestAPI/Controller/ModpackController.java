@@ -35,15 +35,15 @@ public class ModpackController {
     }
 
     @ApiOperation("Get all modpacks with a specific release type")
-    @RequestMapping(method = RequestMethod.GET, value = "/release/{releaseType}")
-    public List<Modpack> getModpacksWithReleaseType(@PathVariable String releaseType) {
-        return modpackService.getModpacksWithReleaseType(releaseType);
+    @RequestMapping(method = RequestMethod.GET, value = "/release/{versionType}")
+    public List<Modpack> getModpacksWithReleaseType(@PathVariable String versionType) {
+        return modpackService.getModpacksWithReleaseType(versionType);
     }
 
     @ApiOperation("Add a new modpack")
     @RequestMapping(method = RequestMethod.POST, value = "/addModpack", produces = "application/json")
     public void addModpack(@RequestBody Modpack modpack) {
-        modpackService.addModpack(new Modpack((modpackService.getAllModpacks().size() + 1), modpack.getName(), modpack.getVersionType()));
+        modpackService.addModpack(new Modpack(modpack.getName(), modpack.getVersionType()));
     }
 
     @ApiOperation("Update a modpack")
@@ -53,8 +53,8 @@ public class ModpackController {
     }
 
     @ApiOperation("Delete a modpack by ID")
-    @RequestMapping(method = RequestMethod.DELETE, value = "/{modpackId}")
-    public void deleteModpack(@PathVariable int modpackId) {
-        modpackService.deleteModpack(modpackId);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
+    public void deleteModpack(@PathVariable int id) {
+        modpackService.deleteModpack(id);
     }
 }

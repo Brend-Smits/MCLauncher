@@ -31,7 +31,7 @@ public class EditModpackController {
     }
     public void saveModpackAction() {
         try {
-            Modpack editedModpack = new Modpack(Integer.valueOf(idTextField.getText()), nameTextField.getText(), versionTextField.getText());
+            Modpack editedModpack = new Modpack(nameTextField.getText(), versionTextField.getText());
             modpackLogic.EditModpack(editedModpack);
             System.out.println("Saving modpack");
         } catch (Exception e) {

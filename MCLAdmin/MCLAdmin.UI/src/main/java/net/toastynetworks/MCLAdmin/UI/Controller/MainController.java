@@ -51,9 +51,9 @@ public class MainController implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
-        modpackNameColumn.setCellValueFactory(new PropertyValueFactory<Modpack, String>("modpackName"));
-        modpackVersionColumn.setCellValueFactory(new PropertyValueFactory<Modpack, String>("modpackVersionType"));
-        modpackIdColumn.setCellValueFactory(new PropertyValueFactory<Modpack, Integer>("modpackId"));
+        modpackNameColumn.setCellValueFactory(new PropertyValueFactory<Modpack, String>("name"));
+        modpackVersionColumn.setCellValueFactory(new PropertyValueFactory<Modpack, String>("versionType"));
+        modpackIdColumn.setCellValueFactory(new PropertyValueFactory<Modpack, Integer>("id"));
 
         modpackTable.setItems(getModpacks());
     }
