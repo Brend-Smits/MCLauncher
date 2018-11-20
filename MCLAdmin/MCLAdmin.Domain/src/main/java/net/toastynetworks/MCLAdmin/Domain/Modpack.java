@@ -1,10 +1,22 @@
 package net.toastynetworks.MCLAdmin.Domain;
 
+import java.util.List;
+
 public class Modpack {
 
     private String modpackName;
     private String modpackVersionType;
     private int modpackId;
+    private List<String> hashedFileStructureList;
+
+    public List<String> getHashedFileStructureList() {
+        return hashedFileStructureList;
+    }
+
+    public void setHashedFileStructureList(List<String> hashedFileStructureList) {
+        this.hashedFileStructureList = hashedFileStructureList;
+    }
+
 
     public int getModpackId() {
         return modpackId;
@@ -25,9 +37,7 @@ public class Modpack {
         this.modpackVersionType = versionType;
     }
 
-    public Modpack() {
-
-    }
+    public Modpack() { }
 
     public String getModpackName() {
         return modpackName;

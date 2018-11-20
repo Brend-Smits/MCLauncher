@@ -8,7 +8,7 @@
     <artifactId>MCLAPI</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <modpackName>MCLauncher API</modpackName>
+    <name>MCLauncher API</name>
     <description>REST API for Minecraft Launcher</description>
 
     <parent>
