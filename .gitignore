@@ -68,12 +68,21 @@ fabric.properties
 \.idea/vcs\.xml
 
 \.idea/encodings\.xml
-MCLRestAPI/target/
+MCLRestAPI/target/*
 
-MCLRestAPI/\.idea/
+MCLRestAPI/\.idea/*
 
-MCLEndUser/\.idea/
+MCLEndUser/\.idea/*
 
-MCLAdmin/\.idea/workspace\.xml
+MCLAdmin/\.idea/*
 
 *.log
+
+MCLAdmin/MCLAdmin\.BLL/target/*
+MCLAdmin/MCLAdmin\.DAL/target/*
+
+MCLAdmin/MCLAdmin\.DAL/target/*
+
+MCLAdmin/MCLAdmin\.Domain/target/*
+
+MCLAdmin/MCLAdmin\.UI/target/*
