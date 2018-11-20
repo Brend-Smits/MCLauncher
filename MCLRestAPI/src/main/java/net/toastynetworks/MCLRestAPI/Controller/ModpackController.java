@@ -7,6 +7,7 @@ import net.toastynetworks.MCLRestAPI.Service.ModpackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -24,9 +25,13 @@ public class ModpackController {
     }
 
     @ApiOperation("Get a single Modpack")
-    @RequestMapping(method = RequestMethod.GET, value = "/{name}")
-    public Modpack getModpack(@PathVariable String name) {
-        return modpackService.getModpack(name);
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
+    public Modpack getModpack(@PathVariable int id, HttpServletResponse response) {
+        Modpack modpack = modpackService.getModpack(id);
+        if (modpack == null) {
+            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+        }
+        return modpack;
     }
 
     @ApiOperation("Get all modpacks with a specific release type")
@@ -41,10 +46,10 @@ public class ModpackController {
         modpackService.addModpack(new Modpack((modpackService.getAllModpacks().size() + 1), modpack.getModpackName(), modpack.getModpackVersionType()));
     }
 
-    @ApiOperation("Update a modpack by ID")
-    @RequestMapping(method = RequestMethod.PUT, value = "/{modpackId}")
-    public void updateModpack(@RequestBody Modpack modpack, @PathVariable int modpackId) {
-        modpackService.updateModpack(modpack, modpackId);
+    @ApiOperation("Update a modpack")
+    @RequestMapping(method = RequestMethod.PUT)
+    public void updateModpack(@RequestBody Modpack modpack) {
+        modpackService.updateModpack(modpack);
     }
 
     @ApiOperation("Delete a modpack by ID")

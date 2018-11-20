@@ -1,6 +1,8 @@
 package net.toastynetworks.MCLRestAPI.Service;
 
 import net.toastynetworks.MCLRestAPI.Models.Modpack;
+import net.toastynetworks.MCLRestAPI.Repository.ModpackRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,34 +13,32 @@ import java.util.stream.Collectors;
 @Service
 public class ModpackService {
 
-    List<Modpack> modpacks = new ArrayList<>(Arrays.asList(
-            new Modpack(0, "FTB: Sky-Factory 3", "Latest"),
-            new Modpack(1, "Tekkit Legends", "Latest"),
-            new Modpack(2, "FTB: Infinity Evolved", "Beta")
-    )
-    );
+    @Autowired
+    private ModpackRepository modpackRepository;
 
     public List<Modpack> getAllModpacks() {
+        List<Modpack> modpacks = new ArrayList<>();
+        modpackRepository.findAll().forEach(modpacks::add);
         return modpacks;
     }
 
-    public Modpack getModpack(String name) {
-        return modpacks.stream().filter(t -> t.getModpackName().equals(name)).findFirst().get();
+    public Modpack getModpack(int id) {
+        return modpackRepository.findById(id).orElse(null);
     }
 
     public List<Modpack> getModpacksWithReleaseType(String releaseType) {
-        return modpacks.stream().filter(t -> t.getModpackVersionType().equals(releaseType)).collect(Collectors.toList());
+        return modpackRepository.findByModpackVersionType(releaseType);
     }
 
     public void addModpack(Modpack modpack) {
-        modpacks.add(modpack);
+        modpackRepository.save(modpack);
     }
 
-    public void updateModpack(Modpack modpack, int modpackId) {
-        modpacks.stream().filter(t -> t.getModpackId() == (modpackId)).findFirst().ifPresent(i -> {i.setModpackName(modpack.getModpackName());i.setModpackVersionType(modpack.getModpackVersionType());});
+    public void updateModpack(Modpack modpack) {
+        modpackRepository.save(modpack);
     }
 
     public void deleteModpack(int modpackId) {
-        modpacks.removeIf(t -> t.getModpackId() == modpackId);
+        modpackRepository.deleteById(modpackId);
     }
 }
