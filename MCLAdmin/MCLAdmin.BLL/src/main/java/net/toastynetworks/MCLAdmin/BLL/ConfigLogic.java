@@ -1,8 +1,11 @@
 package net.toastynetworks.MCLAdmin.BLL;
 
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
+import net.toastynetworks.MCLAdmin.Domain.Modpack;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.util.List;
 import java.util.Properties;
 
 public class ConfigLogic implements IConfigLogic {
@@ -79,6 +82,19 @@ public class ConfigLogic implements IConfigLogic {
             }
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+    public void PrepareWorkspace(List<Modpack> modpacks) {
+        String workspace = GetWorkSpaceFromConfig() + "/";
+        for (Modpack modpack :
+                modpacks) {
+            File temp = new File(workspace + String.valueOf(modpack.getId()) + "-" + modpack.getName());
+            System.out.println(temp);
+            if (!temp.exists()) {
+                temp.mkdirs();
+            } else {
+                System.out.println("Directory: " + workspace + String.valueOf(modpack.getId()) + "-" + modpack.getName() + " already exists!");
+            }
         }
     }
 }

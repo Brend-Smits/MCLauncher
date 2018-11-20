@@ -8,7 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
+import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
@@ -20,6 +22,7 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
+    private IConfigLogic configLogic = ConfigFactory.CreateLogic();
     @FXML
     private TableView<Modpack> modpackTable;
     @FXML
@@ -39,15 +42,12 @@ public class MainController implements Initializable {
     public ObservableList<Modpack> getModpacks() {
         ObservableList<Modpack> modpacks = FXCollections.observableArrayList();
         for (Modpack modpack :
-                GetAllModpacks()) {
+                modpackLogic.GetAllModpacks()) {
             modpacks.add(modpack);
         }
         return modpacks;
     }
 
-    public List<Modpack> GetAllModpacks() {
-        return modpackLogic.GetAllModpacks();
-    }
 
 
     public void initialize(URL location, ResourceBundle resources) {
@@ -56,6 +56,7 @@ public class MainController implements Initializable {
         modpackIdColumn.setCellValueFactory(new PropertyValueFactory<Modpack, Integer>("id"));
 
         modpackTable.setItems(getModpacks());
+        configLogic.PrepareWorkspace(modpackLogic.GetAllModpacks());
     }
 
 
