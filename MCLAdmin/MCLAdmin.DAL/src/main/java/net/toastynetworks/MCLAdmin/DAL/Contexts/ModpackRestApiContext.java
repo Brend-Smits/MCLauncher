@@ -84,9 +84,9 @@ public class ModpackRestApiContext implements IModpackContext {
         }
     }
 
-    public void DeleteModpack(Modpack modpack) {
+    public void DeleteModpack(int id) {
         try {
-            HttpResponse<String> deleteModpack = Unirest.delete("http://localhost:8080/v1/modpack/" + modpack.getId()).asString();
+            HttpResponse<String> deleteModpack = Unirest.delete("http://localhost:8080/v1/modpack/" + id).asString();
             if (deleteModpack.getStatus() != 200) {
                 throw new RuntimeException("Failed: HTTP error code: " + deleteModpack.getStatus() + " " + deleteModpack.getStatusText());
             }

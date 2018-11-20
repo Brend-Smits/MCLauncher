@@ -25,7 +25,7 @@ public class ModpackLogic implements IModpackLogic {
         modpackRepository.EditModpack(modpack);
     }
 
-    public void DeleteModpack(Modpack modpack) {
-        modpackRepository.DeleteModpack(modpack);
+    public void DeleteModpack(int id) {
+        modpackRepository.DeleteModpack(id);
     }
 }
