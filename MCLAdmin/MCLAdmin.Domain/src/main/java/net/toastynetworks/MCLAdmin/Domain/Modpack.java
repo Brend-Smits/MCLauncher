@@ -1,58 +1,47 @@
 package net.toastynetworks.MCLAdmin.Domain;
 
-import java.util.List;
-
 public class Modpack {
 
-    private String modpackName;
-    private String modpackVersionType;
-    private int modpackId;
-    private List<String> hashedFileStructureList;
+    private String name;
+    private String versionType;
+    private int id;
 
-    public List<String> getHashedFileStructureList() {
-        return hashedFileStructureList;
+
+    public int getId() {
+        return id;
     }
 
-    public void setHashedFileStructureList(List<String> hashedFileStructureList) {
-        this.hashedFileStructureList = hashedFileStructureList;
-    }
-
-
-    public int getModpackId() {
-        return modpackId;
-    }
-
-    public void setModpackId(int modpackId) {
-        this.modpackId = modpackId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Modpack(String name, String versionType) {
-        this.modpackName = name;
-        this.modpackVersionType = versionType;
+        this.name = name;
+        this.versionType = versionType;
     }
 
     public Modpack(int modpackId, String name, String versionType) {
-        this.modpackId = modpackId;
-        this.modpackName = name;
-        this.modpackVersionType = versionType;
+        this.id = modpackId;
+        this.name = name;
+        this.versionType = versionType;
     }
 
     public Modpack() { }
 
-    public String getModpackName() {
-        return modpackName;
+    public String getName() {
+        return name;
     }
 
-    public void setModpackName(String modpackName) {
-        this.modpackName = modpackName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getModpackVersionType() {
-        return modpackVersionType;
+    public String getVersionType() {
+        return versionType;
     }
 
-    public void setModpackVersionType(String modpackVersionType) {
-        this.modpackVersionType = modpackVersionType;
+    public void setVersionType(String versionType) {
+        this.versionType = versionType;
     }
 
 }

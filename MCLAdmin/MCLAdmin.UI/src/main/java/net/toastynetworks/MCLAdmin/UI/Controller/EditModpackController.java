@@ -40,8 +40,8 @@ public class EditModpackController {
     }
 
     public void initialize() {
-        idTextField.setText(String.valueOf(selectedModpack.getModpackId()));
-        nameTextField.setText(selectedModpack.getModpackName());
-        versionTextField.setText(selectedModpack.getModpackVersionType());
+        idTextField.setText(String.valueOf(selectedModpack.getId()));
+        nameTextField.setText(selectedModpack.getName());
+        versionTextField.setText(selectedModpack.getVersionType());
     }
 }

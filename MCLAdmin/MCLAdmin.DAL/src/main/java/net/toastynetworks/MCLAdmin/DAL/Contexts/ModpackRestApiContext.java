@@ -7,7 +7,6 @@ import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
-import org.apache.http.HttpStatus;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -43,8 +42,8 @@ public class ModpackRestApiContext implements IModpackContext {
 
     public void AddModpack(Modpack modpack) {
         try {
-            Modpack modpackObject = new Modpack(modpack.getModpackName(), modpack.getModpackVersionType());
-            System.out.println(modpackObject.getModpackName() + modpackObject.getModpackVersionType());
+            Modpack modpackObject = new Modpack(modpack.getName(), modpack.getVersionType());
+            System.out.println(modpackObject.getName() + modpackObject.getVersionType());
             HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/v1/modpack/addModpack")
                     .header("Content-Type", "application/json")
                     .body(modpackObject)
@@ -73,7 +72,7 @@ public class ModpackRestApiContext implements IModpackContext {
     }
     public void EditModpack(Modpack modpack) {
         try {
-            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/" + modpack.getModpackId())
+            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/" + modpack.getId())
                     .header("Content-Type", "application/json")
                     .body(modpack)
                     .asJson();
@@ -87,7 +86,7 @@ public class ModpackRestApiContext implements IModpackContext {
 
     public void DeleteModpack(Modpack modpack) {
         try {
-            HttpResponse<String> deleteModpack = Unirest.delete("http://localhost:8080/v1/modpack/" + modpack.getModpackId()).asString();
+            HttpResponse<String> deleteModpack = Unirest.delete("http://localhost:8080/v1/modpack/" + modpack.getId()).asString();
             if (deleteModpack.getStatus() != 200) {
                 throw new RuntimeException("Failed: HTTP error code: " + deleteModpack.getStatus() + " " + deleteModpack.getStatusText());
             }
