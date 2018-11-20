@@ -11,13 +11,13 @@ public class Modpack {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String modpackName;
-    private String modpackVersionType;
+    private String name;
+    private String versionType;
 
     public Modpack( int modpackId, String name, String versionType) {
         this.id = modpackId;
-        this.modpackName = name;
-        this.modpackVersionType = versionType;
+        this.name = name;
+        this.versionType = versionType;
     }
 
     public Modpack() {}
@@ -30,20 +30,20 @@ public class Modpack {
         this.id = id;
     }
 
-    public String getModpackName() {
-        return modpackName;
+    public String getName() {
+        return name;
     }
 
-    public void setModpackName(String modpackName) {
-        this.modpackName = modpackName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getModpackVersionType() {
-        return modpackVersionType;
+    public String getVersionType() {
+        return versionType;
     }
 
-    public void setModpackVersionType(String modpackVersionType) {
-        this.modpackVersionType = modpackVersionType;
+    public void setVersionType(String versionType) {
+        this.versionType = versionType;
     }
 
 }
