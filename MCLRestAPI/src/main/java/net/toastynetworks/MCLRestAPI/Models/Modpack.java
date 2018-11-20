@@ -1,27 +1,33 @@
 package net.toastynetworks.MCLRestAPI.Models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Modpack {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private String modpackName;
     private String modpackVersionType;
 
-    public int getModpackId() {
-        return modpackId;
-    }
-
-    public void setModpackId(int modpackId) {
-        this.modpackId = modpackId;
-    }
-
-    private int modpackId;
-
     public Modpack( int modpackId, String name, String versionType) {
-        this.modpackId = modpackId;
+        this.id = modpackId;
         this.modpackName = name;
         this.modpackVersionType = versionType;
     }
 
-    public Modpack() {
+    public Modpack() {}
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getModpackName() {
