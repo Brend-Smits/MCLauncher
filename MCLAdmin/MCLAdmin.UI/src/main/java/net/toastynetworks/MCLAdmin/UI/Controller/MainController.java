@@ -15,7 +15,9 @@ import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
+import java.io.File;
 import java.net.URL;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -35,7 +37,10 @@ public class MainController implements Initializable {
     private Button addNewModpackButton;
     @FXML
     private Button editModpackButton;
-    @FXML Button deleteModpackButton;
+    @FXML
+    private Button deleteModpackButton;
+    @FXML
+    private Button uploadModpackButton;
 
     public static Modpack selectedModpack;
 
@@ -75,10 +80,27 @@ public class MainController implements Initializable {
             System.out.println(e);
         }
     }
-    public void deleteModpackButton() {
+    public void deleteModpackButtonClick() {
         try {
             modpackLogic.DeleteModpack(modpackTable.getSelectionModel().getSelectedItem().getId());
             modpackTable.setItems(getModpacks());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void uploadModpackButtonClick() {
+        try {
+            Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
+            String uploadDirectory = configLogic.GetWorkSpaceFromConfig() + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName();
+            File dir = new File(uploadDirectory);
+            System.out.println(dir);
+            if (dir != null) {
+                System.out.println(dir.getAbsolutePath());
+                for (File file :
+                        dir.listFiles()) {
+                    System.out.println(file.getName());
+                }
+            }
         } catch (Exception e) {
             System.out.println(e);
         }
