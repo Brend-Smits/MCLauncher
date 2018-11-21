@@ -10,21 +10,23 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
+import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackUploadLogic;
+import net.toastynetworks.MCLAdmin.DAL.Contexts.ModpackUploadRestApiContext;
 import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
+import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
 import java.io.File;
 import java.net.URL;
-import java.nio.file.Path;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
+    private IModpackUploadLogic modpackUploadLogic = ModpackUploadFactory.CreateLogic();
     @FXML
     private TableView<Modpack> modpackTable;
     @FXML
@@ -99,6 +101,7 @@ public class MainController implements Initializable {
                 for (File file :
                         dir.listFiles()) {
                     System.out.println(file.getName());
+                    modpackUploadLogic.uploadSingleFile(file);
                 }
             }
         } catch (Exception e) {
