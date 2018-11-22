@@ -20,6 +20,7 @@ import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -96,13 +97,15 @@ public class MainController implements Initializable {
             String uploadDirectory = configLogic.GetWorkSpaceFromConfig() + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName();
             File dir = new File(uploadDirectory);
             System.out.println(dir);
+            ArrayList<File> files = new ArrayList<File>();
             if (dir != null) {
                 System.out.println(dir.getAbsolutePath());
                 for (File file :
                         dir.listFiles()) {
                     System.out.println(file.getName());
-                    modpackUploadLogic.uploadSingleFile(file);
+                    files.add(file);
                 }
+                modpackUploadLogic.uploadMultipleFiles(files);
             }
         } catch (Exception e) {
             System.out.println(e);

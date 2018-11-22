@@ -6,16 +6,17 @@ import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackUploadContext;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class ModpackUploadRestApiContext implements IModpackUploadContext {
     public void uploadSingleFile(File file) {
         //Do something
-        System.out.println(file.getAbsolutePath());
+    }
+
+    public void uploadMultipleFiles(ArrayList<File> files) {
         try {
-            
-            HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/uploadFile")
-                    .header("Content-Type", "multipart/form-data")
-                    .field(file.getName(), file)
+            HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/uploadMultipleFiles")
+                    .field("files", files)
                     .asJson();
 
             if (jsonResponse.getStatus() != 200) {
@@ -29,9 +30,5 @@ public class ModpackUploadRestApiContext implements IModpackUploadContext {
         } catch (Exception exception) {
             System.out.println(exception);
         }
-    }
-
-    public void uploadMultipleFiles(File[] files) {
-        //Do something
     }
 }

@@ -4,6 +4,7 @@ import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackUploadContext
 import net.toastynetworks.MCLAdmin.DAL.Interfaces.IModpackUploadRepository;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class ModpackUploadRepository implements IModpackUploadRepository {
     private IModpackUploadContext modpackContext;
@@ -15,7 +16,7 @@ public class ModpackUploadRepository implements IModpackUploadRepository {
         modpackContext.uploadSingleFile(file);
     }
 
-    public void uploadMultipleFiles(File[] files) {
+    public void uploadMultipleFiles(ArrayList<File> files) {
         modpackContext.uploadMultipleFiles(files);
     }
 }
