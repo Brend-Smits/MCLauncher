@@ -19,8 +19,11 @@ import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -99,14 +102,20 @@ public class MainController implements Initializable {
             System.out.println(dir);
             ArrayList<File> files = new ArrayList<File>();
             if (dir != null) {
-                System.out.println(dir.getAbsolutePath());
-                for (File file :
-                        dir.listFiles()) {
-                    System.out.println(file.getName());
-                    files.add(file);
+                try {
+                    Files.walk(dir.toPath())
+                            .filter(Files::isRegularFile)
+                            .forEach(t -> {
+                        System.out.println(t.getFileName());
+                        File temp = t.toFile();
+                        files.add(temp);
+                    });
+                } catch (IOException e1) {
+                    e1.printStackTrace();
                 }
-                modpackUploadLogic.uploadMultipleFiles(files);
             }
+
+                modpackUploadLogic.uploadMultipleFiles(files);
         } catch (Exception e) {
             System.out.println(e);
         }
