@@ -19,12 +19,16 @@ import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 public class MainController implements Initializable {
 
@@ -102,22 +106,47 @@ public class MainController implements Initializable {
             System.out.println(dir);
             ArrayList<File> files = new ArrayList<File>();
             if (dir != null) {
-                try {
-                    Files.walk(dir.toPath())
-                            .filter(Files::isRegularFile)
-                            .forEach(t -> {
-                        System.out.println(t.getFileName());
-                        File temp = t.toFile();
-                        files.add(temp);
-                    });
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
+                File zip = new File("C:\\Users\\Brend\\Desktop\\MCL\\test.zip");
+                FileOutputStream fos = new FileOutputStream(zip);
+                ZipOutputStream zos = new ZipOutputStream(fos);
+                addDirToZipArchive(zos, new File(dir.toString()), null);
+                zos.flush();
+                fos.flush();
+                zos.close();
+                fos.close();
+                files.add(zip);
             }
-
-                modpackUploadLogic.uploadMultipleFiles(files);
+               modpackUploadLogic.uploadMultipleFiles(files);
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+    public static void addDirToZipArchive(ZipOutputStream zos, File fileToZip, String parrentDirectoryName) throws Exception {
+        if (fileToZip == null || !fileToZip.exists()) {
+            return;
+        }
+
+        String zipEntryName = fileToZip.getName();
+        if (parrentDirectoryName!=null && !parrentDirectoryName.isEmpty()) {
+            zipEntryName = parrentDirectoryName + "/" + fileToZip.getName();
+        }
+
+        if (fileToZip.isDirectory()) {
+            System.out.println("+" + zipEntryName);
+            for (File file : fileToZip.listFiles()) {
+                addDirToZipArchive(zos, file, zipEntryName);
+            }
+        } else {
+            System.out.println("   " + zipEntryName);
+            byte[] buffer = new byte[1024];
+            FileInputStream fis = new FileInputStream(fileToZip);
+            zos.putNextEntry(new ZipEntry(zipEntryName));
+            int length;
+            while ((length = fis.read(buffer)) > 0) {
+                zos.write(buffer, 0, length);
+            }
+            zos.closeEntry();
+            fis.close();
         }
     }
 }
