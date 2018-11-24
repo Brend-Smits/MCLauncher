@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
-import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
+import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchSceneUtil;
 
 import java.io.File;
 
@@ -39,7 +39,7 @@ public class SelectWorkspaceController {
             try {
                 configLogic.CreateConfig();
                 configLogic.EditConfig(workspaceTextField.getText());
-                new SwitchScene(nextButton, "fxml/main.fxml");
+                new SwitchSceneUtil(nextButton, "fxml/main.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }

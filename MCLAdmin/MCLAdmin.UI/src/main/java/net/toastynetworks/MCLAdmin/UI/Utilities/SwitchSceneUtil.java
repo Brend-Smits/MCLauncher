@@ -6,9 +6,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class SwitchScene {
+public class SwitchSceneUtil {
 
-    public SwitchScene(Button button, String newScene) throws Exception {
+    public SwitchSceneUtil(Button button, String newScene) throws Exception {
         Stage stage;
         Parent root;
 

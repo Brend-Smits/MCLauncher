@@ -11,24 +11,21 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackUploadLogic;
-import net.toastynetworks.MCLAdmin.DAL.Contexts.ModpackUploadRestApiContext;
 import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
-import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
+import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchSceneUtil;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+
+import static net.toastynetworks.MCLAdmin.UI.Utilities.ZipUtil.addDirToZipArchive;
+import static net.toastynetworks.MCLAdmin.UI.Utilities.ZipUtil.unzipArchive;
 
 public class MainController implements Initializable {
 
@@ -77,7 +74,7 @@ public class MainController implements Initializable {
 
     public void addModpackButton() {
         try {
-            new SwitchScene(addNewModpackButton, "fxml/AddModpackScene.fxml");
+            new SwitchSceneUtil(addNewModpackButton, "fxml/AddModpackScene.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -85,7 +82,7 @@ public class MainController implements Initializable {
     public void editModpackButton() {
         try {
             selectedModpack = modpackTable.getSelectionModel().getSelectedItem();
-            new SwitchScene(editModpackButton, "fxml/EditModpackScene.fxml");
+            new SwitchSceneUtil(editModpackButton, "fxml/EditModpackScene.fxml");
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -107,46 +104,19 @@ public class MainController implements Initializable {
             ArrayList<File> files = new ArrayList<File>();
             if (dir != null) {
                 File zip = new File("C:\\Users\\Brend\\Desktop\\MCL\\test.zip");
-                FileOutputStream fos = new FileOutputStream(zip);
-                ZipOutputStream zos = new ZipOutputStream(fos);
-                addDirToZipArchive(zos, new File(dir.toString()), null);
-                zos.flush();
-                fos.flush();
-                zos.close();
-                fos.close();
+                FileOutputStream fileOutputStream = new FileOutputStream(zip);
+                ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
+                addDirToZipArchive(zipOutputStream, new File(dir.toString()), null);
+                zipOutputStream.flush();
+                zipOutputStream.close();
+                fileOutputStream.flush();
+                fileOutputStream.close();
                 files.add(zip);
             }
-               modpackUploadLogic.uploadMultipleFiles(files);
+            modpackUploadLogic.uploadMultipleFiles(files);
+            unzipArchive("C:\\Users\\Brend\\Desktop\\MCL\\test.zip");
         } catch (Exception e) {
             System.out.println(e);
-        }
-    }
-    public static void addDirToZipArchive(ZipOutputStream zos, File fileToZip, String parrentDirectoryName) throws Exception {
-        if (fileToZip == null || !fileToZip.exists()) {
-            return;
-        }
-
-        String zipEntryName = fileToZip.getName();
-        if (parrentDirectoryName!=null && !parrentDirectoryName.isEmpty()) {
-            zipEntryName = parrentDirectoryName + "/" + fileToZip.getName();
-        }
-
-        if (fileToZip.isDirectory()) {
-            System.out.println("+" + zipEntryName);
-            for (File file : fileToZip.listFiles()) {
-                addDirToZipArchive(zos, file, zipEntryName);
-            }
-        } else {
-            System.out.println("   " + zipEntryName);
-            byte[] buffer = new byte[1024];
-            FileInputStream fis = new FileInputStream(fileToZip);
-            zos.putNextEntry(new ZipEntry(zipEntryName));
-            int length;
-            while ((length = fis.read(buffer)) > 0) {
-                zos.write(buffer, 0, length);
-            }
-            zos.closeEntry();
-            fis.close();
         }
     }
 }

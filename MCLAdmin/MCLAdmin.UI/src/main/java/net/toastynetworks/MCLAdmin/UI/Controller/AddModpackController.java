@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
-import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
+import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchSceneUtil;
 
 import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
 import java.io.*;
@@ -27,14 +27,14 @@ public class AddModpackController {
     public void AddModpack() {
         modpackLogic.AddModpack(new Modpack(nameTextField.getText(), versionTextField.getText()));
         try {
-            new SwitchScene(backButton, "fxml/main.fxml");
+            new SwitchSceneUtil(backButton, "fxml/main.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     public void backToMainMenuButton() {
         try {
-            new SwitchScene(backButton, "fxml/main.fxml");
+            new SwitchSceneUtil(backButton, "fxml/main.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
