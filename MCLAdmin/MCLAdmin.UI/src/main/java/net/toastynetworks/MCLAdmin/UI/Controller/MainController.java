@@ -1,13 +1,18 @@
 package net.toastynetworks.MCLAdmin.UI.Controller;
 
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackUploadLogic;
@@ -27,7 +32,7 @@ import java.util.zip.ZipOutputStream;
 import static net.toastynetworks.MCLAdmin.UI.Utilities.ZipUtil.addDirToZipArchive;
 import static net.toastynetworks.MCLAdmin.UI.Utilities.ZipUtil.unzipArchive;
 
-public class MainController implements Initializable {
+public class MainController extends Application implements Initializable  {
 
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
@@ -50,6 +55,25 @@ public class MainController implements Initializable {
     private Button uploadModpackButton;
 
     public static Modpack selectedModpack;
+
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        URL fileLocation;
+        if (configLogic.GetWorkSpaceFromConfig() != null) {
+            fileLocation = getClass().getClassLoader().getResource("fxml/main.fxml");
+        } else {
+            fileLocation = getClass().getClassLoader().getResource("fxml/SelectWorkspaceScene.fxml");
+        }
+        Parent root = FXMLLoader.load(fileLocation);
+        primaryStage.setTitle("MCL-Admin");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     public ObservableList<Modpack> getModpacks() {
         ObservableList<Modpack> modpacks = FXCollections.observableArrayList();
