@@ -21,12 +21,16 @@ import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
 import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchSceneUtil;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.stream.Stream;
 import java.util.zip.ZipOutputStream;
 
 import static net.toastynetworks.MCLAdmin.UI.Utilities.ZipUtil.addDirToZipArchive;
@@ -55,6 +59,8 @@ public class MainController extends Application implements Initializable  {
     private Button uploadModpackButton;
 
     public static Modpack selectedModpack;
+    private String zipName;
+    private String workspace = configLogic.GetWorkSpaceFromConfig() + "\\";
 
 
     @Override
@@ -119,15 +125,17 @@ public class MainController extends Application implements Initializable  {
             System.out.println(e);
         }
     }
+    //TODO: Move to logic layer and clean up
     public void uploadModpackButtonClick() {
         try {
             Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
-            String uploadDirectory = configLogic.GetWorkSpaceFromConfig() + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName();
+            String uploadDirectory = configLogic.GetWorkSpaceFromConfig() + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName() + "/";
             File dir = new File(uploadDirectory);
             System.out.println(dir);
             ArrayList<File> files = new ArrayList<File>();
             if (dir != null) {
-                File zip = new File("C:\\Users\\Brend\\Desktop\\MCL\\test.zip");
+                zipName = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")) + "--" + modpack.getName() + ".zip";
+                File zip = new File(workspace + zipName);
                 FileOutputStream fileOutputStream = new FileOutputStream(zip);
                 ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
                 addDirToZipArchive(zipOutputStream, new File(dir.toString()), null);
@@ -138,7 +146,25 @@ public class MainController extends Application implements Initializable  {
                 files.add(zip);
             }
             modpackUploadLogic.uploadMultipleFiles(files);
-            unzipArchive("C:\\Users\\Brend\\Desktop\\MCL\\test.zip");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    //TODO: Move to logic layer and clean up
+    //TODO: Remove unzip button, this was for debugging only
+    public void unzipModpackButtonClick() {
+        Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
+        String folderName = String.valueOf(modpack.getId()) + "-" + modpack.getName();
+        try {
+            unzipArchive(workspace + zipName);
+            File src = new File(workspace + zipName.replace(".zip", "") + "\\" + folderName);
+            File dest = new File(workspace + folderName);
+            FileUtils.copyDirectory(src, dest);
+            System.out.println("Done!!");
+            //TODO: Move this into a seperate method in the logic layer, it should clean up the files and such.
+            FileUtils.deleteDirectory(new File(workspace + zipName.replace(".zip", "")));
+            FileUtils.forceDelete(new File(workspace + zipName));
+            System.out.println("Done!");
         } catch (Exception e) {
             System.out.println(e);
         }

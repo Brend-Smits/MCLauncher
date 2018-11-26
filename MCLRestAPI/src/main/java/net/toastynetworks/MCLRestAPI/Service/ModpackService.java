@@ -25,7 +25,6 @@ public class ModpackService {
     public Modpack getModpack(int id) {
         return modpackRepository.findById(id).orElse(null);
     }
-
     public List<Modpack> getModpacksWithReleaseType(String releaseType) {
         return modpackRepository.findByVersionType(releaseType);
     }

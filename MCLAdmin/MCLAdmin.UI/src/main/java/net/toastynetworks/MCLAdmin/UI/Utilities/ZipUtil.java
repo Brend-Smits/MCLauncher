@@ -1,12 +1,14 @@
 package net.toastynetworks.MCLAdmin.UI.Utilities;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
-
+//TODO: Make this class a shared library for all MCL projects.
 public class ZipUtil {
 
     public static void addDirToZipArchive(ZipOutputStream zos, File fileToZip, String parrentDirectoryName) throws Exception {
@@ -37,7 +39,8 @@ public class ZipUtil {
             fis.close();
         }
     }
-
+    //TODO: Something is not being closed right. A proccess is  still being left running. Investigate what is not being closed and fix it.
+    //TODO: Cleanup this method and make it better understandable.
     public static void unzipArchive(String zipFile) throws ZipException, IOException {
         System.out.println(zipFile);
         int BUFFER = 2048;
@@ -45,7 +48,6 @@ public class ZipUtil {
 
         ZipFile zip = new ZipFile(file);
         String newPath = zipFile.substring(0, zipFile.length() - 4);
-
         new File(newPath).mkdir();
         Enumeration zipFileEntries = zip.entries();
 
@@ -71,9 +73,8 @@ public class ZipUtil {
                 byte data[] = new byte[BUFFER];
 
                 // write the current file to disk
-                FileOutputStream fos = new FileOutputStream(destFile);
-                BufferedOutputStream dest = new BufferedOutputStream(fos,
-                        BUFFER);
+                FileOutputStream fileOutputStream = new FileOutputStream(destFile);
+                BufferedOutputStream dest = new BufferedOutputStream(fileOutputStream, BUFFER);
 
                 // read and write until last byte is encountered
                 while ((currentByte = is.read(data, 0, BUFFER)) != -1) {
@@ -81,6 +82,8 @@ public class ZipUtil {
                 }
                 dest.flush();
                 dest.close();
+                fileOutputStream.flush();
+                fileOutputStream.close();
                 is.close();
             }
         }

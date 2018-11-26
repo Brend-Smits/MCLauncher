@@ -18,5 +18,6 @@
       <Button fx:id="editModpackButton" layoutX="130.0" layoutY="4.0" mnemonicParsing="false" onAction="#editModpackButton" prefHeight="33.0" prefWidth="117.0" text="Edit Modpack" />
       <Button fx:id="deleteModpackButton" layoutX="256.0" layoutY="4.0" mnemonicParsing="false" onAction="#deleteModpackButtonClick" prefHeight="33.0" prefWidth="117.0" text="Delete Modpack" />
       <Button fx:id="uploadModpackButton" layoutX="1478.0" layoutY="4.0" mnemonicParsing="false" onAction="#uploadModpackButtonClick" prefHeight="33.0" prefWidth="117.0" text="Upload Modpack" />
+      <Button fx:id="unzipModpackButton" layoutX="1349.0" layoutY="4.0" mnemonicParsing="false" onAction="#unzipModpackButtonClick" prefHeight="33.0" prefWidth="117.0" text="Unzip Modpack" />
    </children>
 </AnchorPane>
