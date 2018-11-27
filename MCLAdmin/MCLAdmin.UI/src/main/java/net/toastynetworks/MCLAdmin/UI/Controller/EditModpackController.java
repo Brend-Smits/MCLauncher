@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
-import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchSceneUtil;
+import net.toastynetworks.javafx.SwitchSceneUtils;
 
 import static net.toastynetworks.MCLAdmin.UI.Controller.MainController.selectedModpack;
 
@@ -24,7 +24,7 @@ public class EditModpackController {
 
     public void backToMainMenuButton() {
         try {
-            new SwitchSceneUtil(backButton, "fxml/main.fxml");
+            new SwitchSceneUtils(backButton, "fxml/main.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }

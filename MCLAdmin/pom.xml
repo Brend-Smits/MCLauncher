@@ -25,6 +25,11 @@
             <scope>system</scope>
             <systemPath>D:/SynologyDrive/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.apache.directory.studio</groupId>
+            <artifactId>org.apache.commons.io</artifactId>
+            <version>2.4</version>
+        </dependency>
     </dependencies>
 
 
