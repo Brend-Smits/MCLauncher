@@ -18,5 +18,14 @@
         <module>MCLAdmin.UI</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>net.toastynetworks.MCLSharedUtils</groupId>
+            <artifactId>MCLSharedUtils</artifactId>
+            <scope>system</scope>
+            <systemPath>D:/SynologyDrive/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils.jar</systemPath>
+        </dependency>
+    </dependencies>
+
 
 </project>

@@ -20,7 +20,7 @@ import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
-import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchSceneUtil;
+import net.toastynetworks.javafx.SwitchSceneUtils;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -31,11 +31,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.stream.Stream;
 import java.util.zip.ZipOutputStream;
 
-import static net.toastynetworks.MCLAdmin.UI.Utilities.ZipUtil.addDirToZipArchive;
-import static net.toastynetworks.MCLAdmin.UI.Utilities.ZipUtil.unzipArchive;
+import static net.toastynetworks.zip.ZipUtils.addDirToZipArchive;
+import static net.toastynetworks.zip.ZipUtils.unzipArchive;
+
 
 public class MainController extends Application implements Initializable  {
 
@@ -105,7 +105,7 @@ public class MainController extends Application implements Initializable  {
 
     public void addModpackButton() {
         try {
-            new SwitchSceneUtil(addNewModpackButton, "fxml/AddModpackScene.fxml");
+            new SwitchSceneUtils(addNewModpackButton, "fxml/AddModpackScene.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -113,7 +113,7 @@ public class MainController extends Application implements Initializable  {
     public void editModpackButton() {
         try {
             selectedModpack = modpackTable.getSelectionModel().getSelectedItem();
-            new SwitchSceneUtil(editModpackButton, "fxml/EditModpackScene.fxml");
+            new SwitchSceneUtils(editModpackButton, "fxml/EditModpackScene.fxml");
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -161,7 +161,7 @@ public class MainController extends Application implements Initializable  {
             File src = new File(workspace + zipName.replace(".zip", "") + "\\" + folderName);
             File dest = new File(workspace + folderName);
             FileUtils.copyDirectory(src, dest);
-            System.out.println("Done!!");
+            System.out.println("Done!!");   
             //TODO: Move this into a seperate method in the logic layer, it should clean up the files and such.
             FileUtils.deleteDirectory(new File(workspace + zipName.replace(".zip", "")));
             FileUtils.forceDelete(new File(workspace + zipName));

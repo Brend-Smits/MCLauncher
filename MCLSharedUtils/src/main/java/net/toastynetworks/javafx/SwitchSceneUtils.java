@@ -1,4 +1,4 @@
-package net.toastynetworks.MCLAdmin.UI.Utilities;
+package net.toastynetworks.javafx;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -6,9 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class SwitchSceneUtil {
-
-    public SwitchSceneUtil(Button button, String newScene) throws Exception {
+public class SwitchSceneUtils {
+    public SwitchSceneUtils(Button button, String newScene) throws Exception {
         Stage stage;
         Parent root;
 

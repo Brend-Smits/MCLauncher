@@ -1,4 +1,4 @@
-package net.toastynetworks.MCLAdmin.UI.Utilities;
+package net.toastynetworks.zip;
 
 import org.apache.commons.io.IOUtils;
 
@@ -8,8 +8,8 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
-//TODO: Make this class a shared library for all MCL projects.
-public class ZipUtil{
+
+public class ZipUtils {
 
     public static void addDirToZipArchive(ZipOutputStream zos, File fileToZip, String parrentDirectoryName) throws Exception {
         if (fileToZip == null || !fileToZip.exists()) {
@@ -99,4 +99,5 @@ public class ZipUtil{
             IOUtils.closeQuietly(is);
         }
     }
+
 }
