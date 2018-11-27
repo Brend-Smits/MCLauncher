@@ -25,6 +25,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -165,7 +166,7 @@ public class MainController extends Application implements Initializable  {
             FileUtils.deleteDirectory(new File(workspace + zipName.replace(".zip", "")));
             FileUtils.forceDelete(new File(workspace + zipName));
             System.out.println("Done!");
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
     }

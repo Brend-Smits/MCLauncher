@@ -1,15 +1,15 @@
 package net.toastynetworks.MCLAdmin.UI.Utilities;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 //TODO: Make this class a shared library for all MCL projects.
-public class ZipUtil {
+public class ZipUtil{
 
     public static void addDirToZipArchive(ZipOutputStream zos, File fileToZip, String parrentDirectoryName) throws Exception {
         if (fileToZip == null || !fileToZip.exists()) {
@@ -39,53 +39,64 @@ public class ZipUtil {
             fis.close();
         }
     }
-    //TODO: Something is not being closed right. A proccess is  still being left running. Investigate what is not being closed and fix it.
     //TODO: Cleanup this method and make it better understandable.
     public static void unzipArchive(String zipFile) throws ZipException, IOException {
-        System.out.println(zipFile);
-        int BUFFER = 2048;
-        File file = new File(zipFile);
+        FileOutputStream fileOutputStream = null;
+        BufferedOutputStream dest = null;
+        BufferedInputStream is = null;
+        try {
+            System.out.println(zipFile);
+            int BUFFER = 2048;
+            File file = new File(zipFile);
+            ZipFile zip = new ZipFile(file);
+            String newPath = zipFile.substring(0, zipFile.length() - 4);
+            new File(newPath).mkdir();
+            Enumeration zipFileEntries = zip.entries();
 
-        ZipFile zip = new ZipFile(file);
-        String newPath = zipFile.substring(0, zipFile.length() - 4);
-        new File(newPath).mkdir();
-        Enumeration zipFileEntries = zip.entries();
-
-        // Process each entry
-        while (zipFileEntries.hasMoreElements())
-        {
-            // grab a zip file entry
-            ZipEntry entry = (ZipEntry) zipFileEntries.nextElement();
-            String currentEntry = entry.getName();
-            File destFile = new File(newPath, currentEntry);
-            //destFile = new File(newPath, destFile.getName());
-            File destinationParent = destFile.getParentFile();
-
-            // create the parent directory structure if needed
-            destinationParent.mkdirs();
-
-            if (!entry.isDirectory())
+            // Process each entry
+            while (zipFileEntries.hasMoreElements())
             {
-                BufferedInputStream is = new BufferedInputStream(zip
-                        .getInputStream(entry));
-                int currentByte;
-                // establish buffer for writing file
-                byte data[] = new byte[BUFFER];
+                // grab a zip file entry
+                ZipEntry entry = (ZipEntry) zipFileEntries.nextElement();
+                String currentEntry = entry.getName();
+                File destFile = new File(newPath, currentEntry);
+                //destFile = new File(newPath, destFile.getName());
+                File destinationParent = destFile.getParentFile();
 
-                // write the current file to disk
-                FileOutputStream fileOutputStream = new FileOutputStream(destFile);
-                BufferedOutputStream dest = new BufferedOutputStream(fileOutputStream, BUFFER);
+                // create the parent directory structure if needed
+                destinationParent.mkdirs();
 
-                // read and write until last byte is encountered
-                while ((currentByte = is.read(data, 0, BUFFER)) != -1) {
-                    dest.write(data, 0, currentByte);
+                if (!entry.isDirectory())
+                {
+                    is = new BufferedInputStream(zip.getInputStream(entry));
+                    int currentByte;
+                    // establish buffer for writing file
+                    byte data[] = new byte[BUFFER];
+
+                    // write the current file to disk
+                    fileOutputStream = new FileOutputStream(destFile);
+                    dest = new BufferedOutputStream(fileOutputStream, BUFFER);
+
+                    // read and write until last byte is encountered
+                    while ((currentByte = is.read(data, 0, BUFFER)) != -1) {
+                        dest.write(data, 0, currentByte);
+                    }
+                    dest.flush();
+                    dest.close();
+                    fileOutputStream.flush();
+                    fileOutputStream.close();
+                    is.close();
                 }
-                dest.flush();
-                dest.close();
-                fileOutputStream.flush();
-                fileOutputStream.close();
-                is.close();
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+            IOUtils.closeQuietly(fileOutputStream);
+            IOUtils.closeQuietly(dest);
+            IOUtils.closeQuietly(is);
+        } finally {
+            IOUtils.closeQuietly(fileOutputStream);
+            IOUtils.closeQuietly(dest);
+            IOUtils.closeQuietly(is);
         }
     }
 }
