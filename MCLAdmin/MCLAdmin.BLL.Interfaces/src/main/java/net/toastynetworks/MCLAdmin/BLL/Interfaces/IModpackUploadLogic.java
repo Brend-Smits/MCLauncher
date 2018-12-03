@@ -9,5 +9,5 @@ public interface IModpackUploadLogic {
 
     void uploadSingleFile(File file);
     void uploadMultipleFiles(ArrayList<File> files);
-    void uploadModpack(Modpack modpack);
+    void uploadModpack(Modpack modpack, String workspace);
 }

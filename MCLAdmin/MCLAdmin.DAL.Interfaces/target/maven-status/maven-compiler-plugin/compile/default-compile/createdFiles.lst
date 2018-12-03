@@ -1,0 +1,2 @@
+net\toastynetworks\MCLAdmin\DAL\Interfaces\IModpackRepository.class
+net\toastynetworks\MCLAdmin\DAL\Interfaces\IModpackUploadRepository.class

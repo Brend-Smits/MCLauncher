@@ -5,10 +5,9 @@ import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackUploadLogic;
 import net.toastynetworks.MCLAdmin.DAL.Interfaces.IModpackUploadRepository;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -19,9 +18,8 @@ import static net.toastynetworks.zip.ZipUtils.unzipArchive;
 
 public class ModpackUploadLogic implements IModpackUploadLogic {
     private IModpackUploadRepository modpackUploadRepository;
-    private IConfigLogic configLogic;
     private String zipName;
-    private String workspace = configLogic.GetWorkSpaceFromConfig() + "\\";
+    private String workspace;
 
     public ModpackUploadLogic(IModpackUploadRepository modpackUploadRepo) {
         modpackUploadRepository = modpackUploadRepo;
@@ -38,22 +36,16 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
         modpackUploadRepository.uploadMultipleFiles(files);
     }
 
-    public void uploadModpack(Modpack modpack) {
+    public void uploadModpack(Modpack modpack, String workspace) {
         try {
-            String uploadDirectory = configLogic.GetWorkSpaceFromConfig() + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName() + "/";
+            this.workspace = workspace + "\\";
+            String uploadDirectory = workspace + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName() + "/";
             File dir = new File(uploadDirectory);
             System.out.println(dir);
             ArrayList<File> files = new ArrayList<>();
             if (dir != null) {
                 zipName = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")) + "--" + modpack.getName() + ".zip";
-                File zip = new File(workspace + zipName);
-                FileOutputStream fileOutputStream = new FileOutputStream(zip);
-                ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
-                addDirToZipArchive(zipOutputStream, new File(dir.toString()), null);
-                zipOutputStream.flush();
-                zipOutputStream.close();
-                fileOutputStream.flush();
-                fileOutputStream.close();
+                File zip = createZipArchive(dir);
                 files.add(zip);
             }
             uploadMultipleFiles(files);
@@ -63,10 +55,20 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
         }
 
     }
+    private File createZipArchive(File dir) throws Exception {
+        File zip = null;
+        try {
+            zip = addDirToZipArchive(workspace, zipName, new File(dir.toString()), null);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return zip;
+    }
 
     private void unzipAndCleanArchive(Modpack modpack) {
         String folderName = String.valueOf(modpack.getId()) + "-" + modpack.getName();
         try {
+            workspace = workspace + "\\";
             unzipArchive(workspace + zipName);
             moveFilesToWorkspace(folderName);
             deleteZipAndFiles();

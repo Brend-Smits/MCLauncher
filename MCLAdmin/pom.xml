@@ -23,7 +23,8 @@
             <groupId>net.toastynetworks.MCLSharedUtils</groupId>
             <artifactId>MCLSharedUtils</artifactId>
             <scope>system</scope>
-            <systemPath>D:/SynologyDrive/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils.jar</systemPath>
+            <version>1.2-SNAPSHOT</version>
+            <systemPath>D:/SynologyDrive/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils-1.2-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.apache.directory.studio</groupId>

@@ -1,0 +1,3 @@
+net\toastynetworks\MCLAdmin\BLL\Interfaces\IModpackUploadLogic.class
+net\toastynetworks\MCLAdmin\BLL\Interfaces\IConfigLogic.class
+net\toastynetworks\MCLAdmin\BLL\Interfaces\IModpackLogic.class

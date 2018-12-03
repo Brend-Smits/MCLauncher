@@ -44,6 +44,7 @@ public class MainController extends Application implements Initializable  {
     private Button editModpackButton;
 
     public static Modpack selectedModpack;
+    public String workspace = configLogic.GetWorkSpaceFromConfig();
 
 
     @Override
@@ -107,6 +108,6 @@ public class MainController extends Application implements Initializable  {
     }
     public void uploadModpackButtonClick() {
             Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
-            modpackUploadLogic.uploadModpack(modpack);
+            modpackUploadLogic.uploadModpack(modpack, workspace);
     }
 }
