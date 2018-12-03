@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f43868f-d381-42b2-aac8-519460ebe718" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackUploadLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL.Interfaces/src/main/java/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackUploadLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackUploadLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL.Interfaces/target/classes/net/toastynetworks/MCLAdmin/BLL/Interfaces/IModpackUploadLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackUploadLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackUploadLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackUploadLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackUploadLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/fxml/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/fxml/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/AddModpackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/AddModpackController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/EditModpackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/EditModpackController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/SelectWorkspaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/SelectWorkspaceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Utilities/SwitchSceneUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Utilities/ZipUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../MCLAdmin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCLSharedUtils.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/toastynetworks/zip/ZipUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/toastynetworks/zip/ZipUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MCLSharedUtils.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/toastynetworks/zip/ZipUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/toastynetworks/zip/ZipUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,6 +51,47 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1089458276">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="209" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="209" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/zip/ZipUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -129,6 +153,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,16 +204,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="net" type="462c0819:PsiDirectoryNode" />
               <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
-              <item name="javafx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MCLSharedUtils" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MCLSharedUtils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="toastynetworks" type="462c0819:PsiDirectoryNode" />
               <item name="zip" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -196,7 +211,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -234,16 +248,18 @@
       <updated>1543320815146</updated>
       <workItem from="1543320828166" duration="4404000" />
       <workItem from="1543865895363" duration="101000" />
+      <workItem from="1543867773285" duration="597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10611000" />
+    <option name="totallyTimeSpent" value="11208000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2576" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26012793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -261,6 +277,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -269,7 +286,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.25706667" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.49684873" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,13 +296,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/zip/ZipUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="89" column="49" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -297,9 +307,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/zip/ZipUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
         </state>
       </provider>
     </entry>

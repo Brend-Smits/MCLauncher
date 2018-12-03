@@ -13,12 +13,8 @@ public class ZipUtils {
 
     public static File addDirToZipArchive(String workspace, String zipName, File fileToZip, String parrentDirectoryName) throws Exception {
         File zip = new File(workspace + zipName);
-        FileOutputStream fileOutputStream = null;
-        ZipOutputStream zos = null;
-        FileInputStream fis = null;
-        try {
-            fileOutputStream = new FileOutputStream(zip);
-            zos = new ZipOutputStream(fileOutputStream);
+        try(FileOutputStream fileOutputStream = new FileOutputStream(zip);
+            ZipOutputStream zos = new ZipOutputStream(fileOutputStream)) {
             if (fileToZip == null || !fileToZip.exists()) {
                 return null;
             }
@@ -36,30 +32,22 @@ public class ZipUtils {
             } else {
                 System.out.println("   " + zipEntryName);
                 byte[] buffer = new byte[1024];
-                 fis = new FileInputStream(fileToZip);
-                zos.putNextEntry(new ZipEntry(zipEntryName));
-                int length;
-                while ((length = fis.read(buffer)) > 0) {
-                    zos.write(buffer, 0, length);
+                try (FileInputStream fileInputStream = new FileInputStream(fileToZip)){
+                    zos.putNextEntry(new ZipEntry(zipEntryName));
+                    int length;
+                    while ((length = fileInputStream.read(buffer)) > 0) {
+                        zos.write(buffer, 0, length);
+                    }
                 }
-                zos.closeEntry();
-                zos.close();
-                fis.close();
             }
         } catch (Exception e) {
             System.out.println(e);
-        } finally {
-            IOUtils.closeQuietly(fileOutputStream);
-            IOUtils.closeQuietly(zos);
-            IOUtils.closeQuietly(fis);
         }
         return zip;
     }
     //TODO: Cleanup this method and make it better understandable.
     public static void unzipArchive(String zipFile) throws ZipException, IOException {
-        FileOutputStream fileOutputStream = null;
-        BufferedOutputStream dest = null;
-        BufferedInputStream is = null;
+
         try {
             System.out.println(zipFile);
             int BUFFER = 2048;
@@ -84,27 +72,26 @@ public class ZipUtils {
 
                 if (!entry.isDirectory())
                 {
-                    is = new BufferedInputStream(zip.getInputStream(entry));
-                    int currentByte;
-                    // establish buffer for writing file
-                    byte data[] = new byte[BUFFER];
-
-                    // write the current file to disk
-                    fileOutputStream = new FileOutputStream(destFile);
-                    dest = new BufferedOutputStream(fileOutputStream, BUFFER);
-
-                    // read and write until last byte is encountered
-                    while ((currentByte = is.read(data, 0, BUFFER)) != -1) {
-                        dest.write(data, 0, currentByte);
+                    try (BufferedInputStream bufferedInputStream = new BufferedInputStream(zip.getInputStream(entry));
+                         FileOutputStream fileOutputStream = new FileOutputStream(destFile))
+                    {
+                        int currentByte;
+                        // establish buffer for writing file
+                        byte data[] = new byte[BUFFER];
+                        // write the current file to disk
+                        try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream, BUFFER))
+                        {
+                            // read and write until last byte is encountered
+                            while ((currentByte = bufferedInputStream.read(data, 0, BUFFER)) != -1) {
+                                bufferedOutputStream.write(data, 0, currentByte);
+                            }
+                        }
                     }
+
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            IOUtils.closeQuietly(fileOutputStream);
-            IOUtils.closeQuietly(dest);
-            IOUtils.closeQuietly(is);
         }
     }
 
