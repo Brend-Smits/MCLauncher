@@ -38,7 +38,7 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
 
     public void uploadModpack(Modpack modpack, String workspace) {
         try {
-            this.workspace = workspace + "\\";
+            this.workspace = workspace;
             String uploadDirectory = workspace + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName() + "/";
             File dir = new File(uploadDirectory);
             System.out.println(dir);
@@ -56,9 +56,10 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
 
     }
     private File createZipArchive(File dir) throws Exception {
-        File zip = null;
+        File zip = new File(workspace + zipName);
         try {
-            zip = addDirToZipArchive(workspace, zipName, new File(dir.toString()), null);
+            System.out.println(zip.toString());
+            addDirToZipArchive(zip, new File(dir.toString()));
         } catch (Exception e) {
             System.out.println(e);
         }
