@@ -1,6 +1,7 @@
 package net.toastynetworks.zip;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
@@ -46,17 +47,21 @@ public class ZipUtils {
     public static void addDirToZipArchive(File zipFile, File directoryToCompress) throws IOException {
         // open the zip stream here with the try-with-resources
         try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(zipFile))) {
-            addDirToZipArchive(zos, zipFile, File.separator);
+            addDirToZipArchive(zos, directoryToCompress, directoryToCompress.getPath());
         }
     }
 
     private static void addDirToZipArchive(ZipOutputStream zos, File directoryToCompress, String path) throws IOException {
-        // get all files in the root directory and pass them to the other method to zip them
-        addFilesToZip(zos, path, directoryToCompress.listFiles(f -> f.isFile()));
-
-        // handle directories to this same method
-        for (File dir : directoryToCompress.listFiles(f -> f.isDirectory())) {
-            addDirToZipArchive(zos, dir, path + dir.getName() + File.separator);
+        File[] listFiles = directoryToCompress.listFiles(f -> f.isFile());
+        File[] listDirectories = directoryToCompress.listFiles(f -> f.isDirectory());
+        if (listDirectories != null) {
+            addFilesToZip(zos, path, listDirectories);
+        } else if (listFiles != null) {
+            // handle directories to this same method
+//            for (File dir : directoryToCompress.listFiles(f -> f.isDirectory())) {
+//                addDirToZipArchive(zos, dir, path + dir.getName());
+//            }
+            addFilesToZip(zos, path, listFiles);
         }
     }
 

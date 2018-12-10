@@ -56,7 +56,7 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
 
     }
     private File createZipArchive(File dir) throws Exception {
-        File zip = new File(workspace + zipName);
+        File zip = new File(workspace + "\\" +  zipName);
         try {
             System.out.println(zip.toString());
             addDirToZipArchive(zip, new File(dir.toString()));
