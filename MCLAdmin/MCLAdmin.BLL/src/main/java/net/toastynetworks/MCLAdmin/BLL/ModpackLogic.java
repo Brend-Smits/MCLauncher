@@ -14,8 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipOutputStream;
 
-import static net.toastynetworks.zip.ZipUtils.addDirToZipArchive;
-
 public class ModpackLogic implements IModpackLogic {
     private IModpackRepository modpackRepository;
 
