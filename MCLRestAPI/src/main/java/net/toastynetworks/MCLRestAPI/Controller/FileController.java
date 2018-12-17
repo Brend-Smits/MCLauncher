@@ -1,6 +1,6 @@
 package net.toastynetworks.MCLRestAPI.Controller;
 
-import net.toastynetworks.MCLRestAPI.Payload.UploadFileResponse;
+import net.toastynetworks.MCLRestAPI.Models.UploadedFile;
 import net.toastynetworks.MCLRestAPI.Service.FileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,8 +28,8 @@ public class FileController {
     private FileStorageService fileStorageService;
 
     @PostMapping("/uploadFile")
-    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
-        //Convert incoming File to MultipartFile or convert file to multipartfile before making the request
+    public UploadedFile uploadFile(@RequestParam("file") MultipartFile file) {
+        //Convert incoming UploadedFile to MultipartFile or convert file to multipartfile before making the request
         String fileName = fileStorageService.storeFile(file);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -37,12 +37,12 @@ public class FileController {
                 .path(fileName)
                 .toUriString();
 
-        return new UploadFileResponse(fileName, fileDownloadUri,
+        return new UploadedFile(fileName, fileDownloadUri,
                 file.getContentType(), file.getSize());
     }
 
     @PostMapping("/uploadMultipleFiles")
-    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
+    public List<UploadedFile> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
         return Arrays.asList(files)
                 .stream()
                 .map(file -> uploadFile(file))

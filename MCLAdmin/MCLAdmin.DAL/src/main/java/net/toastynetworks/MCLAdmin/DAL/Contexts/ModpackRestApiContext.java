@@ -7,6 +7,7 @@ import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
+import net.toastynetworks.MCLAdmin.Domain.UploadedFile;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -72,7 +73,21 @@ public class ModpackRestApiContext implements IModpackContext {
     }
     public void EditModpack(Modpack modpack) {
         try {
-            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/" + modpack.getId())
+            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/")
+                    .header("Content-Type", "application/json")
+                    .body(modpack)
+                    .asJson();
+            if (updateModpack.getStatus() != 200) {
+                throw new RuntimeException("Failed: HTTP error code: " + updateModpack.getStatus() + " " + updateModpack.getStatusText());
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void EditModpack(Modpack modpack, UploadedFile file) {
+        try {
+            modpack.setDownloadUrl(file.getFileDownloadUri());
+            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/")
                     .header("Content-Type", "application/json")
                     .body(modpack)
                     .asJson();

@@ -1,66 +1,60 @@
 package net.toastynetworks.MCLEndUser.DAL.Contexts;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.ObjectMapper;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.request.GetRequest;
 import net.toastynetworks.MCLEndUser.DAL.Contexts.Interfaces.IModpackContext;
+import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ModpackRestApiContext implements IModpackContext {
-    public List<String> GetAllModpacks() {
-        return GetModpackNamesFromJSON(GetJSONFromUrl("v1/modpack"));
+    static {
+        Unirest.setObjectMapper(new ObjectMapper() {
+            private com.fasterxml.jackson.databind.ObjectMapper jacksonObjectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
+
+            public <T> T readValue(String value, Class<T> valueType) {
+                try {
+                    return jacksonObjectMapper.readValue(value, valueType);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            public String writeValue(Object value) {
+                try {
+                    return jacksonObjectMapper.writeValueAsString(value);
+                } catch (JsonProcessingException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
     }
 
-    public String GetJSONFromUrl(String endpoint) {
-        try {
-            URL url = new URL("http://localhost:8080/" + endpoint);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
-            connection.setRequestProperty("Accept", "application/json");
 
-            if (connection.getResponseCode() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + connection.getResponseCode());
-            }
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(
-                    (connection.getInputStream())));
-
-            String output;
-            StringBuffer response = new StringBuffer();
-            System.out.println("Output from Server .... \n");
-            while ((output = br.readLine()) != null) {
-                response.append(output);
-            }
-            connection.disconnect();
-            return response.toString();
-
-
-
+    @Override
+    public List<Modpack> GetAllModpacks() {
+        try{
+            HttpResponse<Modpack[]> modpackListResponse = Unirest.get("http://localhost:8080/v1/modpack").asObject(Modpack[].class);
+            Modpack[] modpackObjectArray = modpackListResponse.getBody();
+            return Arrays.asList(modpackObjectArray);
         } catch (Exception e) {
             System.out.println(e);
         }
+
         return null;
     }
-    public List<String> GetModpackNamesFromJSON(String json) {
-        List<String> modpackNames = new ArrayList<String>();
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
 
-            ModpackModel[] modpackModels = objectMapper.readValue(json, ModpackModel[].class);
-            for (ModpackModel model : modpackModels) {
-                System.out.println(model.getName());
-                modpackNames.add(model.getName());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+    @Override
+    public void DownloadModpack(String fileUri) {
+        try{
+            Unirest.get(fileUri);
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        return modpackNames;
     }
-
 }

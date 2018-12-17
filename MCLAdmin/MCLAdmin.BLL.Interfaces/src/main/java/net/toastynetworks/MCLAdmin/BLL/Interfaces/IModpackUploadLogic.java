@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public interface IModpackUploadLogic {
 
-    void uploadSingleFile(File file);
-    void uploadMultipleFiles(ArrayList<File> files);
+    void uploadMultipleFiles(ArrayList<File> files, Modpack modpack);
     void uploadModpack(Modpack modpack, String workspace);
 }

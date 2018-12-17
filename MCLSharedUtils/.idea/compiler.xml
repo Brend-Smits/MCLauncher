@@ -9,5 +9,8 @@
         <module name="MCLSharedUtils" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MCLSharedUtils" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
