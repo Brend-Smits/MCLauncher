@@ -24,8 +24,15 @@
             <artifactId>MCLSharedUtils</artifactId>
             <scope>system</scope>
             <version>1.2-SNAPSHOT</version>
-            <systemPath>C:/Users/Brend/CloudStation/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils-1.2-SNAPSHOT.jar</systemPath>
+            <systemPath>D:/SynologyDrive/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar</systemPath>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.zeroturnaround/zt-zip -->
+        <dependency>
+            <groupId>org.zeroturnaround</groupId>
+            <artifactId>zt-zip</artifactId>
+            <version>1.13</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.directory.studio</groupId>
             <artifactId>org.apache.commons.io</artifactId>
