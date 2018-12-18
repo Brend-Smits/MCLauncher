@@ -10,9 +10,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import net.toastynetworks.MCLEndUser.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
+import net.toastynetworks.MCLEndUser.Factory.ConfigFactory;
 import net.toastynetworks.MCLEndUser.Factory.ModpackFactory;
+import net.toastynetworks.MCLEnduser.BLL.ConfigLogic;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,6 +29,7 @@ public class Main extends Application implements Initializable {
     private List<Modpack> modpackLists;
     private ObservableList<String> items = FXCollections.observableArrayList();
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
+    private IConfigLogic configLogic = ConfigFactory.CreateLogic();
 
     public static void main(String[] args) {
         launch(args);
@@ -33,9 +37,15 @@ public class Main extends Application implements Initializable {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("user-ui.fxml"));
+        URL fileLocation;
+        if (configLogic.GetWorkSpaceFromConfig() != null) {
+            fileLocation = getClass().getClassLoader().getResource("user-ui.fxml");
+        } else {
+            fileLocation = getClass().getClassLoader().getResource("SelectWorkspaceScene.fxml");
+        }
+        Parent root = FXMLLoader.load(fileLocation);
         primaryStage.setTitle("ToastyNetworks Launcher V2");
-        primaryStage.setScene(new Scene(root, 1920, 1080));
+        primaryStage.setScene(new Scene(root, 1900, 1040));
         primaryStage.show();
     }
 
@@ -45,7 +55,7 @@ public class Main extends Application implements Initializable {
             System.out.println(modpack.getName());
             //TODO: Get download URL here from the object and then make a rest call to retrieve the file.
             //Temporary
-            modpackLogic.downloadFile(modpack.getDownloadUrl(), "C:\\Users\\user\\AppData\\Roaming\\.MCLauncher\\test");
+            modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -39,6 +39,12 @@
                 D:/SynologyDrive/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar
             </systemPath>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.zeroturnaround/zt-zip -->
+        <dependency>
+            <groupId>org.zeroturnaround</groupId>
+            <artifactId>zt-zip</artifactId>
+            <version>1.13</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -135,3 +135,5 @@ MCLAdmin/MCLAdmin\.UI/target/*
 MCLSharedUtils/\.idea/libraries/*
 
 MCLSharedUtils/\.idea/workspace\.xml
+
+MCLEndUser/MCLEndUser\.DAL/target/*

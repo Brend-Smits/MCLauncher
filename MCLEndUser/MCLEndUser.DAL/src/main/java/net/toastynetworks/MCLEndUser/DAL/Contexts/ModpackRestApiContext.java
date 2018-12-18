@@ -5,6 +5,8 @@ import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLEndUser.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 import net.toastynetworks.unirest.UnirestObjectMapperUtils;
+import org.zeroturnaround.zip.ZipUtil;
+import org.zeroturnaround.zip.commons.FileUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,6 +14,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
@@ -72,6 +77,10 @@ public class ModpackRestApiContext implements IModpackContext {
 
             // opens input stream from the HTTP connection
             InputStream inputStream = httpConn.getInputStream();
+            Path path = Paths.get(saveDir);
+            if (Files.notExists(path)) {
+                Files.createDirectory(path);
+            }
             String saveFilePath = saveDir + File.separator + fileName;
 
             // opens an output stream to save into file
@@ -87,6 +96,10 @@ public class ModpackRestApiContext implements IModpackContext {
             inputStream.close();
 
             System.out.println("File downloaded");
+            System.out.println("I will now extract it");
+            ZipUtil.unpack(new File(saveFilePath), new File(saveDir));
+            System.out.println("I will now delete the zip");
+            FileUtils.forceDelete(new File(saveFilePath));
         } else {
             System.out.println("No file to download. Server replied HTTP code: " + responseCode);
         }
