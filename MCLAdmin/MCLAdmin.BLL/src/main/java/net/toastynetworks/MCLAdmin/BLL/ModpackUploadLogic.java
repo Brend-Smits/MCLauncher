@@ -29,19 +29,24 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
     public void uploadModpack(Modpack modpack, String workspace) {
         try {
             this.workspace = workspace;
-            String uploadDirectory = workspace + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName() + "/";
-            File dir = new File(uploadDirectory);
-            ArrayList<File> files = new ArrayList<>();
-            if (dir != null) {
-                File zipToUpload = createZipArchive(dir, modpack);
-                files.add(zipToUpload);
-            }
+            ArrayList<File> files = prepareUpload(modpack, workspace);
             uploadMultipleFiles(files, modpack);
             deleteZipAndFiles();
         } catch (Exception e) {
             System.out.println(e);
         }
 
+    }
+
+    private ArrayList<File> prepareUpload(Modpack modpack, String workspace) throws Exception {
+        String uploadDirectory = workspace + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName() + "/";
+        File dir = new File(uploadDirectory);
+        ArrayList<File> files = new ArrayList<>();
+        if (dir != null) {
+            File zipToUpload = createZipArchive(dir, modpack);
+            files.add(zipToUpload);
+        }
+        return files;
     }
 
     private File createZipArchive(File directoryToZip, Modpack modpack) throws Exception {

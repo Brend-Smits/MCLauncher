@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f43868f-d381-42b2-aac8-519460ebe718" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/toastynetworks/unirest/UnirestObjectMapperUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ConfigLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ConfigLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackUploadLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/target/classes/net/toastynetworks/MCLAdmin/BLL/ModpackUploadLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackUploadRestApiContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackUploadRestApiContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackRestApiContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackUploadRestApiContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Contexts/ModpackUploadRestApiContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/target/classes/net/toastynetworks/MCLAdmin/DAL/Repositories/ModpackRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller/AddModpackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller/AddModpackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller/SelectWorkspaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/src/main/java/net/toastynetworks/MCLAdmin/UI/Controller/SelectWorkspaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/AddModpackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/AddModpackController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/EditModpackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/EditModpackController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/SelectWorkspaceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.UI/target/classes/net/toastynetworks/MCLAdmin/UI/Controller/SelectWorkspaceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackUploadLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.BLL/src/main/java/net/toastynetworks/MCLAdmin/BLL/ModpackUploadLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCLSharedUtils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MCLSharedUtils.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MCLSharedUtils-1.2-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/toastynetworks/javafx/SwitchSceneUtils.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -236,7 +216,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545133091630" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545133424086" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -265,12 +245,12 @@
       <updated>1545066845551</updated>
       <workItem from="1545066851073" duration="594000" />
       <workItem from="1545128240901" duration="90000" />
-      <workItem from="1545132195925" duration="893000" />
+      <workItem from="1545132195925" duration="1093000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2175000" />
+    <option name="totallyTimeSpent" value="2375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-133" width="1936" height="1176" extended-state="6" />
