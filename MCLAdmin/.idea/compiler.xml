@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="MCLAdmin.BLL" />
-        <module name="MCLAdmin.BLL.Interfaces" />
-        <module name="MCLAdmin.DAL" />
-        <module name="MCLAdmin.DAL.Interfaces" />
-        <module name="MCLAdmin.Domain" />
-        <module name="MCLAdmin.Factory" />
-        <module name="MCLAdmin.UI" />
-        <module name="MCLAdminBLL" />
-        <module name="MCLAdminBLLInterfaces" />
-        <module name="MCLAdminDAL" />
-        <module name="MCLAdminDALInterfaces" />
-        <module name="MCLAdminDomain" />
-        <module name="MCLAdminFactory" />
-      </profile>
-    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MCLAdmin" target="1.5" />
+      <module name="MCLAdmin.BLL" target="8" />
+      <module name="MCLAdmin.BLL.Interfaces" target="8" />
+      <module name="MCLAdmin.DAL" target="8" />
+      <module name="MCLAdmin.DAL.Interfaces" target="8" />
+      <module name="MCLAdmin.Domain" target="8" />
+      <module name="MCLAdmin.Factory" target="8" />
+      <module name="MCLAdmin.UI" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

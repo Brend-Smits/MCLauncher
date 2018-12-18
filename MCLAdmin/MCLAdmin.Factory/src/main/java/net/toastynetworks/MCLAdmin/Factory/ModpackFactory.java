@@ -7,7 +7,7 @@ import net.toastynetworks.MCLAdmin.DAL.Repositories.ModpackRepository;
 
 public class ModpackFactory {
 
-    public static IModpackLogic CreateLogic(){
+    public static IModpackLogic CreateLogic() {
         return new ModpackLogic(new ModpackRepository(new ModpackRestApiContext()));
     }
 

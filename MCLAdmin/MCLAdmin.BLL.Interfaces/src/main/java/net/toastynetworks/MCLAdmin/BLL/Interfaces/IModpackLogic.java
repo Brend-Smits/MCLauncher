@@ -7,7 +7,10 @@ import java.util.List;
 public interface IModpackLogic {
 
     List<Modpack> GetAllModpacks();
+
     void AddModpack(Modpack modpack);
+
     void EditModpack(Modpack modpack);
-    void DeleteModpack(Modpack modpack);
+
+    void DeleteModpack(int id);
 }

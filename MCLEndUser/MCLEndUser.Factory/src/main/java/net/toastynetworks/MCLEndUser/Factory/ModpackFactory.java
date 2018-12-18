@@ -7,7 +7,7 @@ import net.toastynetworks.MCLEnduser.BLL.ModpackLogic;
 
 public class ModpackFactory {
 
-    public static IModpackLogic CreateLogic(){
+    public static IModpackLogic CreateLogic() {
         return new ModpackLogic(new ModpackRepository(new ModpackRestApiContext()));
     }
 }
