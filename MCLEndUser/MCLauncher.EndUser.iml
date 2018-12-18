@@ -8,5 +8,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Maven: net.toastynetworks.MCLSharedUtils:MCLSharedUtils:1.2-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

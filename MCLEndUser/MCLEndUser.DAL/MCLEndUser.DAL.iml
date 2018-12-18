@@ -23,5 +23,14 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20160212" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: net.toastynetworks.MCLSharedUtils:MCLSharedUtils:1.2-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -4,6 +4,7 @@ import net.toastynetworks.MCLEndUser.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLEndUser.DAL.Interfaces.IModpackRepository;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ModpackRepository implements IModpackRepository {
@@ -20,7 +21,7 @@ public class ModpackRepository implements IModpackRepository {
     }
 
     @Override
-    public void DownloadModpack(String fileUri) {
-        modpackContext.DownloadModpack(fileUri);
+    public void downloadFile(String fileURL, String saveDir) throws IOException {
+        modpackContext.downloadFile(fileURL, saveDir);
     }
 }

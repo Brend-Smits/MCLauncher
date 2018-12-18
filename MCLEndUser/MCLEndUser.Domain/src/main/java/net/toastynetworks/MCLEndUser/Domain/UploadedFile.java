@@ -13,6 +13,10 @@ public class UploadedFile {
         this.size = size;
     }
 
+    public UploadedFile() {
+
+    }
+
     public String getFileName() {
         return fileName;
     }
