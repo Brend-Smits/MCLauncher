@@ -1,5 +1,7 @@
 package net.toastynetworks.MCLRestAPI.Controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import net.toastynetworks.MCLRestAPI.Models.UploadedFile;
 import net.toastynetworks.MCLRestAPI.Service.FileStorageService;
 import org.slf4j.Logger;
@@ -20,6 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@Api(value = "File Controller", description = "Handles all file uploads and all file downloads")
 public class FileController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
@@ -27,6 +30,7 @@ public class FileController {
     @Autowired
     private FileStorageService fileStorageService;
 
+    @ApiOperation("Upload a single multipart file.")
     @PostMapping("/uploadFile")
     public UploadedFile uploadFile(@RequestParam("file") MultipartFile file) {
         //Convert incoming UploadedFile to MultipartFile or convert file to multipartfile before making the request
@@ -41,6 +45,7 @@ public class FileController {
                 file.getContentType(), file.getSize());
     }
 
+    @ApiOperation("Upload multiple files, this uses the single uploadfile endpoint")
     @PostMapping("/uploadMultipleFiles")
     public List<UploadedFile> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
         return Arrays.asList(files)
@@ -49,6 +54,7 @@ public class FileController {
                 .collect(Collectors.toList());
     }
 
+    @ApiOperation("Download the requested filename")
     @GetMapping("/downloadFile/{fileName:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
         // Load file as Resource
@@ -63,7 +69,7 @@ public class FileController {
         }
 
         // Fallback to the default content type if type could not be determined
-        if(contentType == null) {
+        if (contentType == null) {
             contentType = "application/octet-stream";
         }
 

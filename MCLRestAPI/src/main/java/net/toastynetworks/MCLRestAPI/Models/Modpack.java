@@ -19,7 +19,8 @@ public class Modpack {
         this.versionType = versionType;
     }
 
-    public Modpack() {}
+    public Modpack() {
+    }
 
     public int getId() {
         return id;
