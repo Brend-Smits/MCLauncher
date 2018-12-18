@@ -73,12 +73,16 @@ public class MainController extends Application implements Initializable {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
-        modpackNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        modpackVersionColumn.setCellValueFactory(new PropertyValueFactory<>("versionType"));
-        modpackIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        try {
+            modpackNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            modpackVersionColumn.setCellValueFactory(new PropertyValueFactory<>("versionType"));
+            modpackIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
 
-        modpackTable.setItems(getModpacks());
-        configLogic.PrepareWorkspace(modpackLogic.GetAllModpacks());
+            modpackTable.setItems(getModpacks());
+            configLogic.PrepareWorkspace(modpackLogic.GetAllModpacks());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void addModpackButton() {
@@ -108,7 +112,11 @@ public class MainController extends Application implements Initializable {
     }
 
     public void uploadModpackButtonClick() {
-        Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
-        modpackUploadLogic.uploadModpack(modpack, workspace);
+        try {
+            Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
+            modpackUploadLogic.uploadModpack(modpack, workspace);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

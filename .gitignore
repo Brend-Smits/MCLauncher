@@ -131,3 +131,5 @@ MCLAdmin/MCLAdmin\.Factory/target/*
 MCLAdmin/MCLAdmin\.DAL/target/*
 
 MCLAdmin/MCLAdmin\.UI/target/*
+
+MCLSharedUtils/\.idea/libraries/*

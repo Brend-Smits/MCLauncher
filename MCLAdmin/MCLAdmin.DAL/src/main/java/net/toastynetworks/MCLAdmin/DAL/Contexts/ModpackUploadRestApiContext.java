@@ -9,6 +9,7 @@ import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Domain.UploadedFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ModpackUploadRestApiContext implements IModpackUploadContext {
@@ -19,19 +20,25 @@ public class ModpackUploadRestApiContext implements IModpackUploadContext {
             HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/uploadMultipleFiles")
                     .field("files", files)
                     .asJson();
-            //TODO: Make a file model with attributes: file, size, downloadurl etc. This way we can simply return this model and use it to save things such as downloadurl in db.
-            ObjectMapper mapper = new ObjectMapper();
+
             if (jsonResponse.getStatus() != 200) {
-                System.out.println("Headers: " + jsonResponse.getHeaders());
-                System.out.println("Body: " + jsonResponse.getBody());
                 throw new RuntimeException("Failed: HTTP error code : " + jsonResponse.getStatus() + " " + jsonResponse.getStatusText());
-            } else {
-                UploadedFile file = mapper.readValue(jsonResponse.getBody().getArray().get(0).toString(), UploadedFile.class);
-                modpackRestApiContext.EditModpack(modpack, file);
             }
+            updateModpackWithFileInfo(modpack, jsonResponse);
 
         } catch (Exception exception) {
             System.out.println(exception);
+        }
+    }
+
+    private void updateModpackWithFileInfo(Modpack modpack, HttpResponse<JsonNode> responseBody) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            //Get first object of the array that is returned, this is the file we uploaded.
+            UploadedFile file = mapper.readValue(responseBody.getBody().getArray().get(0).toString(), UploadedFile.class);
+            modpackRestApiContext.EditModpack(modpack, file);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

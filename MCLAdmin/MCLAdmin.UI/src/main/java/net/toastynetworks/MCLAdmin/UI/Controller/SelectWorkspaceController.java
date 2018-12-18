@@ -23,27 +23,35 @@ public class SelectWorkspaceController {
     private Button nextButton;
 
     public void changeButtonClick() {
-        DirectoryChooser directoryChooser = new DirectoryChooser();
-        File dir = directoryChooser.showDialog(changeWorkspaceButton.getScene().getWindow());
-        if (dir != null) {
-            workspaceTextField.setText(dir.getAbsolutePath());
+        try {
+            DirectoryChooser directoryChooser = new DirectoryChooser();
+            File dir = directoryChooser.showDialog(changeWorkspaceButton.getScene().getWindow());
+            if (dir != null) {
+                workspaceTextField.setText(dir.getAbsolutePath());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public void nextButtonClick() {
-        if (workspaceTextField.getText().equals("")) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("MCL-Error");
-            alert.setContentText("Please select a workspace");
-            alert.showAndWait();
-        } else {
-            try {
-                configLogic.CreateConfig();
-                configLogic.EditConfig(workspaceTextField.getText());
-                new SwitchSceneUtils(nextButton, "fxml/main.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
+        try {
+            if (workspaceTextField.getText().equals("")) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("MCL-Error");
+                alert.setContentText("Please select a workspace");
+                alert.showAndWait();
+            } else {
+                try {
+                    configLogic.CreateConfig();
+                    configLogic.EditConfig(workspaceTextField.getText());
+                    new SwitchSceneUtils(nextButton, "fxml/main.fxml");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
