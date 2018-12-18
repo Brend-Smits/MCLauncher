@@ -99,7 +99,7 @@ public class Controller implements Initializable {
             //TODO: Get download URL here from the object and then make a rest call to retrieve the file.
 //        modpackLogic.DownloadModpack(modpack.getDownloadUrl());
             //Temporary
-            downloadFile(modpack.getDownloadUrl(),"C:\\Users\\Brend\\AppData\\Roaming\\.MCLauncher\\test");
+            downloadFile(modpack.getDownloadUrl(),"C:\\Users\\user\\AppData\\Roaming\\.MCLauncher\\test");
         } catch (IOException e) {
             e.printStackTrace();
         }
