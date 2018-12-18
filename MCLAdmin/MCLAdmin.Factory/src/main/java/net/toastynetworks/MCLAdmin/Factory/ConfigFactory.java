@@ -5,7 +5,7 @@ import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 
 public class ConfigFactory {
 
-    public static IConfigLogic CreateLogic(){
+    public static IConfigLogic CreateLogic() {
         return new ConfigLogic();
     }
 

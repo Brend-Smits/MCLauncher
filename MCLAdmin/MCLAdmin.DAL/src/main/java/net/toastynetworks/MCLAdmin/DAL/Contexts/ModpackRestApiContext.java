@@ -60,8 +60,9 @@ public class ModpackRestApiContext implements IModpackContext {
             System.out.println(exception);
         }
     }
+
     public List<Modpack> GetModpackList() {
-        try{
+        try {
             HttpResponse<Modpack[]> modpackListResponse = Unirest.get("http://localhost:8080/v1/modpack").asObject(Modpack[].class);
             Modpack[] modpackObjectArray = modpackListResponse.getBody();
             return Arrays.asList(modpackObjectArray);
@@ -71,6 +72,7 @@ public class ModpackRestApiContext implements IModpackContext {
 
         return null;
     }
+
     public void EditModpack(Modpack modpack) {
         try {
             HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/")
@@ -84,6 +86,7 @@ public class ModpackRestApiContext implements IModpackContext {
             System.out.println(e);
         }
     }
+
     public void EditModpack(Modpack modpack, UploadedFile file) {
         try {
             modpack.setDownloadUrl(file.getFileDownloadUri());

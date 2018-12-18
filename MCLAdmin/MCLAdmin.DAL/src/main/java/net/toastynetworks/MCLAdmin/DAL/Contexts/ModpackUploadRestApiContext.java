@@ -1,6 +1,5 @@
 package net.toastynetworks.MCLAdmin.DAL.Contexts;
 
-import com.fasterxml.jackson.core.TreeNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -8,13 +7,13 @@ import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackUploadContext;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Domain.UploadedFile;
-import org.json.JSONArray;
 
 import java.io.File;
 import java.util.ArrayList;
 
 public class ModpackUploadRestApiContext implements IModpackUploadContext {
     ModpackRestApiContext modpackRestApiContext = new ModpackRestApiContext();
+
     public void uploadMultipleFiles(ArrayList<File> files, Modpack modpack) {
         try {
             HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/uploadMultipleFiles")

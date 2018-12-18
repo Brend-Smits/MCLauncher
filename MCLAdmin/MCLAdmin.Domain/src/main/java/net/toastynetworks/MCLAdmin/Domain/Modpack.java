@@ -21,7 +21,8 @@ public class Modpack {
         this.versionType = versionType;
     }
 
-    public Modpack() { }
+    public Modpack() {
+    }
 
     public String getName() {
         return name;

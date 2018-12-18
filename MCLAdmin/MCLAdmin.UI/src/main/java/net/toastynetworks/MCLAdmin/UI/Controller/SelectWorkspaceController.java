@@ -29,13 +29,14 @@ public class SelectWorkspaceController {
             workspaceTextField.setText(dir.getAbsolutePath());
         }
     }
+
     public void nextButtonClick() {
-        if (workspaceTextField.getText().equals("")){
+        if (workspaceTextField.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("MCL-Error");
             alert.setContentText("Please select a workspace");
             alert.showAndWait();
-        } else{
+        } else {
             try {
                 configLogic.CreateConfig();
                 configLogic.EditConfig(workspaceTextField.getText());

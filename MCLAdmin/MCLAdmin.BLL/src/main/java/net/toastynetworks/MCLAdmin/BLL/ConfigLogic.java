@@ -45,7 +45,7 @@ public class ConfigLogic implements IConfigLogic {
         return prop.getProperty("Workspace:");
     }
 
-    public void EditConfig( String newWorkspace) {
+    public void EditConfig(String newWorkspace) {
         try {
             Properties prop = new Properties();
             InputStream input = null;
@@ -84,17 +84,22 @@ public class ConfigLogic implements IConfigLogic {
             System.out.println(e);
         }
     }
+
     public void PrepareWorkspace(List<Modpack> modpacks) {
-        String workspace = GetWorkSpaceFromConfig() + "/";
-        for (Modpack modpack :
-                modpacks) {
-            File temp = new File(workspace + String.valueOf(modpack.getId()) + "-" + modpack.getName());
-            System.out.println(temp);
-            if (!temp.exists()) {
-                temp.mkdirs();
-            } else {
-                System.out.println("Directory: " + workspace + String.valueOf(modpack.getId()) + "-" + modpack.getName() + " already exists!");
+        try {
+            String workspace = GetWorkSpaceFromConfig() + "/";
+            for (Modpack modpack :
+                    modpacks) {
+                File temp = new File(workspace + String.valueOf(modpack.getId()) + "-" + modpack.getName());
+                System.out.println(temp);
+                if (!temp.exists()) {
+                    temp.mkdirs();
+                } else {
+                    System.out.println("Directory: " + workspace + String.valueOf(modpack.getId()) + "-" + modpack.getName() + " already exists!");
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

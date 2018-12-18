@@ -25,7 +25,7 @@ import net.toastynetworks.javafx.SwitchSceneUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController extends Application implements Initializable  {
+public class MainController extends Application implements Initializable {
 
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
@@ -48,7 +48,7 @@ public class MainController extends Application implements Initializable  {
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         URL fileLocation;
         if (configLogic.GetWorkSpaceFromConfig() != null) {
             fileLocation = getClass().getClassLoader().getResource("fxml/main.fxml");
@@ -90,6 +90,7 @@ public class MainController extends Application implements Initializable  {
             e.printStackTrace();
         }
     }
+
     public void editModpackButton() {
         try {
             selectedModpack = modpackTable.getSelectionModel().getSelectedItem();
@@ -98,6 +99,7 @@ public class MainController extends Application implements Initializable  {
             System.out.println(e);
         }
     }
+
     public void deleteModpackButtonClick() {
         try {
             modpackLogic.DeleteModpack(modpackTable.getSelectionModel().getSelectedItem().getId());
@@ -106,8 +108,9 @@ public class MainController extends Application implements Initializable  {
             System.out.println(e);
         }
     }
+
     public void uploadModpackButtonClick() {
-            Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
-            modpackUploadLogic.uploadModpack(modpack, workspace);
+        Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
+        modpackUploadLogic.uploadModpack(modpack, workspace);
     }
 }

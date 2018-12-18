@@ -29,6 +29,7 @@ public class EditModpackController {
             e.printStackTrace();
         }
     }
+
     public void saveModpackAction() {
         try {
             Modpack editedModpack = new Modpack(nameTextField.getText(), versionTextField.getText());

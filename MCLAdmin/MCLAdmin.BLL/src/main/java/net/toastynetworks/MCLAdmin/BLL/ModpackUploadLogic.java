@@ -43,9 +43,10 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
         }
 
     }
+
     private File createZipArchive(File directoryToZip, Modpack modpack) throws Exception {
         zipName = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")) + "--" + modpack.getName() + ".zip";
-        File zipFile = new File(workspace + "\\" +  zipName);
+        File zipFile = new File(workspace + "\\" + zipName);
         try {
             ZipUtil.pack(directoryToZip, zipFile);
         } catch (Exception e) {
@@ -55,7 +56,7 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
     }
 
     private void deleteZipAndFiles() throws IOException {
-        FileUtils.deleteDirectory(new File(workspace + "\\" +  zipName.replace(".zip", "")));
+        FileUtils.deleteDirectory(new File(workspace + "\\" + zipName.replace(".zip", "")));
         FileUtils.forceDelete(new File(workspace + "\\" + zipName));
         System.out.println("Done!");
     }
