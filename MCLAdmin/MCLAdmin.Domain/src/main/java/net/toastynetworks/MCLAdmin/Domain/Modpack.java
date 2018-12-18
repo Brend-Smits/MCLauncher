@@ -8,20 +8,20 @@ public class Modpack {
     private String downloadUrl;
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public Modpack(String name, String versionType) {
         this.name = name;
         this.versionType = versionType;
     }
 
     public Modpack() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

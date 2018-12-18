@@ -27,8 +27,10 @@ import java.util.ResourceBundle;
 
 public class MainController extends Application implements Initializable {
 
+    public static Modpack selectedModpack;
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
+    public String workspace = configLogic.GetWorkSpaceFromConfig();
     private IModpackUploadLogic modpackUploadLogic = ModpackUploadFactory.CreateLogic();
     @FXML
     private TableView<Modpack> modpackTable;
@@ -43,9 +45,9 @@ public class MainController extends Application implements Initializable {
     @FXML
     private Button editModpackButton;
 
-    public static Modpack selectedModpack;
-    public String workspace = configLogic.GetWorkSpaceFromConfig();
-
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -59,10 +61,6 @@ public class MainController extends Application implements Initializable {
         primaryStage.setTitle("MCL-Admin");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 
     public ObservableList<Modpack> getModpacks() {

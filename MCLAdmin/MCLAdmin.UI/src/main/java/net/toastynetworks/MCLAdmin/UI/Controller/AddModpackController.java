@@ -24,23 +24,6 @@ public class AddModpackController {
     @FXML
     private TextField versionTextField;
 
-    public void AddModpack() {
-        modpackLogic.AddModpack(new Modpack(nameTextField.getText(), versionTextField.getText()));
-        try {
-            new SwitchSceneUtils(backButton, "fxml/main.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void backToMainMenuButton() {
-        try {
-            new SwitchSceneUtils(backButton, "fxml/main.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     /**
      * Read the file and calculate the SHA-1 checksum
      *
@@ -66,5 +49,22 @@ public class AddModpackController {
         }
 
         return new HexBinaryAdapter().marshal(sha1.digest());
+    }
+
+    public void AddModpack() {
+        modpackLogic.AddModpack(new Modpack(nameTextField.getText(), versionTextField.getText()));
+        try {
+            new SwitchSceneUtils(backButton, "fxml/main.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void backToMainMenuButton() {
+        try {
+            new SwitchSceneUtils(backButton, "fxml/main.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
