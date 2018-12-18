@@ -28,7 +28,7 @@ import java.util.ResourceBundle;
 public class Main extends Application implements Initializable {
     @FXML
     private ListView modpackList;
-    private ArrayList<Modpack> modpackLists = new ArrayList<>();
+    private static ArrayList<Modpack> modpackLists = new ArrayList<>();
     private ObservableList<String> items = FXCollections.observableArrayList();
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
@@ -55,7 +55,12 @@ public class Main extends Application implements Initializable {
         try {
             Modpack modpack = modpackLists.stream().filter(x -> x.getName() == modpackList.getSelectionModel().getSelectedItem()).findFirst().get();
             System.out.println(modpack.getName());
-            modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
+            if (modpack.getDownloadUrl() != null) {
+                modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
+            } else {
+                System.out.println("No valid download url could be found: " + modpack.getDownloadUrl());
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,8 +68,8 @@ public class Main extends Application implements Initializable {
 
     public void updateButtonClicked() {
         try {
-            //TODO: Update button does not recover current modpacks properly. Have to investigate how to properly do this.
             modpackLists.clear();
+            items.clear();
             modpackLists = modpackLogic.GetAllModpacks();
             modpackList.setItems(items);
             for (Modpack modpack :

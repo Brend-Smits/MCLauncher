@@ -32,8 +32,19 @@ public class ModpackService {
         modpackRepository.save(modpack);
     }
 
-    public void updateModpack(Modpack modpack) {
-        modpackRepository.save(modpack);
+    public void updateModpack(Modpack modpack, int id) {
+//        modpackRepository.save(modpack, id);
+        modpackRepository.findById(id)
+                .map(mod -> {
+                    mod.setName(modpack.getName());
+                    mod.setVersionType(modpack.getVersionType());
+                    mod.setDownloadUrl(modpack.getDownloadUrl());
+                    return modpackRepository.save(mod);
+                })
+                .orElseGet(() -> {
+                    modpack.setId(id);
+                    return modpackRepository.save(modpack);
+                });
     }
 
     public void deleteModpack(int modpackId) {

@@ -9,7 +9,7 @@ public interface IModpackContext {
 
     void AddModpack(Modpack modpack);
 
-    void EditModpack(Modpack modpack);
+    void EditModpack(Modpack modpack, int nonEditModpackId);
 
     void DeleteModpack(int id);
 }

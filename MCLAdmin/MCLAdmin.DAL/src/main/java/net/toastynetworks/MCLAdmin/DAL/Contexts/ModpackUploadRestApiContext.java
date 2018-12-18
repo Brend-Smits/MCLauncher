@@ -36,7 +36,7 @@ public class ModpackUploadRestApiContext implements IModpackUploadContext {
             ObjectMapper mapper = new ObjectMapper();
             //Get first object of the array that is returned, this is the file we uploaded.
             UploadedFile file = mapper.readValue(responseBody.getBody().getArray().get(0).toString(), UploadedFile.class);
-            modpackRestApiContext.EditModpack(modpack, file);
+            modpackRestApiContext.EditModpack(modpack, file, modpack.getId());
         } catch (IOException e) {
             e.printStackTrace();
         }

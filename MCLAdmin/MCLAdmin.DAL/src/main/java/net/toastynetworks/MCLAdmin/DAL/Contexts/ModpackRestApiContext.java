@@ -49,9 +49,9 @@ public class ModpackRestApiContext implements IModpackContext {
         return null;
     }
 
-    public void EditModpack(Modpack modpack) {
+    public void EditModpack(Modpack modpack, int nonEditModpackId) {
         try {
-            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/")
+            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/" + nonEditModpackId)
                     .header("Content-Type", "application/json")
                     .body(modpack)
                     .asJson();
@@ -63,10 +63,10 @@ public class ModpackRestApiContext implements IModpackContext {
         }
     }
 
-    public void EditModpack(Modpack modpack, UploadedFile file) {
+    public void EditModpack(Modpack modpack, UploadedFile file, int nonEditModpackId) {
         try {
             modpack.setDownloadUrl(file.getFileDownloadUri());
-            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/")
+            HttpResponse<JsonNode> updateModpack = Unirest.put("http://localhost:8080/v1/modpack/" + nonEditModpackId)
                     .header("Content-Type", "application/json")
                     .body(modpack)
                     .asJson();
