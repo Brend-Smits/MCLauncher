@@ -61,6 +61,19 @@ public class Main extends Application implements Initializable {
         }
     }
 
+    public void updateButtonClicked() {
+        try {
+            modpackLists = modpackLogic.GetAllModpacks();
+            modpackList.setItems(items);
+            for (Modpack modpack :
+                    modpackLists) {
+                items.add(modpack.getName());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         modpackLists = modpackLogic.GetAllModpacks();
