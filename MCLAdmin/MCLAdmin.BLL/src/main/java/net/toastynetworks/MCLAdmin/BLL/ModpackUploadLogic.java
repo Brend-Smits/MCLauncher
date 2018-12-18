@@ -33,8 +33,7 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
             File dir = new File(uploadDirectory);
             ArrayList<File> files = new ArrayList<>();
             if (dir != null) {
-                zipName = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")) + "--" + modpack.getName() + ".zip";
-                File zipToUpload = createZipArchive(dir);
+                File zipToUpload = createZipArchive(dir, modpack);
                 files.add(zipToUpload);
             }
             uploadMultipleFiles(files, modpack);
@@ -44,7 +43,8 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
         }
 
     }
-    private File createZipArchive(File directoryToZip) throws Exception {
+    private File createZipArchive(File directoryToZip, Modpack modpack) throws Exception {
+        zipName = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")) + "--" + modpack.getName() + ".zip";
         File zipFile = new File(workspace + "\\" +  zipName);
         try {
             ZipUtil.pack(directoryToZip, zipFile);
