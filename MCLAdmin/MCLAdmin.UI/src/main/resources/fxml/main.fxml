@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.toastynetworks.MCLAdmin.UI.Controller.MainController">
-   <children>
-      <TableView fx:id="modpackTable" layoutX="-2.0" layoutY="39.0" prefHeight="359.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="41.0">
-        <columns>
-            <TableColumn fx:id="modpackIdColumn" prefWidth="200.0" text="ID" />
-          <TableColumn fx:id="modpackNameColumn" prefWidth="200.0" text="Modpack" />
-          <TableColumn fx:id="modpackVersionColumn" minWidth="5.0" prefWidth="140.0" text="Version" />
-        </columns>
-      </TableView>
-      <Button fx:id="addNewModpackButton" layoutX="4.0" layoutY="4.0" mnemonicParsing="false" onAction="#addModpackButton" prefHeight="33.0" prefWidth="117.0" text="Add Modpack" />
-      <Button fx:id="editModpackButton" layoutX="130.0" layoutY="4.0" mnemonicParsing="false" onAction="#editModpackButton" prefHeight="33.0" prefWidth="117.0" text="Edit Modpack" />
-      <Button fx:id="deleteModpackButton" layoutX="256.0" layoutY="4.0" mnemonicParsing="false" onAction="#deleteModpackButton" prefHeight="33.0" prefWidth="117.0" text="Delete Modpack" />
-   </children>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="900.0" prefWidth="1600.0"
+            xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="net.toastynetworks.MCLAdmin.UI.Controller.MainController">
+    <children>
+        <TableView fx:id="modpackTable" layoutX="-2.0" layoutY="39.0" prefHeight="359.0" prefWidth="600.0"
+                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0"
+                   AnchorPane.topAnchor="41.0">
+            <columns>
+                <TableColumn fx:id="modpackIdColumn" prefWidth="200.0" text="ID"/>
+                <TableColumn fx:id="modpackNameColumn" prefWidth="200.0" text="Modpack"/>
+                <TableColumn fx:id="modpackVersionColumn" minWidth="5.0" prefWidth="140.0" text="Version"/>
+            </columns>
+        </TableView>
+        <Button fx:id="addNewModpackButton" layoutX="4.0" layoutY="4.0" mnemonicParsing="false"
+                onAction="#addModpackButton" prefHeight="33.0" prefWidth="117.0" text="Add Modpack"/>
+        <Button fx:id="editModpackButton" layoutX="130.0" layoutY="4.0" mnemonicParsing="false"
+                onAction="#editModpackButton" prefHeight="33.0" prefWidth="117.0" text="Edit Modpack"/>
+        <Button fx:id="deleteModpackButton" layoutX="256.0" layoutY="4.0" mnemonicParsing="false"
+                onAction="#deleteModpackButtonClick" prefHeight="33.0" prefWidth="117.0" text="Delete Modpack"/>
+        <Button fx:id="uploadModpackButton" layoutX="1478.0" layoutY="4.0" mnemonicParsing="false"
+                onAction="#uploadModpackButtonClick" prefHeight="33.0" prefWidth="117.0" text="Upload Modpack"/>
+    </children>
 </AnchorPane>

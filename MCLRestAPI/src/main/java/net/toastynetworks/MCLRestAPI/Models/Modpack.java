@@ -10,16 +10,17 @@ public class Modpack {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String name;
     private String versionType;
+    private String downloadUrl;
 
     public Modpack(String name, String versionType) {
         this.name = name;
         this.versionType = versionType;
     }
 
-    public Modpack() {}
+    public Modpack() {
+    }
 
     public int getId() {
         return id;
@@ -43,6 +44,14 @@ public class Modpack {
 
     public void setVersionType(String versionType) {
         this.versionType = versionType;
+    }
+
+    public String getDownloadUrl() {
+        return downloadUrl;
+    }
+
+    public void setDownloadUrl(String downloadUrl) {
+        this.downloadUrl = downloadUrl;
     }
 
 }

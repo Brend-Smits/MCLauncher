@@ -4,6 +4,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import net.toastynetworks.MCLRestAPI.Models.Modpack;
 import net.toastynetworks.MCLRestAPI.Service.ModpackService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,8 @@ import java.util.List;
 @RequestMapping("/v1/modpack")
 @Api(value = "Modpack Resource", description = "Modpack data")
 public class ModpackController {
+
+    private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
     @Autowired
     private ModpackService modpackService;
@@ -30,6 +34,7 @@ public class ModpackController {
         Modpack modpack = modpackService.getModpack(id);
         if (modpack == null) {
             response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+            logger.info("No modpack can be found");
         }
         return modpack;
     }
@@ -43,18 +48,33 @@ public class ModpackController {
     @ApiOperation("Add a new modpack")
     @RequestMapping(method = RequestMethod.POST, value = "/addModpack", produces = "application/json")
     public void addModpack(@RequestBody Modpack modpack) {
-        modpackService.addModpack(new Modpack(modpack.getName(), modpack.getVersionType()));
+        try {
+            modpackService.addModpack(new Modpack(modpack.getName(), modpack.getVersionType()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("Modpack could not be added: " + e);
+        }
     }
 
     @ApiOperation("Update a modpack")
     @RequestMapping(method = RequestMethod.PUT)
     public void updateModpack(@RequestBody Modpack modpack) {
-        modpackService.updateModpack(modpack);
+        try {
+            modpackService.updateModpack(modpack);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("Modpack could not be updated: " + e);
+        }
     }
 
     @ApiOperation("Delete a modpack by ID")
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
     public void deleteModpack(@PathVariable int id) {
-        modpackService.deleteModpack(id);
+        try {
+            modpackService.deleteModpack(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("Modpack could not be deleted " + e);
+        }
     }
 }

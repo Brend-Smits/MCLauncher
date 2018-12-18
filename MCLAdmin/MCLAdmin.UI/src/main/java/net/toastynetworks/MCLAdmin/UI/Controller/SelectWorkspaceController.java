@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
-import net.toastynetworks.MCLAdmin.UI.Utilities.SwitchScene;
+import net.toastynetworks.javafx.SwitchSceneUtils;
 
 import java.io.File;
 
@@ -23,26 +23,35 @@ public class SelectWorkspaceController {
     private Button nextButton;
 
     public void changeButtonClick() {
-        DirectoryChooser directoryChooser = new DirectoryChooser();
-        File dir = directoryChooser.showDialog(changeWorkspaceButton.getScene().getWindow());
-        if (dir != null) {
-            workspaceTextField.setText(dir.getAbsolutePath());
+        try {
+            DirectoryChooser directoryChooser = new DirectoryChooser();
+            File dir = directoryChooser.showDialog(changeWorkspaceButton.getScene().getWindow());
+            if (dir != null) {
+                workspaceTextField.setText(dir.getAbsolutePath());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
     public void nextButtonClick() {
-        if (workspaceTextField.getText().equals("")){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("MCL-Error");
-            alert.setContentText("Please select a workspace");
-            alert.showAndWait();
-        } else{
-            try {
-                configLogic.CreateConfig();
-                configLogic.EditConfig(workspaceTextField.getText());
-                new SwitchScene(nextButton, "fxml/main.fxml");
-            } catch (Exception e) {
-                e.printStackTrace();
+        try {
+            if (workspaceTextField.getText().equals("")) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("MCL-Error");
+                alert.setContentText("Please select a workspace");
+                alert.showAndWait();
+            } else {
+                try {
+                    configLogic.CreateConfig();
+                    configLogic.EditConfig(workspaceTextField.getText());
+                    new SwitchSceneUtils(nextButton, "fxml/main.fxml");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

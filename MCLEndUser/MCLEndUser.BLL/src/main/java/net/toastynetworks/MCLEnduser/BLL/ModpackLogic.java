@@ -2,7 +2,9 @@ package net.toastynetworks.MCLEnduser.BLL;
 
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLEndUser.DAL.Interfaces.IModpackRepository;
+import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ModpackLogic implements IModpackLogic {
@@ -13,7 +15,12 @@ public class ModpackLogic implements IModpackLogic {
         modpackRepository = modpackRepo;
     }
 
-    public List<String> GetAllModpacks() {
+    public List<Modpack> GetAllModpacks() {
         return modpackRepository.GetAllModpacks();
+    }
+
+    @Override
+    public void downloadFile(String fileURL, String saveDir) throws IOException {
+        modpackRepository.downloadFile(fileURL, saveDir);
     }
 }
