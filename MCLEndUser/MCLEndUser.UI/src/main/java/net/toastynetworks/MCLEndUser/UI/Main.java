@@ -19,6 +19,8 @@ import net.toastynetworks.MCLEnduser.BLL.ConfigLogic;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -26,7 +28,7 @@ import java.util.ResourceBundle;
 public class Main extends Application implements Initializable {
     @FXML
     private ListView modpackList;
-    private List<Modpack> modpackLists;
+    private ArrayList<Modpack> modpackLists = new ArrayList<>();
     private ObservableList<String> items = FXCollections.observableArrayList();
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
@@ -53,8 +55,6 @@ public class Main extends Application implements Initializable {
         try {
             Modpack modpack = modpackLists.stream().filter(x -> x.getName() == modpackList.getSelectionModel().getSelectedItem()).findFirst().get();
             System.out.println(modpack.getName());
-            //TODO: Get download URL here from the object and then make a rest call to retrieve the file.
-            //Temporary
             modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
         } catch (IOException e) {
             e.printStackTrace();
@@ -63,11 +63,15 @@ public class Main extends Application implements Initializable {
 
     public void updateButtonClicked() {
         try {
+            //TODO: Update button does not recover current modpacks properly. Have to investigate how to properly do this.
+            modpackLists.clear();
             modpackLists = modpackLogic.GetAllModpacks();
             modpackList.setItems(items);
             for (Modpack modpack :
                     modpackLists) {
-                items.add(modpack.getName());
+                if (!items.stream().filter(s -> s.equalsIgnoreCase(modpack.getName())).findFirst().isPresent()) {
+                    items.add(modpack.getName());
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

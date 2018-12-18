@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class ConfigLogic implements IConfigLogic {
-    private String configPath = System.getenv("APPDATA") + "/" + ".MCLauncher/enduser/" + "config.properties";
+    private String configPath = System.getenv("APPDATA") + "/" + ".MCLauncher/admin/" + "config.properties";
 
     public void CreateConfig() {
         try {
