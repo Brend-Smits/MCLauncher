@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class Main extends Application implements Initializable {
@@ -32,6 +34,8 @@ public class Main extends Application implements Initializable {
     private ObservableList<String> items = FXCollections.observableArrayList();
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
+    //Create a ExecutorService threadpool
+    ExecutorService threadPool = Executors.newWorkStealingPool();
 
     public static void main(String[] args) {
         launch(args);
@@ -52,18 +56,19 @@ public class Main extends Application implements Initializable {
     }
 
     public void playButtonClicked() {
-        try {
-            Modpack modpack = modpackLists.stream().filter(x -> x.getName() == modpackList.getSelectionModel().getSelectedItem()).findFirst().get();
-            System.out.println(modpack.getName());
-            if (modpack.getDownloadUrl() != null) {
-                modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
-            } else {
-                System.out.println("No valid download url could be found: " + modpack.getDownloadUrl());
+        threadPool.execute(() -> {
+            try {
+                Modpack modpack = modpackLists.stream().filter(x -> x.getName() == modpackList.getSelectionModel().getSelectedItem()).findFirst().get();
+                System.out.println(modpack.getName());
+                if (modpack.getDownloadUrl() != null) {
+                    modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
+                } else {
+                    System.out.println("No valid download url could be found: " + modpack.getDownloadUrl());
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        });
     }
 
     public void updateButtonClicked() {
@@ -85,12 +90,13 @@ public class Main extends Application implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        modpackLists = modpackLogic.GetAllModpacks();
-        modpackList.setItems(items);
-        for (Modpack modpack :
-                modpackLists) {
-            items.add(modpack.getName());
-        }
-
+        threadPool.execute(() -> {
+            modpackLists = modpackLogic.GetAllModpacks();
+            modpackList.setItems(items);
+            for (Modpack modpack :
+                    modpackLists) {
+                items.add(modpack.getName());
+            }
+        });
     }
 }

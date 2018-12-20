@@ -24,6 +24,8 @@ import net.toastynetworks.javafx.SwitchSceneUtils;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainController extends Application implements Initializable {
 
@@ -32,6 +34,7 @@ public class MainController extends Application implements Initializable {
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
     public String workspace = configLogic.GetWorkSpaceFromConfig();
     private IModpackUploadLogic modpackUploadLogic = ModpackUploadFactory.CreateLogic();
+    ExecutorService threadPool = Executors.newWorkStealingPool();
     @FXML
     private TableView<Modpack> modpackTable;
     @FXML
@@ -112,11 +115,13 @@ public class MainController extends Application implements Initializable {
     }
 
     public void uploadModpackButtonClick() {
-        try {
-            Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
-            modpackUploadLogic.uploadModpack(modpack, workspace);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        threadPool.execute(() -> {
+            try {
+                Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
+                modpackUploadLogic.uploadModpack(modpack, workspace);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
