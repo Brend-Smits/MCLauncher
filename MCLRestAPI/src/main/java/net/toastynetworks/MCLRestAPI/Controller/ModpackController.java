@@ -56,11 +56,11 @@ public class ModpackController {
         }
     }
 
-    @ApiOperation("Update a modpack")
-    @RequestMapping(method = RequestMethod.PUT)
-    public void updateModpack(@RequestBody Modpack modpack) {
+    @ApiOperation("Update a modpack by ID")
+    @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
+    public void updateModpack(@PathVariable int id, @RequestBody Modpack modpack) {
         try {
-            modpackService.updateModpack(modpack);
+            modpackService.updateModpack(modpack, id);
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("Modpack could not be updated: " + e);

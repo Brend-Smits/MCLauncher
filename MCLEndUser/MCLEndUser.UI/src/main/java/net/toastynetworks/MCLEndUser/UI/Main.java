@@ -15,18 +15,20 @@ import net.toastynetworks.MCLEndUser.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 import net.toastynetworks.MCLEndUser.Factory.ConfigFactory;
 import net.toastynetworks.MCLEndUser.Factory.ModpackFactory;
-import net.toastynetworks.MCLEnduser.BLL.ConfigLogic;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class Main extends Application implements Initializable {
+    private static ArrayList<Modpack> modpackLists = new ArrayList<>();
+    ExecutorService threadPool = Executors.newWorkStealingPool();
     @FXML
     private ListView modpackList;
-    private List<Modpack> modpackLists;
     private ObservableList<String> items = FXCollections.observableArrayList();
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
@@ -50,25 +52,47 @@ public class Main extends Application implements Initializable {
     }
 
     public void playButtonClicked() {
+        threadPool.execute(() -> {
+            try {
+                Modpack modpack = modpackLists.stream().filter(x -> x.getName() == modpackList.getSelectionModel().getSelectedItem()).findFirst().get();
+                System.out.println(modpack.getName());
+                if (modpack.getDownloadUrl() != null) {
+                    modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
+                } else {
+                    System.out.println("No valid download url could be found: " + modpack.getDownloadUrl());
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public void updateButtonClicked() {
         try {
-            Modpack modpack = modpackLists.stream().filter(x -> x.getName() == modpackList.getSelectionModel().getSelectedItem()).findFirst().get();
-            System.out.println(modpack.getName());
-            //TODO: Get download URL here from the object and then make a rest call to retrieve the file.
-            //Temporary
-            modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
-        } catch (IOException e) {
+            modpackLists.clear();
+            items.clear();
+            modpackLists = modpackLogic.GetAllModpacks();
+            modpackList.setItems(items);
+            for (Modpack modpack :
+                    modpackLists) {
+                if (!items.stream().filter(s -> s.equalsIgnoreCase(modpack.getName())).findFirst().isPresent()) {
+                    items.add(modpack.getName());
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        modpackLists = modpackLogic.GetAllModpacks();
-        modpackList.setItems(items);
-        for (Modpack modpack :
-                modpackLists) {
-            items.add(modpack.getName());
-        }
-
+        threadPool.execute(() -> {
+            modpackLists = modpackLogic.GetAllModpacks();
+            modpackList.setItems(items);
+            for (Modpack modpack :
+                    modpackLists) {
+                items.add(modpack.getName());
+            }
+        });
     }
 }

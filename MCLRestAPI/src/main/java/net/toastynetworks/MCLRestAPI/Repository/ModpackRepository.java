@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ModpackRepository extends CrudRepository<Modpack, Integer> {
     List<Modpack> findByVersionType(String versionType);
+
 }

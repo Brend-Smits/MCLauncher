@@ -5,8 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="400.0" prefWidth="653.0" style="-fx-background-color: #1a1a1a;"
             xmlns="http://javafx.com/javafx/10.0.1" fx:controller="net.toastynetworks.MCLEndUser.UI.Main">
     <children>
@@ -96,6 +95,16 @@
                 textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="30.0">
             <font>
                 <Font name="NexaBold" size="18.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#updateButtonClicked" prefHeight="56.0" prefWidth="126.0"
+                style="-fx-background-color: #e8b23e; -fx-background-radius: 5px;" text="UPDATE" textFill="WHITE"
+                AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="175.0">
+            <font>
+                <Font size="18.0"/>
             </font>
             <cursor>
                 <Cursor fx:constant="HAND"/>

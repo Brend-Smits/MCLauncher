@@ -5,7 +5,7 @@ import net.toastynetworks.MCLEndUser.DAL.Interfaces.IModpackRepository;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 
 public class ModpackLogic implements IModpackLogic {
 
@@ -15,7 +15,7 @@ public class ModpackLogic implements IModpackLogic {
         modpackRepository = modpackRepo;
     }
 
-    public List<Modpack> GetAllModpacks() {
+    public ArrayList<Modpack> GetAllModpacks() {
         return modpackRepository.GetAllModpacks();
     }
 

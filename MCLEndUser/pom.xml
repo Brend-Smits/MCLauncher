@@ -36,7 +36,7 @@
             <scope>system</scope>
             <version>1.2-SNAPSHOT</version>
             <systemPath>
-                D:/SynologyDrive/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar
+                C:/Users/Brend/CloudStation/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar
             </systemPath>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.zeroturnaround/zt-zip -->

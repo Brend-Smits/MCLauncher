@@ -17,18 +17,22 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayList;
 
 public class ModpackRestApiContext implements IModpackContext {
     UnirestObjectMapperUtils unirestObjectMapperUtils = new UnirestObjectMapperUtils();
 
     @Override
-    public List<Modpack> GetAllModpacks() {
+    public ArrayList<Modpack> GetAllModpacks() {
         try {
             HttpResponse<Modpack[]> modpackListResponse = Unirest.get("http://localhost:8080/v1/modpack").asObject(Modpack[].class);
             Modpack[] modpackObjectArray = modpackListResponse.getBody();
-            return Arrays.asList(modpackObjectArray);
+            ArrayList<Modpack> modpackArray = new ArrayList<>();
+            for (Modpack modpack :
+                    modpackObjectArray) {
+                modpackArray.add(modpack);
+            }
+            return modpackArray;
         } catch (Exception e) {
             System.out.println(e);
         }

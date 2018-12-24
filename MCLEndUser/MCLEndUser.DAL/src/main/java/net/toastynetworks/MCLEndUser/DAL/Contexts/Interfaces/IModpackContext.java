@@ -3,11 +3,11 @@ package net.toastynetworks.MCLEndUser.DAL.Contexts.Interfaces;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 
 public interface IModpackContext {
 
-    List<Modpack> GetAllModpacks();
+    ArrayList<Modpack> GetAllModpacks();
 
     void downloadFile(String fileURL, String saveDir) throws IOException;
 }

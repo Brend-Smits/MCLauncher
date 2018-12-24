@@ -1,6 +1,5 @@
 package net.toastynetworks.MCLAdmin.BLL.Interfaces;
 
-
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 
 import java.util.List;
