@@ -15,27 +15,23 @@ import net.toastynetworks.MCLEndUser.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 import net.toastynetworks.MCLEndUser.Factory.ConfigFactory;
 import net.toastynetworks.MCLEndUser.Factory.ModpackFactory;
-import net.toastynetworks.MCLEnduser.BLL.ConfigLogic;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
 public class Main extends Application implements Initializable {
+    private static ArrayList<Modpack> modpackLists = new ArrayList<>();
+    ExecutorService threadPool = Executors.newWorkStealingPool();
     @FXML
     private ListView modpackList;
-    private static ArrayList<Modpack> modpackLists = new ArrayList<>();
     private ObservableList<String> items = FXCollections.observableArrayList();
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
-    //Create a ExecutorService threadpool
-    ExecutorService threadPool = Executors.newWorkStealingPool();
 
     public static void main(String[] args) {
         launch(args);

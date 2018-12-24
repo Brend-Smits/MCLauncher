@@ -16,6 +16,7 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
     private IModpackUploadRepository modpackUploadRepository;
     private String zipName;
     private String workspace;
+    private String uploadStatus;
 
     public ModpackUploadLogic(IModpackUploadRepository modpackUploadRepo) {
         modpackUploadRepository = modpackUploadRepo;
@@ -23,6 +24,7 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
 
     @Override
     public void uploadMultipleFiles(ArrayList<File> files, Modpack modpack) {
+        uploadStatus = "Uploading file(s) to server!";
         modpackUploadRepository.uploadMultipleFiles(files, modpack);
     }
 
@@ -38,6 +40,21 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
 
     }
 
+    @Override
+    public double getUploadProgress() {
+        return ProgressBarLogic.progressPercentage;
+    }
+
+    @Override
+    public void resetUploadProgress() {
+        ProgressBarLogic.resetProgress();
+    }
+
+    @Override
+    public String getUploadStatus() {
+        return uploadStatus;
+    }
+
     private ArrayList<File> prepareUpload(Modpack modpack, String workspace) throws Exception {
         String uploadDirectory = workspace + "/" + String.valueOf(modpack.getId()) + "-" + modpack.getName() + "/";
         File dir = new File(uploadDirectory);
@@ -51,9 +68,18 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
 
     private File createZipArchive(File directoryToZip, Modpack modpack) throws Exception {
         zipName = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")) + "--" + modpack.getName() + ".zip";
+        uploadStatus = "Creating Zipfile from Directory";
         File zipFile = new File(workspace + "\\" + zipName);
         try {
-            ZipUtil.pack(directoryToZip, zipFile);
+            ProgressBarLogic progressBarLogic = new ProgressBarLogic(directoryToZip, zipFile);
+            ZipUtil.pack(directoryToZip, zipFile, name -> {
+                uploadStatus = "Adding file: " + name + " to the zip";
+                progressBarLogic.progressPercentage = 0;
+                progressBarLogic.progress.add(name);
+                progressBarLogic.calculateProgress(progressBarLogic.progress);
+                return name;
+            });
+            System.out.println("\rDone-Uploading now                                                 \n");
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -63,6 +89,7 @@ public class ModpackUploadLogic implements IModpackUploadLogic {
     private void deleteZipAndFiles() throws IOException {
         FileUtils.deleteDirectory(new File(workspace + "\\" + zipName.replace(".zip", "")));
         FileUtils.forceDelete(new File(workspace + "\\" + zipName));
+        uploadStatus = "Cleaning up :)";
         System.out.println("Done!");
     }
 }
