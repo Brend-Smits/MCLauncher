@@ -10,4 +10,10 @@ public interface IModpackUploadLogic {
     void uploadMultipleFiles(ArrayList<File> files, Modpack modpack);
 
     void uploadModpack(Modpack modpack, String workspace);
+
+    double getUploadProgress();
+
+    void resetUploadProgress();
+
+    String getUploadStatus();
 }

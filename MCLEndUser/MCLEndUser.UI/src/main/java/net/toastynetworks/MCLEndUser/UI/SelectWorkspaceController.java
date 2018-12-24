@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLEndUser.Factory.ConfigFactory;
-import net.toastynetworks.MCLEnduser.BLL.ConfigLogic;
 import net.toastynetworks.javafx.SwitchSceneUtils;
 
 import java.io.File;

@@ -1,6 +1,7 @@
 package net.toastynetworks.MCLAdmin.UI.Controller;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,9 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
@@ -24,13 +23,16 @@ import net.toastynetworks.javafx.SwitchSceneUtils;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.*;
 
 public class MainController extends Application implements Initializable {
 
     public static Modpack selectedModpack;
+    ExecutorService threadPool = Executors.newWorkStealingPool();
+    ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
-    public String workspace = configLogic.GetWorkSpaceFromConfig();
+    private String workspace = configLogic.GetWorkSpaceFromConfig();
     private IModpackUploadLogic modpackUploadLogic = ModpackUploadFactory.CreateLogic();
     @FXML
     private TableView<Modpack> modpackTable;
@@ -44,6 +46,28 @@ public class MainController extends Application implements Initializable {
     private Button addNewModpackButton;
     @FXML
     private Button editModpackButton;
+    @FXML
+    private ProgressBar progressBar = new ProgressBar();
+    @FXML
+    private Label progressLabel;
+    @FXML
+    private Label statusLabel;
+    private double progressPercentage;
+    private Runnable pollable = new Runnable() {
+        @Override
+        public void run() {
+            threadPool.execute(() -> {
+                Thread.currentThread().setName("MCL-PollUploadProgress-Thread");
+
+                pollUploadProgress();
+                progressBar.setProgress(((float) progressPercentage));
+                Platform.runLater(() -> {
+                    progressLabel.setText(String.format("%.2f", (progressPercentage * 100)) + "%");
+                    statusLabel.setText(modpackUploadLogic.getUploadStatus());
+                });
+            });
+        }
+    };
 
     public static void main(String[] args) {
         launch(args);
@@ -63,7 +87,7 @@ public class MainController extends Application implements Initializable {
         primaryStage.show();
     }
 
-    public ObservableList<Modpack> getModpacks() {
+    private ObservableList<Modpack> getModpacks() {
         ObservableList<Modpack> modpacks = FXCollections.observableArrayList();
         for (Modpack modpack :
                 modpackLogic.GetAllModpacks()) {
@@ -112,11 +136,29 @@ public class MainController extends Application implements Initializable {
     }
 
     public void uploadModpackButtonClick() {
-        try {
-            Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
-            modpackUploadLogic.uploadModpack(modpack, workspace);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        threadPool.execute(() -> {
+            try {
+                Thread.currentThread().setName("MCL-UploadModpack-Thread");
+
+                ScheduledFuture<?> scheduledFuture = service.scheduleAtFixedRate(pollable, 0, 1, TimeUnit.SECONDS);
+                Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
+                modpackUploadLogic.uploadModpack(modpack, workspace);
+                scheduledFuture.cancel(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                progressBar.setProgress(1);
+                Platform.runLater(() -> {
+                    progressLabel.setText("Done!");
+                    modpackUploadLogic.resetUploadProgress();
+                    statusLabel.setText("");
+                });
+            }
+        });
+    }
+
+    private void pollUploadProgress() {
+        progressPercentage = modpackUploadLogic.getUploadProgress();
+        System.out.println("Current progress: " + progressPercentage);
     }
 }
