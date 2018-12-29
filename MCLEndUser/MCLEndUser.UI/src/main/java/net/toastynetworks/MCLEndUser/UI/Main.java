@@ -1,6 +1,7 @@
 package net.toastynetworks.MCLEndUser.UI;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,21 +13,24 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IModpackLogic;
+import net.toastynetworks.MCLEndUser.BLL.Interfaces.ISocketLogic;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 import net.toastynetworks.MCLEndUser.Factory.ConfigFactory;
 import net.toastynetworks.MCLEndUser.Factory.ModpackFactory;
+import net.toastynetworks.MCLEndUser.Factory.SocketFactory;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 
 public class Main extends Application implements Initializable {
     private static ArrayList<Modpack> modpackLists = new ArrayList<>();
     ExecutorService threadPool = Executors.newWorkStealingPool();
+    ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+    ISocketLogic socketLogic = SocketFactory.CreateLogic();
     @FXML
     private ListView modpackList;
     private ObservableList<String> items = FXCollections.observableArrayList();
@@ -49,6 +53,12 @@ public class Main extends Application implements Initializable {
         primaryStage.setTitle("ToastyNetworks Launcher V2");
         primaryStage.setScene(new Scene(root, 1900, 1040));
         primaryStage.show();
+
+        primaryStage.setOnCloseRequest(t -> {
+            Platform.exit();
+            System.exit(0);
+        });
+
     }
 
     public void playButtonClicked() {
@@ -78,6 +88,7 @@ public class Main extends Application implements Initializable {
                 if (!items.stream().filter(s -> s.equalsIgnoreCase(modpack.getName())).findFirst().isPresent()) {
                     items.add(modpack.getName());
                 }
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -87,12 +98,33 @@ public class Main extends Application implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         threadPool.execute(() -> {
-            modpackLists = modpackLogic.GetAllModpacks();
-            modpackList.setItems(items);
-            for (Modpack modpack :
-                    modpackLists) {
-                items.add(modpack.getName());
+            try {
+                modpackLists = modpackLogic.GetAllModpacks();
+                if (!items.isEmpty()) {
+                    modpackList.setItems(items);
+                    for (Modpack modpack :
+                            modpackLists) {
+                        items.add(modpack.getName());
+                    }
+                }
+                ScheduledFuture<?> scheduledFuture = service.scheduleAtFixedRate(pollable, 0, 60, TimeUnit.SECONDS);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
+
+    private Runnable pollable = () -> threadPool.execute(() -> {
+        Thread.currentThread().setName("MCL-PollServerStatus-Thread");
+        if (!items.isEmpty()) {
+            for (Modpack modpack :
+                    modpackLists) {
+                Modpack statusModpack = socketLogic.checkStatus(modpack);
+                System.out.println("New modpack status: " + statusModpack.isOnline());
+            }
+        } else {
+            System.out.println("No modpacks found!");
+        }
+    });
+
 }

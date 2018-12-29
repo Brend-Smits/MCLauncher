@@ -18,9 +18,11 @@ public class AddModpackController {
     private TextField nameTextField;
     @FXML
     private TextField versionTextField;
+    @FXML
+    private TextField hostTextField;
 
     public void AddModpack() {
-        modpackLogic.AddModpack(new Modpack(nameTextField.getText(), versionTextField.getText()));
+        modpackLogic.AddModpack(new Modpack(nameTextField.getText(), versionTextField.getText(), hostTextField.getText()));
         try {
             new SwitchSceneUtils(backButton, "fxml/main.fxml");
         } catch (Exception e) {

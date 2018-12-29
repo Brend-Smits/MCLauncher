@@ -12,10 +12,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import net.toastynetworks.MCLAdmin.BLL.Interfaces.IClientLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackUploadLogic;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
+import net.toastynetworks.MCLAdmin.Factory.ClientFactory;
 import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
@@ -34,6 +36,9 @@ public class MainController extends Application implements Initializable {
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
     private String workspace = configLogic.GetWorkSpaceFromConfig();
     private IModpackUploadLogic modpackUploadLogic = ModpackUploadFactory.CreateLogic();
+    private IClientLogic clientSocketLogic = ClientFactory.CreateLogic();
+
+
     @FXML
     private TableView<Modpack> modpackTable;
     @FXML

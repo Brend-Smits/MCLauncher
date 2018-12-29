@@ -21,7 +21,7 @@ public class ModpackRestApiContext implements IModpackContext {
 
     public void AddModpack(Modpack modpack) {
         try {
-            Modpack modpackObject = new Modpack(modpack.getName(), modpack.getVersionType());
+            Modpack modpackObject = new Modpack(modpack.getName(), modpack.getVersionType(), modpack.getHost());
 
             HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/v1/modpack/addModpack")
                     .header("Content-Type", "application/json")
