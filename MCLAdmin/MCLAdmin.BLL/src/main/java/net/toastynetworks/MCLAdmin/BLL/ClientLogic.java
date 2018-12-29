@@ -3,7 +3,7 @@ package net.toastynetworks.MCLAdmin.BLL;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IClientLogic;
 import net.toastynetworks.MCLAdmin.DAL.Interfaces.IClientRepository;
 
-public class ClientLogic implements IClientLogic{
+public class ClientLogic implements IClientLogic {
 
     private IClientRepository clientRepository;
 

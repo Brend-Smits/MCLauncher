@@ -6,13 +6,9 @@ import org.eclipse.jetty.util.component.LifeCycle;
 import javax.websocket.ContainerProvider;
 import javax.websocket.Session;
 import javax.websocket.WebSocketContainer;
-import java.io.*;
-import java.net.InetAddress;
-import java.net.Socket;
 import java.net.URI;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 
 
 public class ClientSocketContext implements IClientSocketContext {
