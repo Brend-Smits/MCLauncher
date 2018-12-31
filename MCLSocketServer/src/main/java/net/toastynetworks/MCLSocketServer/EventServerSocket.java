@@ -48,9 +48,9 @@ public class EventServerSocket {
         System.out.println("[Broadcast] { " + s + " } to:");
         for(Session session : sessions) {
             try {
-                session.getBasicRemote().sendText(s);
+                session.getAsyncRemote().sendText(s);
                 System.out.println("\t\t >> Client associated with server side session ID: " + session.getId());
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

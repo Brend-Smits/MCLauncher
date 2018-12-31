@@ -57,7 +57,7 @@ public class SocketContext implements ISocketContext {
 
     @Override
     public void checkStatus() {
-        ScheduledFuture<?> scheduledFuture = service.scheduleAtFixedRate(pollable, 0, 60, TimeUnit.SECONDS);
+        ScheduledFuture<?> scheduledFuture = service.scheduleAtFixedRate(pollable, 0, 30, TimeUnit.SECONDS);
     }
 
     @Override

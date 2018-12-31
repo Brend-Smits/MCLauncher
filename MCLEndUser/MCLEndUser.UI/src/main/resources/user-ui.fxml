@@ -15,7 +15,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="653.0" style="-fx-background-color: #1a1a1a;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.toastynetworks.MCLEndUser.UI.Main">
     <children>
-        <ListView fx:id="modpackList" layoutX="8.0" layoutY="88.0" prefHeight="312.0" prefWidth="263.0" style="-fx-background-color: #e8b23e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="88.0">
+      <ListView fx:id="modpackStatusListView" layoutX="262.0" layoutY="88.0" prefHeight="312.0" prefWidth="89.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="262.0" AnchorPane.topAnchor="88.0" />
+        <ListView fx:id="modpackListView" layoutX="8.0" layoutY="88.0" prefHeight="312.0" prefWidth="263.0" style="-fx-background-color: #e8b23e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="88.0">
             <contextMenu>
                 <ContextMenu>
                     <items>
