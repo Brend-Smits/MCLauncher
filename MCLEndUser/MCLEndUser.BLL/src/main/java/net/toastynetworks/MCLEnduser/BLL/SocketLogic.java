@@ -1,9 +1,11 @@
 package net.toastynetworks.MCLEnduser.BLL;
 
-import com.google.gson.Gson;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.ISocketLogic;
 import net.toastynetworks.MCLEndUser.DAL.Interfaces.ISocketRepository;
+import net.toastynetworks.MCLEndUser.Domain.IObserver;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
+
+import java.util.List;
 
 public class SocketLogic implements ISocketLogic {
 
@@ -19,8 +21,28 @@ public class SocketLogic implements ISocketLogic {
     }
 
     @Override
-    public Modpack checkStatus(Modpack modpack) {
-        Gson gson = new Gson();
-        return socketRepository.checkStatus(gson.toJson(modpack));
+    public void checkStatus() {
+        socketRepository.checkStatus();
+    }
+
+    @Override
+    public void setModpackListForStatusCheck(List<Modpack> modpackList) {
+        socketRepository.setModpackListForStatusCheck(modpackList);
+    }
+
+    @Override
+    public void registerObserver(IObserver observer) {
+        socketRepository.registerObserver(observer);
+    }
+
+    @Override
+    public void unregisterObserver(IObserver observer) {
+        socketRepository.unregisterObserver(observer);
+    }
+
+    @Override
+    public void notifyObserver() {
+        System.out.println("Notifying from Socket Logic");
+        socketRepository.notifyObserver();
     }
 }

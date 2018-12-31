@@ -1,12 +1,15 @@
 package net.toastynetworks.MCLEndUser.BLL.Interfaces;
 
+import net.toastynetworks.MCLEndUser.Domain.IObservable;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
-import java.util.HashMap;
+import java.util.List;
 
-public interface ISocketLogic {
+public interface ISocketLogic extends IObservable {
 
     void sendMessageToServer(String message);
 
-    Modpack checkStatus(Modpack modpack);
+    void checkStatus();
+
+    void setModpackListForStatusCheck(List<Modpack> modpackList);
 }

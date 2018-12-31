@@ -1,6 +1,8 @@
 package net.toastynetworks.MCLEndUser.DAL.Contexts;
 
+import com.google.gson.Gson;
 import net.toastynetworks.MCLEndUser.DAL.Contexts.Interfaces.ISocketContext;
+import net.toastynetworks.MCLEndUser.Domain.IObserver;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 import org.eclipse.jetty.util.component.LifeCycle;
 
@@ -8,15 +10,20 @@ import javax.websocket.ContainerProvider;
 import javax.websocket.Session;
 import javax.websocket.WebSocketContainer;
 import java.net.URI;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.*;
 
 public class SocketContext implements ISocketContext {
 
+    public static List<IObserver> observableList = new ArrayList<>();
+    static List<Modpack> modpackList = new ArrayList<>();
     ExecutorService threadPool = Executors.newWorkStealingPool();
-    static Modpack checkedStatusModpack;
+    ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+
 
     public SocketContext() {
+
     }
 
     @Override
@@ -49,13 +56,44 @@ public class SocketContext implements ISocketContext {
     }
 
     @Override
-    public Modpack checkStatus(String modpackJson) {
-        sendMessageToServer(modpackJson);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return checkedStatusModpack;
+    public void checkStatus() {
+        ScheduledFuture<?> scheduledFuture = service.scheduleAtFixedRate(pollable, 0, 60, TimeUnit.SECONDS);
     }
+
+    @Override
+    public void setModpackListForStatusCheck(List<Modpack> modpackList) {
+        System.out.println("Set modpacks in list to new ones");
+        this.modpackList = modpackList;
+    }
+
+    @Override
+    public void registerObserver(IObserver observer) {
+        observableList.add(observer);
+    }
+
+    @Override
+    public void unregisterObserver(IObserver observer) {
+        observableList.remove(observer);
+    }
+
+    @Override
+    public void notifyObserver() {
+        System.out.println(observableList.size());
+        System.out.println("Notify from Socket Context");
+        for (IObserver observer :
+                observableList) {
+            observer.update(modpackList);
+        }
+    }
+
+    private Runnable pollable = () -> threadPool.execute(() -> {
+        Thread.currentThread().setName("MCL-PollServerStatus-Thread");
+        Gson gson = new Gson();
+            for (Modpack modpack :
+                    modpackList) {
+                String modpackJson = gson.toJson(modpack);
+                sendMessageToServer(modpackJson);
+            }
+    });
+
 }

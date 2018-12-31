@@ -5,11 +5,13 @@ import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
 import javax.websocket.*;
 
-import static net.toastynetworks.MCLEndUser.DAL.Contexts.SocketContext.checkedStatusModpack;
+import static net.toastynetworks.MCLEndUser.DAL.Contexts.SocketContext.modpackList;
+
 
 @ClientEndpoint
 public class OnEventSocketContext {
     Gson gson = new Gson();
+    SocketContext socketContext = new SocketContext();
 
     @OnOpen
     public void onWebSocketConnect() {
@@ -18,20 +20,23 @@ public class OnEventSocketContext {
     @OnMessage
     public void onWebSocketText(String message) {
         System.out.println("[Received]: " + message);
-        Modpack modpack = gson.fromJson(message, Modpack.class);
-        checkedStatusModpack = modpack;
-        System.out.println("Modpack set with ID: " + modpack.getId() + " with online status: " + modpack.isOnline());
+        Modpack newModpack = gson.fromJson(message, Modpack.class);
 
+        if (modpackList.stream().anyMatch(o -> o.getId() == newModpack.getId())) {
+            Modpack oldModpack = modpackList.stream().filter(o -> o.getId() == newModpack.getId()).findFirst().get();
+//            if (modpackList.stream().filter(o -> o.getId() == newModpack.getId()).anyMatch(b -> b.isOnline() != newModpack.isOnline()))
+            if (oldModpack.isOnline() != newModpack.isOnline()) {
+                modpackList.remove(oldModpack);
+                modpackList.add(newModpack);
+                socketContext.notifyObserver();
+            } else {
+                System.out.println("Modpack server status has not changed!");
+            }
+        } else {
+            modpackList.add(newModpack);
+            socketContext.notifyObserver();
+        }
 
-//        Gson gson = new Gson();
-//        Modpack modpack = gson.fromJson(message, Modpack.class);
-//        System.out.println("[Received]: " + modpack.isOnline());
-//        if (isOnlineMap.containsKey(modpack.getId())) {
-//            isOnlineMap.replace(modpack.getId(), modpack.isOnline());
-//            System.out.println("Replaced!");
-//        }
-//        isOnlineMap.put(modpack.getId(), modpack.isOnline());
-//        System.out.println("Added!");
     }
     @OnClose
     public void onWebSocketClose(CloseReason reason) {

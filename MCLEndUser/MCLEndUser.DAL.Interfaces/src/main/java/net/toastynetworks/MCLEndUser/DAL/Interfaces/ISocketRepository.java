@@ -1,10 +1,15 @@
 package net.toastynetworks.MCLEndUser.DAL.Interfaces;
 
+import net.toastynetworks.MCLEndUser.Domain.IObservable;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
-public interface ISocketRepository {
+import java.util.List;
+
+public interface ISocketRepository extends IObservable {
 
     void sendMessageToServer(String message);
 
-    Modpack checkStatus(String modpackJson);
+    void checkStatus();
+
+    void setModpackListForStatusCheck(List<Modpack> modpackList);
 }

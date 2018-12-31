@@ -6,6 +6,7 @@ import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ModpackLogic implements IModpackLogic {
 
@@ -23,4 +24,5 @@ public class ModpackLogic implements IModpackLogic {
     public void downloadFile(String fileURL, String saveDir) throws IOException {
         modpackRepository.downloadFile(fileURL, saveDir);
     }
+
 }
