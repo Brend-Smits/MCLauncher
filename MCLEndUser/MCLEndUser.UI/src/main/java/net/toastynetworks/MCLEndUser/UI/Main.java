@@ -40,8 +40,6 @@ public class Main extends Application implements Initializable, IObserver {
     private TableColumn<Modpack, Boolean> modpackStatusColumn;
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
-    private static ArrayList<Modpack> retrievedModpackList = new ArrayList<>();
-    private static List<Modpack> statusUpdatedModpacks = new ArrayList<>();
     private static List<Modpack> modpackList = new ArrayList<>();
     ExecutorService threadPool = Executors.newWorkStealingPool();
     ISocketLogic socketLogic = SocketFactory.CreateLogic();
@@ -74,7 +72,7 @@ public class Main extends Application implements Initializable, IObserver {
     public void playButtonClicked() {
         threadPool.execute(() -> {
             try {
-                Modpack modpack = retrievedModpackList.stream().filter(x -> x.getId() == modpackTableView.getSelectionModel().getSelectedItem().getId()).findFirst().get();
+                Modpack modpack = modpackList.stream().filter(x -> x.getId() == modpackTableView.getSelectionModel().getSelectedItem().getId()).findFirst().get();
                 if (modpack.getDownloadUrl() != null) {
                     modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
                 } else {
@@ -89,21 +87,7 @@ public class Main extends Application implements Initializable, IObserver {
     public void updateButtonClicked() {
         try {
 
-//            modpackList.clear();
-//            modpackList = modpackLogic.GetAllModpacks();
-//            socketLogic.setModpackListForStatusCheck(modpackList);
-//
-////                modpackListView.getItems().clear();
-////                modpackStatusListView.getItems().clear();
-//            for (Modpack modpack :
-//                    modpackList) {
-//                if (modpackNameColumn.get)
-////                    modpackListView.getItems().add(modpack.getName());
-////                    modpackStatusListView.getItems().add(modpack.isOnline());
-//            }
-
-            List<Modpack> tempModpackList = new ArrayList<>();
-            tempModpackList = modpackLogic.GetAllModpacks();
+            List<Modpack> tempModpackList = modpackLogic.GetAllModpacks();
 
             for (Modpack newModpack :
                     tempModpackList) {
@@ -114,12 +98,11 @@ public class Main extends Application implements Initializable, IObserver {
                 }
             }
 
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     private ObservableList<Modpack> getModpacks() {
         ObservableList<Modpack> modpacks = FXCollections.observableArrayList();
         for (Modpack modpack :
@@ -135,11 +118,12 @@ public class Main extends Application implements Initializable, IObserver {
         threadPool.execute(() -> {
             try {
                 socketLogic.registerObserver(this);
-                modpackTableView.setItems(getModpacks());
 
                 socketLogic.setModpackListForStatusCheck(modpackList);
                 modpackNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-                modpackStatusColumn.setCellValueFactory(new PropertyValueFactory<>("isOnline"));
+                modpackStatusColumn.setCellValueFactory(new PropertyValueFactory<>("onlineStatus"));
+
+                modpackTableView.setItems(getModpacks());
 
                 modpackTableView.refresh();
                 socketLogic.checkStatus();
@@ -152,20 +136,15 @@ public class Main extends Application implements Initializable, IObserver {
     @Override
     public void update(Object object) {
         try {
-//            Platform.runLater(() -> modpackStatusListView.getItems().clear());
             List<Modpack> tempList = (List<Modpack>) object;
-            System.out.println("SIZE: " + tempList.size());
             for (Modpack newModpack :
                     tempList) {
                 Modpack tempModpack = modpackList.stream().filter(o -> o.getId() == newModpack.getId()).findFirst().get();
-                if (tempModpack.isOnline() != newModpack.isOnline()) {
-                    modpackList.set(modpackList.indexOf(tempModpack), newModpack);
-                    Platform.runLater(() -> {
-                        modpackTableView.getItems().stream().filter(o -> o.getId() == tempModpack.getId()).findAny().get().setOnline(tempModpack.isOnline());
-                        modpackTableView.refresh();
-                    });
-                }
-//                Platform.runLater(() -> modpackStatusListView.getItems().add(newModpack.isOnline()));
+                modpackList.set(modpackList.indexOf(tempModpack), newModpack);
+                Platform.runLater(() -> {
+                    modpackTableView.getItems().stream().filter(o -> o.getId() == tempModpack.getId()).findAny().get().setOnlineStatus(tempModpack.getOnlineStatus());
+                    modpackTableView.refresh();
+                });
             }
 
             System.out.println("Received update, thank you.");

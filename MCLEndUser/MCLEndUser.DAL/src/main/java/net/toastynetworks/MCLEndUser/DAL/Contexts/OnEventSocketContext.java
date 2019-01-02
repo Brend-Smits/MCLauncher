@@ -24,13 +24,10 @@ public class OnEventSocketContext {
 
         if (modpackList.stream().anyMatch(o -> o.getId() == newModpack.getId())) {
             Modpack oldModpack = modpackList.stream().filter(o -> o.getId() == newModpack.getId()).findFirst().get();
-//            if (modpackList.stream().filter(o -> o.getId() == newModpack.getId()).anyMatch(b -> b.isOnline() != newModpack.isOnline()))
-            if (oldModpack.isOnline() != newModpack.isOnline()) {
+            if (oldModpack.getOnlineStatus() != newModpack.getOnlineStatus()) {
                 modpackList.remove(oldModpack);
                 modpackList.add(newModpack);
                 socketContext.notifyObserver();
-            } else {
-                System.out.println("Modpack server status has not changed!");
             }
         } else {
             modpackList.add(newModpack);

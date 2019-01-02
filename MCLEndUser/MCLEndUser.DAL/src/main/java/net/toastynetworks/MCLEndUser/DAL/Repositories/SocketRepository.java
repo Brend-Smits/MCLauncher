@@ -42,7 +42,5 @@ public class SocketRepository implements ISocketRepository {
 
     @Override
     public void notifyObserver() {
-        System.out.println("Notify from Socket Repository");
-        socketContext.notifyObserver();
     }
 }

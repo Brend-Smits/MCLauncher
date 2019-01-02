@@ -7,7 +7,7 @@ public class Modpack {
     private String versionType;
     private String downloadUrl;
     private String host;
-    private boolean isOnline;
+    private boolean onlineStatus;
 
 
     public Modpack(String name, String versionType, String host) {
@@ -59,12 +59,12 @@ public class Modpack {
         this.host = host;
     }
 
-    public boolean isOnline() {
-        return isOnline;
+    public boolean getOnlineStatus() {
+        return onlineStatus;
     }
 
-    public void setOnline(boolean online) {
-        isOnline = online;
+    public void setOnlineStatus(boolean onlineStatus) {
+        this.onlineStatus = onlineStatus;
     }
 
 }

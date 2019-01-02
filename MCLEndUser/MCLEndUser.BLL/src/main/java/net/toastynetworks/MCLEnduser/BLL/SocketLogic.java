@@ -42,7 +42,5 @@ public class SocketLogic implements ISocketLogic {
 
     @Override
     public void notifyObserver() {
-        System.out.println("Notifying from Socket Logic");
-        socketRepository.notifyObserver();
     }
 }

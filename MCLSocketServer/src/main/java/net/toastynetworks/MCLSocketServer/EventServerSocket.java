@@ -27,7 +27,7 @@ public class EventServerSocket {
         try {
             Modpack modpack = gson.fromJson(message, Modpack.class);
             boolean isOnline = statusChecker.checkStatusOf(modpack.getHost(), 25565);
-            modpack.setOnline(isOnline);
+            modpack.setOnlineStatus(isOnline);
             broadcast(gson.toJson(modpack));
         } catch (IOException e) {
             e.printStackTrace();

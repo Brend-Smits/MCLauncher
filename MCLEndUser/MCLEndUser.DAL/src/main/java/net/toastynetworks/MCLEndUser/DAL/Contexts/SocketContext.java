@@ -57,14 +57,12 @@ public class SocketContext implements ISocketContext {
 
     @Override
     public void checkStatus() {
-        ScheduledFuture<?> scheduledFuture = service.scheduleAtFixedRate(pollable, 0, 30, TimeUnit.SECONDS);
+        service.scheduleAtFixedRate(pollable, 0, 30, TimeUnit.SECONDS);
     }
 
     @Override
     public void setModpackListForStatusCheck(List<Modpack> modpackList) {
-        System.out.println("Set modpacks in list to new ones");
         this.modpackList = modpackList;
-        System.out.println("ME: " + modpackList.size());
     }
 
     @Override
@@ -80,12 +78,9 @@ public class SocketContext implements ISocketContext {
     @Override
     public void notifyObserver() {
         System.out.println(observableList.size());
-        System.out.println("Notify from Socket Context");
-        System.out.println("YARRR: " + modpackList.size());
         for (IObserver observer :
                 observableList) {
             observer.update(modpackList);
-            System.out.println("Size of modpack list in Context: " + modpackList.size());
         }
     }
 
@@ -94,7 +89,6 @@ public class SocketContext implements ISocketContext {
         Gson gson = new Gson();
             for (Modpack modpack :
                     modpackList) {
-                System.out.println("TEST: " + modpackList.size());
                 String modpackJson = gson.toJson(modpack);
                 sendMessageToServer(modpackJson);
             }
