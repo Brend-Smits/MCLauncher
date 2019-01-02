@@ -49,7 +49,7 @@ public class ModpackController {
     @RequestMapping(method = RequestMethod.POST, value = "/addModpack", produces = "application/json")
     public void addModpack(@RequestBody Modpack modpack) {
         try {
-            modpackService.addModpack(new Modpack(modpack.getName(), modpack.getVersionType()));
+            modpackService.addModpack(new Modpack(modpack.getName(), modpack.getVersionType(), modpack.getHost()));
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("Modpack could not be added: " + e);

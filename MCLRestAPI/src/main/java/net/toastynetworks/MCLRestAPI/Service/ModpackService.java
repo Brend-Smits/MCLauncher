@@ -33,12 +33,12 @@ public class ModpackService {
     }
 
     public void updateModpack(Modpack modpack, int id) {
-//        modpackRepository.save(modpack, id);
         modpackRepository.findById(id)
                 .map(mod -> {
                     mod.setName(modpack.getName());
                     mod.setVersionType(modpack.getVersionType());
                     mod.setDownloadUrl(modpack.getDownloadUrl());
+                    mod.setHost(modpack.getHost());
                     return modpackRepository.save(mod);
                 })
                 .orElseGet(() -> {

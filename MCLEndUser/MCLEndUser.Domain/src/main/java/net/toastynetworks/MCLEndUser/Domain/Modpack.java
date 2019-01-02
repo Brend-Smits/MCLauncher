@@ -6,11 +6,14 @@ public class Modpack {
     private String name;
     private String versionType;
     private String downloadUrl;
+    private String host;
+    private Boolean onlineStatus;
 
 
-    public Modpack(String name, String versionType) {
+    public Modpack(String name, String versionType, String host) {
         this.name = name;
         this.versionType = versionType;
+        this.host = host;
     }
 
     public Modpack() {
@@ -46,6 +49,22 @@ public class Modpack {
 
     public void setDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public Boolean getOnlineStatus() {
+        return onlineStatus;
+    }
+
+    public void setOnlineStatus(Boolean online) {
+        onlineStatus = online;
     }
 
 }

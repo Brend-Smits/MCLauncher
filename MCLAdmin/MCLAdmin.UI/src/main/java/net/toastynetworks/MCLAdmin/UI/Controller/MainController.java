@@ -12,10 +12,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import net.toastynetworks.MCLAdmin.BLL.Interfaces.IClientLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLAdmin.BLL.Interfaces.IModpackUploadLogic;
+import net.toastynetworks.MCLAdmin.Domain.IObserver;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
+import net.toastynetworks.MCLAdmin.Factory.ClientFactory;
 import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
@@ -23,9 +26,11 @@ import net.toastynetworks.javafx.SwitchSceneUtils;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
-public class MainController extends Application implements Initializable {
+public class MainController extends Application implements Initializable, IObserver {
 
     public static Modpack selectedModpack;
     ExecutorService threadPool = Executors.newWorkStealingPool();
@@ -34,6 +39,9 @@ public class MainController extends Application implements Initializable {
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
     private String workspace = configLogic.GetWorkSpaceFromConfig();
     private IModpackUploadLogic modpackUploadLogic = ModpackUploadFactory.CreateLogic();
+    private IClientLogic clientSocketLogic = ClientFactory.CreateLogic();
+
+
     @FXML
     private TableView<Modpack> modpackTable;
     @FXML
@@ -53,21 +61,6 @@ public class MainController extends Application implements Initializable {
     @FXML
     private Label statusLabel;
     private double progressPercentage;
-    private Runnable pollable = new Runnable() {
-        @Override
-        public void run() {
-            threadPool.execute(() -> {
-                Thread.currentThread().setName("MCL-PollUploadProgress-Thread");
-
-                pollUploadProgress();
-                progressBar.setProgress(((float) progressPercentage));
-                Platform.runLater(() -> {
-                    progressLabel.setText(String.format("%.2f", (progressPercentage * 100)) + "%");
-                    statusLabel.setText(modpackUploadLogic.getUploadStatus());
-                });
-            });
-        }
-    };
 
     public static void main(String[] args) {
         launch(args);
@@ -140,10 +133,9 @@ public class MainController extends Application implements Initializable {
             try {
                 Thread.currentThread().setName("MCL-UploadModpack-Thread");
 
-                ScheduledFuture<?> scheduledFuture = service.scheduleAtFixedRate(pollable, 0, 1, TimeUnit.SECONDS);
+                modpackUploadLogic.registerObserver(this);
                 Modpack modpack = modpackTable.getSelectionModel().getSelectedItem();
                 modpackUploadLogic.uploadModpack(modpack, workspace);
-                scheduledFuture.cancel(true);
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
@@ -153,12 +145,20 @@ public class MainController extends Application implements Initializable {
                     modpackUploadLogic.resetUploadProgress();
                     statusLabel.setText("");
                 });
+                modpackUploadLogic.unregisterObserver(this);
             }
         });
     }
 
-    private void pollUploadProgress() {
-        progressPercentage = modpackUploadLogic.getUploadProgress();
-        System.out.println("Current progress: " + progressPercentage);
+    @Override
+    public void update(Object object) {
+        progressPercentage = (Double) object;
+        progressBar.setProgress(((float) progressPercentage));
+        Platform.runLater(() -> {
+            progressLabel.setText(String.format("%.2f", (progressPercentage * 100)) + "%");
+            statusLabel.setText(modpackUploadLogic.getUploadStatus());
+
+
+        });
     }
 }

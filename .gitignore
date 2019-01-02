@@ -137,3 +137,5 @@ MCLSharedUtils/\.idea/libraries/*
 MCLSharedUtils/\.idea/workspace\.xml
 
 MCLEndUser/MCLEndUser\.DAL/target/*
+
+MCLSharedUtils/\.idea/

@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="MCLEndUser.DAL.Interfaces" />
     <orderEntry type="module" module-name="MCLEndUser.Domain" />
     <orderEntry type="module" module-name="MCLEndUser.BLL.Interfaces" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.2" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: net.toastynetworks.MCLSharedUtils:MCLSharedUtils:1.2-SNAPSHOT">
         <CLASSES>
