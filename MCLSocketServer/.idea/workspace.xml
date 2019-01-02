@@ -4,9 +4,7 @@
     <list default="true" id="14446efd-0e73-4662-9991-b2ca8cff928a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/src/main/java/net/toastynetworks/MCLEndUser/DAL/Contexts/SocketContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/src/main/java/net/toastynetworks/MCLEndUser/DAL/Contexts/SocketContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/src/main/java/net/toastynetworks/MCLEndUser/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/src/main/java/net/toastynetworks/MCLEndUser/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/src/main/resources/user-ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/src/main/resources/user-ui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServerSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServerSocket.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
