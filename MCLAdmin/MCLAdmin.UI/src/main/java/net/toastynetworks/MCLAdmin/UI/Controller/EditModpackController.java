@@ -21,6 +21,8 @@ public class EditModpackController {
     private TextField versionTextField;
     @FXML
     private TextField idTextField;
+    @FXML
+    private TextField hostTextField;
 
     public void backToMainMenuButton() {
         try {
@@ -32,7 +34,7 @@ public class EditModpackController {
 
     public void saveModpackAction() {
         try {
-            Modpack editedModpack = new Modpack(nameTextField.getText(), versionTextField.getText());
+            Modpack editedModpack = new Modpack(nameTextField.getText(), versionTextField.getText(), hostTextField.getText());
             modpackLogic.EditModpack(editedModpack, Integer.parseInt(idTextField.getText()));
             System.out.println("Saving modpack");
         } catch (Exception e) {
@@ -44,5 +46,6 @@ public class EditModpackController {
         idTextField.setText(String.valueOf(selectedModpack.getId()));
         nameTextField.setText(selectedModpack.getName());
         versionTextField.setText(selectedModpack.getVersionType());
+        hostTextField.setText(selectedModpack.getHost());
     }
 }

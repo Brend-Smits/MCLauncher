@@ -21,5 +21,8 @@
         <TextField fx:id="idTextField" editable="false" layoutX="62.0" layoutY="60.0" prefHeight="25.0"
                    prefWidth="203.0" promptText="name" text="ID of Modpack (Auto)"/>
         <Label layoutX="62.0" layoutY="36.0" text="Modpack ID:"/>
+        <TextField fx:id="hostTextField" layoutX="62.0" layoutY="247.0" prefHeight="25.0" prefWidth="203.0"
+                   promptText="version" text="Host of Modpack"/>
+        <Label layoutX="62.0" layoutY="223.0" text="Modpack Host:"/>
     </children>
 </AnchorPane>

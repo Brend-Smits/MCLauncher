@@ -30,6 +30,7 @@ public class ModpackRestApiContext implements IModpackContext {
             ArrayList<Modpack> modpackArray = new ArrayList<>();
             for (Modpack modpack :
                     modpackObjectArray) {
+                modpack.setOnlineStatus(false);
                 modpackArray.add(modpack);
             }
             return modpackArray;

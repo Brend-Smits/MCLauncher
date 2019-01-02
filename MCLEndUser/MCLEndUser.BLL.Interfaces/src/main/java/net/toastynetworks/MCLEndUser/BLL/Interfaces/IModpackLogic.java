@@ -4,6 +4,7 @@ import net.toastynetworks.MCLEndUser.Domain.Modpack;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IModpackLogic {
     ArrayList<Modpack> GetAllModpacks();
