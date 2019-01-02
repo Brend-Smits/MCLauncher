@@ -4,13 +4,14 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableMap;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IModpackLogic;
@@ -26,14 +27,17 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class Main extends Application implements Initializable, IObserver {
     @FXML
-    private ListView modpackListView;
+    private TableView<Modpack> modpackTableView;
     @FXML
-    private ListView modpackStatusListView;
+    private TableColumn<Modpack, String> modpackNameColumn;
+    @FXML
+    private TableColumn<Modpack, Boolean> modpackStatusColumn;
     private IModpackLogic modpackLogic = ModpackFactory.CreateLogic();
     private IConfigLogic configLogic = ConfigFactory.CreateLogic();
     private static ArrayList<Modpack> retrievedModpackList = new ArrayList<>();
@@ -70,8 +74,7 @@ public class Main extends Application implements Initializable, IObserver {
     public void playButtonClicked() {
         threadPool.execute(() -> {
             try {
-                Modpack modpack = retrievedModpackList.stream().filter(x -> x.getName() == modpackListView.getSelectionModel().getSelectedItem()).findFirst().get();
-                System.out.println(modpack.getName());
+                Modpack modpack = retrievedModpackList.stream().filter(x -> x.getId() == modpackTableView.getSelectionModel().getSelectedItem().getId()).findFirst().get();
                 if (modpack.getDownloadUrl() != null) {
                     modpackLogic.downloadFile(modpack.getDownloadUrl(), configLogic.GetWorkSpaceFromConfig() + "\\" + modpack.getName());
                 } else {
@@ -84,22 +87,47 @@ public class Main extends Application implements Initializable, IObserver {
     }
 
     public void updateButtonClicked() {
-            try {
+        try {
 
-                modpackList.clear();
-                modpackList = modpackLogic.GetAllModpacks();
-                socketLogic.setModpackListForStatusCheck(modpackList);
+//            modpackList.clear();
+//            modpackList = modpackLogic.GetAllModpacks();
+//            socketLogic.setModpackListForStatusCheck(modpackList);
+//
+////                modpackListView.getItems().clear();
+////                modpackStatusListView.getItems().clear();
+//            for (Modpack modpack :
+//                    modpackList) {
+//                if (modpackNameColumn.get)
+////                    modpackListView.getItems().add(modpack.getName());
+////                    modpackStatusListView.getItems().add(modpack.isOnline());
+//            }
 
-                modpackListView.getItems().clear();
-                modpackStatusListView.getItems().clear();
-                for (Modpack modpack :
-                        modpackList) {
-                    modpackListView.getItems().add(modpack.getName());
-                    modpackStatusListView.getItems().add(modpack.isOnline());
+            List<Modpack> tempModpackList = new ArrayList<>();
+            tempModpackList = modpackLogic.GetAllModpacks();
+
+            for (Modpack newModpack :
+                    tempModpackList) {
+                if (!modpackList.stream().filter(o -> o.getId() == newModpack.getId()).findFirst().isPresent()) {
+                    modpackList.add(newModpack);
+                    modpackTableView.getItems().add(newModpack);
+                    modpackTableView.refresh();
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private ObservableList<Modpack> getModpacks() {
+        ObservableList<Modpack> modpacks = FXCollections.observableArrayList();
+        for (Modpack modpack :
+                modpackLogic.GetAllModpacks()) {
+            modpacks.add(modpack);
+            modpackList.add(modpack);
+        }
+        return modpacks;
     }
 
     @Override
@@ -107,14 +135,13 @@ public class Main extends Application implements Initializable, IObserver {
         threadPool.execute(() -> {
             try {
                 socketLogic.registerObserver(this);
+                modpackTableView.setItems(getModpacks());
 
-                modpackList = modpackLogic.GetAllModpacks();
                 socketLogic.setModpackListForStatusCheck(modpackList);
-                for (Modpack modpack :
-                        modpackList) {
-                    modpackListView.getItems().add(modpack.getName());
-                    modpackStatusListView.getItems().add(modpack.isOnline());
-                }
+                modpackNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+                modpackStatusColumn.setCellValueFactory(new PropertyValueFactory<>("isOnline"));
+
+                modpackTableView.refresh();
                 socketLogic.checkStatus();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -125,7 +152,7 @@ public class Main extends Application implements Initializable, IObserver {
     @Override
     public void update(Object object) {
         try {
-            Platform.runLater(() -> modpackStatusListView.getItems().clear());
+//            Platform.runLater(() -> modpackStatusListView.getItems().clear());
             List<Modpack> tempList = (List<Modpack>) object;
             System.out.println("SIZE: " + tempList.size());
             for (Modpack newModpack :
@@ -133,8 +160,12 @@ public class Main extends Application implements Initializable, IObserver {
                 Modpack tempModpack = modpackList.stream().filter(o -> o.getId() == newModpack.getId()).findFirst().get();
                 if (tempModpack.isOnline() != newModpack.isOnline()) {
                     modpackList.set(modpackList.indexOf(tempModpack), newModpack);
+                    Platform.runLater(() -> {
+                        modpackTableView.getItems().stream().filter(o -> o.getId() == tempModpack.getId()).findAny().get().setOnline(tempModpack.isOnline());
+                        modpackTableView.refresh();
+                    });
                 }
-                Platform.runLater(() -> modpackStatusListView.getItems().add(newModpack.isOnline()));
+//                Platform.runLater(() -> modpackStatusListView.getItems().add(newModpack.isOnline()));
             }
 
             System.out.println("Received update, thank you.");
