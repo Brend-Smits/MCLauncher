@@ -12,10 +12,11 @@
         <module name="MCLAdmin.DAL.Interfaces" />
         <module name="MCLAdmin.Domain" />
         <module name="MCLAdmin.Factory" />
+        <module name="MCLAdmin.Tests.Integration" />
         <module name="MCLAdmin.UI" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="MCLAdmin" target="1.5" />
       <module name="MCLAdmin.BLL" target="8" />
       <module name="MCLAdmin.BLL.Interfaces" target="8" />
@@ -23,6 +24,7 @@
       <module name="MCLAdmin.DAL.Interfaces" target="8" />
       <module name="MCLAdmin.Domain" target="8" />
       <module name="MCLAdmin.Factory" target="8" />
+      <module name="MCLAdmin.Tests.Integration" target="8" />
       <module name="MCLAdmin.UI" target="8" />
     </bytecodeTargetLevel>
   </component>

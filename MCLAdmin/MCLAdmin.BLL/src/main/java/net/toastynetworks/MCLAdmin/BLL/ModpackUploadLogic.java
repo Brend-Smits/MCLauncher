@@ -101,12 +101,12 @@ public class ModpackUploadLogic implements IModpackUploadLogic, IObservable {
      * @return File - Returns the zipped folder as a file
      * @throws Exception When file can not be found or other file issues
      */
-    protected File createZipArchive(File directoryToZip, String modpackName, String workspace) throws Exception, ZipException {
+    protected File createZipArchive(File directoryToZip, String modpackName, String workspace) throws Exception {
         zipName = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss")) + "--" + modpackName + ".zip";
         uploadStatus = "Creating Zipfile from Directory";
         File zipFile = new File(workspace + "\\" + zipName);
         try {
-            ProgressBarLogic progressBarLogic = new ProgressBarLogic(directoryToZip, zipFile);
+            ProgressBarLogic progressBarLogic = new ProgressBarLogic(directoryToZip);
             ZipUtil.pack(directoryToZip, zipFile, name -> {
                 uploadStatus = "Adding file: " + name + " to the zip";
                 progressBarLogic.progressPercentage = 0;
@@ -151,4 +151,13 @@ public class ModpackUploadLogic implements IModpackUploadLogic, IObservable {
             observer.update(ProgressBarLogic.progressPercentage);
         }
     }
+
+    public String getZipName() {
+        return zipName;
+    }
+
+    public void setZipName(String zipName) {
+        this.zipName = zipName;
+    }
+
 }
