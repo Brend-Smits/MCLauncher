@@ -1,10 +1,17 @@
 package net.toastynetworks.MCLRestAPI.Models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "uploadedFile")
 public class UploadedFile {
     private String fileName;
     private String fileDownloadUri;
     private String fileType;
     private long size;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int fileId;
 
     public UploadedFile(String fileName, String fileDownloadUri, String fileType, long size) {
         this.fileName = fileName;

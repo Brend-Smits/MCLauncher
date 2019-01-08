@@ -7,6 +7,7 @@ import net.toastynetworks.MCLRestAPI.Service.ModpackService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -24,12 +25,14 @@ public class ModpackController {
 
     @ApiOperation("Get all Modpacks")
     @RequestMapping(method = RequestMethod.GET)
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public List<Modpack> getAllModpacks() {
         return modpackService.getAllModpacks();
     }
 
     @ApiOperation("Get a single Modpack")
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public Modpack getModpack(@PathVariable int id, HttpServletResponse response) {
         Modpack modpack = modpackService.getModpack(id);
         if (modpack == null) {
@@ -41,12 +44,14 @@ public class ModpackController {
 
     @ApiOperation("Get all modpacks with a specific release type")
     @RequestMapping(method = RequestMethod.GET, value = "/release/{versionType}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public List<Modpack> getModpacksWithReleaseType(@PathVariable String versionType) {
         return modpackService.getModpacksWithReleaseType(versionType);
     }
 
     @ApiOperation("Add a new modpack")
     @RequestMapping(method = RequestMethod.POST, value = "/addModpack", produces = "application/json")
+    @PreAuthorize("hasRole('ADMIN')")
     public void addModpack(@RequestBody Modpack modpack) {
         try {
             modpackService.addModpack(new Modpack(modpack.getName(), modpack.getVersionType(), modpack.getHost()));
@@ -58,6 +63,7 @@ public class ModpackController {
 
     @ApiOperation("Update a modpack by ID")
     @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public void updateModpack(@PathVariable int id, @RequestBody Modpack modpack) {
         try {
             modpackService.updateModpack(modpack, id);
@@ -69,6 +75,7 @@ public class ModpackController {
 
     @ApiOperation("Delete a modpack by ID")
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public void deleteModpack(@PathVariable int id) {
         try {
             modpackService.deleteModpack(id);

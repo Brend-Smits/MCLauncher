@@ -70,7 +70,7 @@ public class MainController extends Application implements Initializable, IObser
     public void start(Stage primaryStage) throws Exception {
         URL fileLocation;
         if (configLogic.GetWorkSpaceFromConfig() != null) {
-            fileLocation = getClass().getClassLoader().getResource("fxml/main.fxml");
+            fileLocation = getClass().getClassLoader().getResource("fxml/LoginScene.fxml");
         } else {
             fileLocation = getClass().getClassLoader().getResource("fxml/SelectWorkspaceScene.fxml");
         }
@@ -91,15 +91,19 @@ public class MainController extends Application implements Initializable, IObser
 
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            modpackNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-            modpackVersionColumn.setCellValueFactory(new PropertyValueFactory<>("versionType"));
-            modpackIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-
-            modpackTable.setItems(getModpacks());
-            configLogic.PrepareWorkspace(modpackLogic.GetAllModpacks());
+            populateModpackTable();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void populateModpackTable() {
+        modpackNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        modpackVersionColumn.setCellValueFactory(new PropertyValueFactory<>("versionType"));
+        modpackIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+
+        modpackTable.setItems(getModpacks());
+        configLogic.PrepareWorkspace(modpackLogic.GetAllModpacks());
     }
 
     public void addModpackButton() {

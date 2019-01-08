@@ -18,6 +18,7 @@ public class ModpackUploadRestApiContext implements IModpackUploadContext {
     public void uploadMultipleFiles(ArrayList<File> files, Modpack modpack) {
         try {
             HttpResponse<JsonNode> jsonResponse = Unirest.post("http://localhost:8080/uploadMultipleFiles")
+                    .header("Authorization", UserRestApiContext.JwtToken)
                     .field("files", files)
                     .asJson();
 

@@ -16,11 +16,13 @@ import javafx.stage.Stage;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IConfigLogic;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.IModpackLogic;
 import net.toastynetworks.MCLEndUser.BLL.Interfaces.ISocketLogic;
+import net.toastynetworks.MCLEndUser.BLL.Interfaces.IUserLogic;
 import net.toastynetworks.MCLEndUser.Domain.IObserver;
 import net.toastynetworks.MCLEndUser.Domain.Modpack;
 import net.toastynetworks.MCLEndUser.Factory.ConfigFactory;
 import net.toastynetworks.MCLEndUser.Factory.ModpackFactory;
 import net.toastynetworks.MCLEndUser.Factory.SocketFactory;
+import net.toastynetworks.MCLEndUser.Factory.UserFactory;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,6 +45,7 @@ public class Main extends Application implements Initializable, IObserver {
     private static List<Modpack> modpackList = new ArrayList<>();
     ExecutorService threadPool = Executors.newWorkStealingPool();
     ISocketLogic socketLogic = SocketFactory.CreateLogic();
+    private IUserLogic userLogic = UserFactory.CreateLogic();
 
     public static void main(String[] args) {
         launch(args);
@@ -117,6 +120,7 @@ public class Main extends Application implements Initializable, IObserver {
     public void initialize(URL location, ResourceBundle resources) {
         threadPool.execute(() -> {
             try {
+                userLogic.Login("kainomood", "123456789");
                 socketLogic.registerObserver(this);
 
                 socketLogic.setModpackListForStatusCheck(modpackList);

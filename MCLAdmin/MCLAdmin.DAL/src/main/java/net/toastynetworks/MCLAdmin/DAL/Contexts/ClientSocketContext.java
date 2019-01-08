@@ -12,7 +12,6 @@ import java.util.concurrent.Executors;
 
 
 public class ClientSocketContext implements IClientSocketContext {
-    ;
     ExecutorService threadPool = Executors.newWorkStealingPool();
 
     public ClientSocketContext() {

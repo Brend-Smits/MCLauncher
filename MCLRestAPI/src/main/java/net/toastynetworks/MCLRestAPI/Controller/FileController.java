@@ -11,6 +11,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -32,6 +33,7 @@ public class FileController {
 
     @ApiOperation("Upload a single multipart file.")
     @PostMapping("/uploadFile")
+    @PreAuthorize("hasRole('ADMIN')")
     public UploadedFile uploadFile(@RequestParam("file") MultipartFile file) {
         //Convert incoming UploadedFile to MultipartFile or convert file to multipartfile before making the request
         String fileName = fileStorageService.storeFile(file);
@@ -47,6 +49,7 @@ public class FileController {
 
     @ApiOperation("Upload multiple files, this uses the single uploadfile endpoint")
     @PostMapping("/uploadMultipleFiles")
+    @PreAuthorize("hasRole('ADMIN')")
     public List<UploadedFile> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
         return Arrays.asList(files)
                 .stream()
@@ -56,6 +59,7 @@ public class FileController {
 
     @ApiOperation("Download the requested filename")
     @GetMapping("/downloadFile/{fileName:.+}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
         // Load file as Resource
         Resource resource = fileStorageService.loadFileAsResource(fileName);

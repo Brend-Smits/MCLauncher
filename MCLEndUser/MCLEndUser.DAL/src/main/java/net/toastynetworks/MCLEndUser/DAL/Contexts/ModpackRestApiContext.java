@@ -25,7 +25,9 @@ public class ModpackRestApiContext implements IModpackContext {
     @Override
     public ArrayList<Modpack> GetAllModpacks() {
         try {
-            HttpResponse<Modpack[]> modpackListResponse = Unirest.get("http://localhost:8080/v1/modpack").asObject(Modpack[].class);
+            HttpResponse<Modpack[]> modpackListResponse = Unirest.get("http://localhost:8080/v1/modpack")
+                    .header("Authorization", UserRestApiContext.JwtToken)
+                    .asObject(Modpack[].class);
             Modpack[] modpackObjectArray = modpackListResponse.getBody();
             ArrayList<Modpack> modpackArray = new ArrayList<>();
             for (Modpack modpack :
@@ -48,6 +50,7 @@ public class ModpackRestApiContext implements IModpackContext {
      * @param saveDir path of the directory to save the file
      * @throws IOException
      */
+    //TODO: Use unirest for this shit
     @Override
     public void downloadFile(String fileURL, String saveDir) throws IOException {
         int BUFFER_SIZE = 4096;
