@@ -25,7 +25,7 @@
             <scope>system</scope>
             <version>1.2-SNAPSHOT</version>
             <systemPath>
-                ~/MCLauncher/MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar
+                ${project.basedir}/MCLauncher/MCLSharedUtils/MCLSharedUtils-1.2-SNAPSHOT.jar
             </systemPath>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.zeroturnaround/zt-zip -->
