@@ -22,7 +22,6 @@ import net.toastynetworks.MCLAdmin.Factory.ClientFactory;
 import net.toastynetworks.MCLAdmin.Factory.ConfigFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackFactory;
 import net.toastynetworks.MCLAdmin.Factory.ModpackUploadFactory;
-import net.toastynetworks.javafx.SwitchSceneUtils;
 
 import java.net.URL;
 import java.util.ResourceBundle;

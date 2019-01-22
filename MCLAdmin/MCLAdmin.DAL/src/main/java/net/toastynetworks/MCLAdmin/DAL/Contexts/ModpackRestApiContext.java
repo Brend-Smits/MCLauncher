@@ -6,7 +6,6 @@ import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Domain.UploadedFile;
-import net.toastynetworks.unirest.UnirestObjectMapperUtils;
 
 import java.util.Arrays;
 import java.util.List;

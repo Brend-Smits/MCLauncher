@@ -16,8 +16,6 @@
     <orderEntry type="module" module-name="MCLAdmin.BLL" />
     <orderEntry type="module" module-name="MCLAdmin.DAL.Interfaces" />
     <orderEntry type="module" module-name="MCLAdmin.DAL" />
-    <orderEntry type="module" module-name="MCLAdmin.Domain" />
-    <orderEntry type="library" name="Maven: net.toastynetworks:MCLSharedUtils:1.2-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.7" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.7" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.7" level="project" />
@@ -26,6 +24,7 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20160212" level="project" />
+    <orderEntry type="module" module-name="MCLAdmin.Domain" />
     <orderEntry type="library" name="Maven: com.github.Rubbertjuh:MCLauncher:1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.2.3.v20140905" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
