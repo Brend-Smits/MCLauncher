@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/MCLAdmin.DAL.Interfaces.iml" filepath="$PROJECT_DIR$/MCLAdmin.DAL.Interfaces/MCLAdmin.DAL.Interfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/MCLAdmin.Domain/MCLAdmin.Domain.iml" filepath="$PROJECT_DIR$/MCLAdmin.Domain/MCLAdmin.Domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/MCLAdmin.Factory/MCLAdmin.Factory.iml" filepath="$PROJECT_DIR$/MCLAdmin.Factory/MCLAdmin.Factory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MCLAdmin.Tests.Integration/MCLAdmin.Tests.Integration.iml" filepath="$PROJECT_DIR$/MCLAdmin.Tests.Integration/MCLAdmin.Tests.Integration.iml" />
       <module fileurl="file://$PROJECT_DIR$/MCLAdmin.UI/MCLAdmin.UI.iml" filepath="$PROJECT_DIR$/MCLAdmin.UI/MCLAdmin.UI.iml" />
     </modules>
   </component>

@@ -10,13 +10,9 @@ public class ProgressBarLogic {
 
     public static Set<String> progress = new HashSet<String>();
     public static double progressPercentage;
-    private static int totalFileNumber;
-    private static File targetDir;
-    private static File zipArchive;
+    public static int totalFileNumber;
 
-    public ProgressBarLogic(File dirToTarget, File zipFile) {
-        targetDir = dirToTarget;
-        zipArchive = zipFile;
+    public ProgressBarLogic(File dirToTarget) {
         try {
             totalFileNumber = Math.toIntExact(Files.walk(dirToTarget.toPath())
                     .parallel()

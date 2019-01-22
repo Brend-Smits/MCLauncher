@@ -2,30 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14446efd-0e73-4662-9991-b2ca8cff928a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.Domain/src/main/java/net/toastynetworks/MCLAdmin/Domain/Modpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.Domain/src/main/java/net/toastynetworks/MCLAdmin/Domain/Modpack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLAdmin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ClientSocketContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLAdmin/MCLAdmin.DAL/src/main/java/net/toastynetworks/MCLAdmin/DAL/Contexts/ClientSocketContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.BLL.Interfaces/target/MCLEndUser.BLL.Interfaces-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.BLL.Interfaces/target/MCLEndUser.BLL.Interfaces-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.BLL/src/main/java/net/toastynetworks/MCLEnduser/BLL/SocketLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.BLL/src/main/java/net/toastynetworks/MCLEnduser/BLL/SocketLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.BLL/target/MCLEndUser.BLL-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.BLL/target/MCLEndUser.BLL-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.BLL/MCLEndUser.BLL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.BLL/MCLEndUser.BLL.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL.Interfaces/target/MCLEndUser.DAL.Interfaces-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL.Interfaces/target/MCLEndUser.DAL.Interfaces-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/src/main/java/net/toastynetworks/MCLEndUser/DAL/Contexts/ModpackRestApiContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/src/main/java/net/toastynetworks/MCLEndUser/DAL/Contexts/ModpackRestApiContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/src/main/java/net/toastynetworks/MCLEndUser/DAL/Contexts/OnEventSocketContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/src/main/java/net/toastynetworks/MCLEndUser/DAL/Contexts/OnEventSocketContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/src/main/java/net/toastynetworks/MCLEndUser/DAL/Contexts/SocketContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/src/main/java/net/toastynetworks/MCLEndUser/DAL/Contexts/SocketContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Domain/src/main/java/net/toastynetworks/MCLEndUser/Domain/Modpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Domain/src/main/java/net/toastynetworks/MCLEndUser/Domain/Modpack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Domain/target/MCLEndUser.Domain-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Domain/target/MCLEndUser.Domain-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Domain/target/classes/net/toastynetworks/MCLEndUser/Domain/Modpack.class" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Domain/target/classes/net/toastynetworks/MCLEndUser/Domain/Modpack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Factory/target/MCLEndUser.Factory-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Factory/target/MCLEndUser.Factory-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/src/main/java/net/toastynetworks/MCLEndUser/UI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/src/main/java/net/toastynetworks/MCLEndUser/UI/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/src/main/resources/user-ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/src/main/resources/user-ui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLEndUser/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MCLSharedUtils/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/MCLEndUser.DAL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.DAL/MCLEndUser.DAL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Factory/MCLEndUser.Factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.Factory/MCLEndUser.Factory.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/MCLEndUser.UI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MCLEndUser/MCLEndUser.UI/MCLEndUser.UI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MCLSocketServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MCLSocketServer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServerSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServerSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/Modpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/Modpack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MCLSocketServer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/MCLSocketServer-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/toastynetworks/MCLSocketServer/EventServerSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/toastynetworks/MCLSocketServer/EventServerSocket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/net/toastynetworks/MCLSocketServer/model/Modpack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/toastynetworks/MCLSocketServer/model/Modpack.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,62 +39,22 @@
     <favorites_list name="MCLSocketServer" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/StatusChecker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServerSocket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="340">
+              <caret line="25" column="39" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/Modpack.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServerSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-              <folding>
-                <element signature="e#1183#1184#0" expanded="true" />
-                <element signature="e#1214#1215#0" expanded="true" />
-                <element signature="e#1259#1260#0" expanded="true" />
-                <element signature="e#1292#1293#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="32" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-649" />
           </provider>
         </entry>
       </file>
@@ -138,6 +85,7 @@
         <option value="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServerSocket.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/Modpack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/EventSocketServer.java" />
       </list>
     </option>
   </component>
@@ -165,10 +113,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -177,7 +125,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,17 +192,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546458775010" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546605622034" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
@@ -358,18 +301,18 @@
       <workItem from="1546454041076" duration="17000" />
       <workItem from="1546454098106" duration="119000" />
       <workItem from="1546454250416" duration="590000" />
-      <workItem from="1546454860534" duration="1393000" />
+      <workItem from="1546454860534" duration="1989000" />
+      <workItem from="1546602490464" duration="1848000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25963000" />
+    <option name="totallyTimeSpent" value="28407000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.2771855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.2739872" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -378,7 +321,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47767395" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2383532" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991684" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -388,7 +331,7 @@
       <window_info anchor="bottom" id="Messages" order="9" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -400,7 +343,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.32995737" />
-      <window_info anchor="right" id="Maven" order="10" visible="true" weight="0.32995737" />
+      <window_info anchor="right" id="Maven" order="10" weight="0.32995737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,20 +357,20 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/old/NetworkConnection.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/old/Server2.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/Server.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/Modpack.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/StatusChecker.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/StatusChecker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/EventSocketServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="374">
+          <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -436,29 +379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/EventServerSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-649" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/toastynetworks/MCLSocketServer/model/Modpack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-          <folding>
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-            <element signature="e#1292#1293#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -514,7 +436,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>main</last-edited>
+          <last-edited>MCLSocketServer</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -526,6 +448,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: com.google.code.gson:gson:2.8.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

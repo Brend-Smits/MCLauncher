@@ -16,6 +16,7 @@
         <module>MCLAdmin.Domain</module>
         <module>MCLAdmin.Factory</module>
         <module>MCLAdmin.UI</module>
+        <module>MCLAdmin.Tests.Integration</module>
     </modules>
 
 

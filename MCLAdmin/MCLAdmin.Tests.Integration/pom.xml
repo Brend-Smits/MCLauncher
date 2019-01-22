@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>MCLAdmin</artifactId>
@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>MCLAdmin.BLL</artifactId>
+    <artifactId>MCLAdmin.Tests.Integration</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -23,6 +23,27 @@
         </plugins>
     </build>
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.4.0-M1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.toastynetworks.MCLSharedUtils</groupId>
+            <artifactId>MCLSharedUtils</artifactId>
+            <scope>system</scope>
+            <version>1.2-SNAPSHOT</version>
+            <systemPath>
+                C:/Users/Brend/CloudStation/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar
+            </systemPath>
+        </dependency>
         <dependency>
             <groupId>net.toastynetworks</groupId>
             <artifactId>MCLAdmin.BLL.Interfaces</artifactId>
@@ -42,18 +63,9 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.4.0-M1</version>
-            <scope>compile</scope>
+            <groupId>net.toastynetworks</groupId>
+            <artifactId>MCLAdmin.Factory</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
-
 </project>
