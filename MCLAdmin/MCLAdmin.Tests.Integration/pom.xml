@@ -36,15 +36,6 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>net.toastynetworks.MCLSharedUtils</groupId>
-            <artifactId>MCLSharedUtils</artifactId>
-            <scope>system</scope>
-            <version>1.2-SNAPSHOT</version>
-            <systemPath>
-                C:/Users/Brend/CloudStation/School/Semester-3/Individueel/MCLauncher/MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar
-            </systemPath>
-        </dependency>
-        <dependency>
             <groupId>net.toastynetworks</groupId>
             <artifactId>MCLAdmin.BLL.Interfaces</artifactId>
             <version>1.0-SNAPSHOT</version>

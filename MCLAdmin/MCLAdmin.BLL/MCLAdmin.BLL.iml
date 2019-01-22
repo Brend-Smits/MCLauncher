@@ -20,15 +20,6 @@
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.4.0-M1" level="project" />
-    <orderEntry type="module-library">
-      <library name="Maven: net.toastynetworks.MCLSharedUtils:MCLSharedUtils:1.2-SNAPSHOT">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../MCLSharedUtils/target/MCLSharedUtils-1.2-SNAPSHOT.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="Maven: org.zeroturnaround:zt-zip:1.13" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.directory.studio:org.apache.commons.io:2.4" level="project" />
