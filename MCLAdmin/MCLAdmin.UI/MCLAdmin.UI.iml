@@ -24,8 +24,6 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20160212" level="project" />
-    <orderEntry type="module" module-name="MCLAdmin.Domain" />
-    <orderEntry type="library" name="Maven: com.github.Rubbertjuh:MCLauncher:1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.2.3.v20140905" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-http:9.2.3.v20140905" level="project" />
@@ -77,6 +75,7 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-common:9.2.7.v20150116" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-api:9.2.7.v20150116" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-servlet:9.2.7.v20150116" level="project" />
+    <orderEntry type="module" module-name="MCLAdmin.Domain" />
     <orderEntry type="library" name="Maven: org.zeroturnaround:zt-zip:1.13" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.directory.studio:org.apache.commons.io:2.4" level="project" />
