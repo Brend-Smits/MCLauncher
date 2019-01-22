@@ -12,8 +12,6 @@ import java.util.List;
 
 public class ModpackRestApiContext implements IModpackContext {
 
-    UnirestObjectMapperUtils unirestObjectMapperUtils = new UnirestObjectMapperUtils();
-
     public List<Modpack> GetAllModpacks() {
         return GetModpackList();
     }

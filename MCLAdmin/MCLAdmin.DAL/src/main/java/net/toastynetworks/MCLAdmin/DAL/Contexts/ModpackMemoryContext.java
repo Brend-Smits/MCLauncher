@@ -1,15 +1,10 @@
 package net.toastynetworks.MCLAdmin.DAL.Contexts;
 
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
 import net.toastynetworks.MCLAdmin.DAL.Contexts.Interfaces.IModpackContext;
 import net.toastynetworks.MCLAdmin.Domain.Modpack;
 import net.toastynetworks.MCLAdmin.Domain.UploadedFile;
-import net.toastynetworks.unirest.UnirestObjectMapperUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ModpackMemoryContext implements IModpackContext {
